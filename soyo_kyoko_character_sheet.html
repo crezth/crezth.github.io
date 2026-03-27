@@ -66,7 +66,7 @@
       <p class="char-name">共工 相繇</p>
       <div class="char-sub">Kyoko Soyo &nbsp;·&nbsp; Level 1 Warrior &nbsp;·&nbsp; Youxia</div>
     </div>
-    <div class="sys-tag"><strong>Blood and Fire</strong>Ashes Without Number</div>
+    <div class="sys-tag"><strong>Crezth</strong>Blood and Fire &nbsp;·&nbsp; Ashes Without Number</div>
   </div>
 
   <div class="body">
@@ -106,7 +106,7 @@
       </div>
 
       <div class="sec">Description</div>
-      <div class="nb" style="font-style:normal;">A large, fat woman with a shock of red hair and bright amber eyes. Red, black and white kimono, worn soft at the shoulders and hem. A big yellow gourd on a braided cord over one shoulder. Built like a sumo wrestler, she pummels foes into submission at close range using a combination of palm thrusts, checks, grapples, and gunfire. Boisterous, talkative, immediately interested in everyone she meets. Laughs loudly and often. Always asks if you are hungry.</div>
+      <div class="nb" style="font-style:normal;">A large, fat woman with a shock of red hair and bright amber eyes. Red, black and white kimono, worn soft at the shoulders and hem. A big yellow gourd on a braided cord over one shoulder. Built like a sumo wrestler, she pummels foes into submission at close range using a combination of palm thrusts, checks, and grapples. Boisterous, talkative, immediately interested in everyone she meets. Laughs loudly and often. Always asks if you are hungry.</div>
 
       <div class="sec">Saving Throws</div>
       <div class="four">
@@ -126,7 +126,7 @@
             <div class="ic"><span class="lbl">Punch to-hit</span><span class="val">+4 (+0+3+1)</span></div>
           </div>
           <div class="irow">
-            <div class="ic"><span class="lbl">Armor Class</span><span class="val">10 (unarmored)</span></div>
+            <div class="ic"><span class="lbl">Armor Class</span><span class="val">13 (leather) (primitive, subtle)</span></div>
             <div class="ic"><span class="lbl">Base Move</span><span class="val">10m (×1)</span></div>
           </div>
 
@@ -143,7 +143,8 @@
 
           <div class="sec">Ranged Attack</div>
           <div class="fb">
-            <span class="fn">Sixgun</span>
+            <!--
+			<span class="fn">Sixgun</span>
             <div class="fd">
               Dmg: 1d8 &nbsp;·&nbsp; Ammo: 6/12 rounds<br>
               Range: Medium normal (30m) / Long max (100m)<br>
@@ -151,16 +152,17 @@
               Trauma Die: 1d6 &nbsp;·&nbsp; Rating: ×3<br>
               <span style="font-size:10px;color:var(--rust);">no melee penalty (Close Combatant)</span>
             </div>
+			-->
+			<span class="fn">None</span>
+            <div class="fd">
+              No Ranged Weapon
+            </div>
           </div>
 
-          <div class="sec">Foci</div>
+          <div class="sec">Focus</div>
           <div class="fb">
             <span class="fn">Unarmed Combatant 1</span>
             <div class="fd">Unarmed = melee weapon for binding ranged arms. At Punch-1+: Shock 1/AC 15. Add Punch skill to damage. Trauma Die 1d6, Rating ×2.</div>
-          </div>
-          <div class="fb">
-            <span class="fn">Close Combatant 1</span>
-            <div class="fd">Pistol-sized ranged weapons in melee with no penalty. Ignore Shock damage from melee assailants even if unarmored.</div>
           </div>
         </div>
 
@@ -216,7 +218,6 @@
       <div class="sec">Skills</div>
       <div class="sk">
         <div class="sl"><span class="sn">Punch</span><span class="sr r1">1</span></div>
-        <div class="sl"><span class="sn">Shoot</span><span class="sr r1">1</span></div>
         <div class="sl"><span class="sn">Survive</span><span class="sr r0">0</span></div>
         <div class="sl"><span class="sn">Heal</span><span class="sr r0">0</span></div>
         <div class="sl"><span class="sn">Exert</span><span class="sr r0">0</span></div>
@@ -231,6 +232,7 @@
         <div class="sl"><span class="sn">Perform</span><span class="sr">-1</span></div>
         <div class="sl"><span class="sn">Pray</span><span class="sr">-1</span></div>
         <div class="sl"><span class="sn">Program</span><span class="sr">-1</span></div>
+		<div class="sl"><span class="sn">Shoot</span><span class="sr">-1</span></div>
         <div class="sl"><span class="sn">Sneak</span><span class="sr">-1</span></div>
         <div class="sl"><span class="sn">Stab</span><span class="sr">-1</span></div>
         <div class="sl"><span class="sn">Trade</span><span class="sr">-1</span></div>
@@ -240,11 +242,10 @@
       <div class="sec" style="margin-top:12px;">Skill Origins</div>
       <div class="nb" style="font-style:normal;font-size:11px;line-height:1.8;">
         Wanderer background free skill: Survive-0<br>
-        Wanderer learning pick 1: Punch-0<br>
+        Wanderer learning pick 1: Exert-0<br>
         Wanderer learning pick 2: Heal-0<br>
-        Warrior class free skill (Any Combat): Punch-1<br>
-        Unarmed Combatant bonus (Punch at 1): Exert-0 (wildcard)<br>
-        Close Combatant bonus (Any Combat): Shoot-0 → Shoot-1<br>
+        Warrior class free skill (Any Combat): Punch-0<br>
+        Unarmed Combatant bonus: Punch-0 to Punch-1<br>
         Final touches: Talk-0
       </div>
     </div>
@@ -258,18 +259,14 @@
             <div class="fd">1d8+4 dmg · Shock 3/AC15 · Enc 0 · Skill: Punch-1</div>
           </div>
           <div class="fb">
-            <span class="fn">Sixgun</span>
-            <div class="fd">1d8 dmg · 6/12 rounds · Range 30/100m · Enc 1 · Skill: Shoot-1<br>No melee penalty (Close Combatant) · Trauma 1d6/×3</div>
-          </div>
-          <div class="fb">
             <span class="fn">Yellow Gourd (club, non-lethal)</span>
             <div class="fd">1d4+3 dmg · Shock 3/AC18 · Enc 1 · Skill: Stab (untrained -1)<br>Non-lethal unless desired · Thrown 10/20m · Attr: STR</div>
           </div>
 
           <div class="sec">Worn &amp; Carried</div>
           <div class="gi"><span class="gn">Red, black &amp; white kimono</span><span class="ge">worn</span></div>
+          <div class="gi"><span class="gn">Lamellar leather mantle pauldrons (13 AC)</span><span class="ge">worn, enc 1</span></div>
           <div class="gi"><span class="gn">Large yellow gourd (Club)</span><span class="ge">ready, enc 1</span></div>
-		  <div class="gi"><span class="gn">Sixgun</span><span class="ge">ready, enc 1</span></div>
           <div class="gi"><span class="gn">Knife</span><span class="ge">enc 1</span></div>
           <div class="gi"><span class="gn">Backpack</span><span class="ge">enc 1</span></div>
           <div class="gi"><span class="gn">Sleeping bag</span><span class="ge">enc 1</span></div>
