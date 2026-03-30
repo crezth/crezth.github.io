@@ -89,12 +89,13 @@ textarea{resize:vertical;min-height:50px;}
 
       <div class="sec">Identity</div>
       <div class="row">
-        <div class="col"><label>Character Name</label><input type="text" id="f-name" placeholder="Name..."></div>
+        <div class="col"><label>Proper Name</label><input type="text" id="f-name" placeholder="Primary name..."></div>
+        <div class="col"><label>Other Name</label><input type="text" id="f-name2" placeholder="Alternate name, title, kanji, etc."></div>
         <div class="col"><label>Background</label><input type="text" id="f-background" placeholder="Background..."></div>
       </div>
       <div class="row">
         <div class="col"><label>Class / Role</label><input type="text" id="f-class" placeholder="Survivor, Warrior, etc."></div>
-        <div class="col" style="max-width:80px;"><label>Level</label><input type="number" id="f-level" value="1" min="1" max="10"></div>
+        <div class="col" style="max-width:80px;"><label>Level</label><input type="number" id="f-level" value="1" min="1" max="10" onchange="updateSaves()"></div>
         <div class="col" style="max-width:120px;"><label>Experience</label><input type="text" id="f-xp" placeholder="0 XP"></div>
       </div>
       <div class="row">
@@ -110,9 +111,9 @@ textarea{resize:vertical;min-height:50px;}
 
       <div class="sec">Saving Throws</div>
       <div class="grid4">
-        <div class="attr-box"><label>Physical</label><input type="text" id="f-save-phys" placeholder="15+"><div class="mod"><input type="text" id="f-save-phys-note" placeholder="mod note" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
-        <div class="attr-box"><label>Evasion</label><input type="text" id="f-save-evas" placeholder="15+"><div class="mod"><input type="text" id="f-save-evas-note" placeholder="mod note" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
-        <div class="attr-box"><label>Mental</label><input type="text" id="f-save-ment" placeholder="15+"><div class="mod"><input type="text" id="f-save-ment-note" placeholder="mod note" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
+        <div class="attr-box"><label>Physical</label><input type="text" id="f-save-phys" placeholder="15+"><div class="mod"><input type="text" id="f-save-phys-note" placeholder="e.g. STR+2" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
+        <div class="attr-box"><label>Evasion</label><input type="text" id="f-save-evas" placeholder="15+"><div class="mod"><input type="text" id="f-save-evas-note" placeholder="e.g. DEX+1" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
+        <div class="attr-box"><label>Mental</label><input type="text" id="f-save-ment" placeholder="15+"><div class="mod"><input type="text" id="f-save-ment-note" placeholder="e.g. WIS+0" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
         <div class="attr-box"><label>Luck</label><input type="text" id="f-save-luck" placeholder="15+"><div class="mod"><input type="text" id="f-save-luck-note" placeholder="no modifier" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
       </div>
     </div>
@@ -276,6 +277,26 @@ function buildAttrs(){
 function updateAttrMod(a){
   const v=parseInt(document.getElementById('f-attr-'+a).value)||10;
   document.getElementById('f-mod-'+a).textContent='mod '+modStr(calcMod(v));
+  updateSaves();
+}
+function getAttrVal(a){return parseInt(document.getElementById('f-attr-'+a)?.value)||10;}
+function updateSaves(){
+  const lvl=parseInt(document.getElementById('f-level')?.value)||1;
+  const base=16-lvl;
+  const strM=calcMod(getAttrVal('STR')),dexM=calcMod(getAttrVal('DEX')),conM=calcMod(getAttrVal('CON'));
+  const intM=calcMod(getAttrVal('INT')),wisM=calcMod(getAttrVal('WIS')),chaM=calcMod(getAttrVal('CHA'));
+  const physM=Math.max(strM,conM), physA=strM>=conM?'STR':'CON';
+  const evasM=Math.max(intM,dexM), evasA=intM>=dexM?'INT':'DEX';
+  const mentM=Math.max(wisM,chaM), mentA=wisM>=chaM?'WIS':'CHA';
+  const fmt=(m,a)=>m!==0?a+modStr(m):(a+'+0');
+  document.getElementById('f-save-phys').value=(base-physM)+'+';
+  document.getElementById('f-save-phys-note').value=fmt(physM,physA);
+  document.getElementById('f-save-evas').value=(base-evasM)+'+';
+  document.getElementById('f-save-evas-note').value=fmt(evasM,evasA);
+  document.getElementById('f-save-ment').value=(base-mentM)+'+';
+  document.getElementById('f-save-ment-note').value=fmt(mentM,mentA);
+  document.getElementById('f-save-luck').value=base+'+';
+  document.getElementById('f-save-luck-note').value='no modifier';
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -283,7 +304,7 @@ function updateAttrMod(a){
 // ═══════════════════════════════════════════════════════════════
 const SKILLS = [
   'Administer','Connect','Drive','Exert','Fix','Heal','Know','Lead',
-  'Notice','Perform','Pray','Program','Punch','Shoot','Sneak','Stab',
+  'Notice','Perform','Program','Punch','Shoot','Sneak','Stab',
   'Survive','Talk','Trade','Work'
 ];
 
@@ -529,18 +550,16 @@ function exportHTML(){
   });
   if(!edgeDetailHTML) edgeDetailHTML = '<div class="fb"><span class="fn">None</span></div>';
 
-  // Skill rows
-  let skillRows = '';
-  SKILLS.forEach(s=>{
-    const lv = parseInt(v('f-skill-'+s));
-    const cls = lv>=1?'sr r1':lv===0?'sr r0':'sr';
-    skillRows += `<div class="sl"><span class="sn">${s}</span><span class="${cls}">${lv}</span></div>\n`;
-  });
-  // Custom skills
+  // Skill rows — sorted by level desc, then alphabetically
+  let allSkills = SKILLS.map(s=>({name:s, lv:parseInt(v('f-skill-'+s))}));
   lists.customSkills.forEach(item=>{
-    const lv = parseInt(item.level)||(-1);
-    const cls = lv>=1?'sr r1':lv===0?'sr r0':'sr';
-    skillRows += `<div class="sl"><span class="sn">${esc(item.name||'?')}</span><span class="${cls}">${lv}</span></div>\n`;
+    allSkills.push({name:item.name||'?', lv:parseInt(item.level)||(-1)});
+  });
+  allSkills.sort((a,b)=> b.lv - a.lv || a.name.localeCompare(b.name));
+  let skillRows = '';
+  allSkills.forEach(s=>{
+    const cls = s.lv>=1?'sr r1':s.lv===0?'sr r0':'sr';
+    skillRows += `<div class="sl"><span class="sn">${esc(s.name)}</span><span class="${cls}">${s.lv}</span></div>\n`;
   });
 
   // Gear rows
@@ -651,7 +670,7 @@ function exportHTML(){
   <div class="hdr">
     <div>
       <p class="char-name">${esc(v('f-name'))||'Unnamed Survivor'}</p>
-      <div class="char-sub">${esc(v('f-player')?(v('f-player')+' \u00b7 '):'')}Level ${esc(v('f-level')||'1')} ${esc(v('f-class')||'Survivor')} &nbsp;&middot;&nbsp; ${esc(v('f-background')||'Unknown')}</div>
+      <div class="char-sub">${v('f-name2')?esc(v('f-name2'))+' &nbsp;&middot;&nbsp; ':''}Level ${esc(v('f-level')||'1')} ${esc(v('f-class')||'Survivor')} &nbsp;&middot;&nbsp; ${esc(v('f-background')||'Unknown')}</div>
     </div>
     <div class="sys-tag"><strong>${esc(v('f-player')||'')}</strong>${esc(v('f-campaign')||'Campaign')} &nbsp;&middot;&nbsp; Ashes Without Number</div>
   </div>
@@ -676,7 +695,8 @@ function exportHTML(){
 
       <div class="sec">Identity</div>
       <div class="irow">
-        <div class="ic"><span class="lbl">Full Name</span><span class="val">${esc(v('f-name'))||'\u2014'}</span></div>
+        <div class="ic"><span class="lbl">Proper Name</span><span class="val">${esc(v('f-name'))||'\u2014'}</span></div>
+        ${v('f-name2')?'<div class="ic"><span class="lbl">Other Name</span><span class="val">'+esc(v('f-name2'))+'</span></div>':''}
         <div class="ic"><span class="lbl">Background</span><span class="val">${esc(v('f-background'))||'\u2014'}</span></div>
       </div>
       <div class="irow">
@@ -886,6 +906,7 @@ makeTrack('strain',${maxStrain},'');
 // ═══════════════════════════════════════════════════════════════
 buildAttrs();
 buildSkills();
+updateSaves();
 </script>
 </body>
 </html>
