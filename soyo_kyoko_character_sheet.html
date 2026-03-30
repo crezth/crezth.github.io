@@ -165,8 +165,8 @@
             <div class="fd">Unarmed = melee weapon for binding ranged arms. At Punch-1+: Shock 1/AC 15. Add Punch skill to damage. Trauma Die 1d6, Rating ×2.</div>
           </div>
           <div class="fb">
-            <span class="fn">Unarmed Combatant 1</span>
-            <div class="fd">Unarmed = melee weapon for binding ranged arms. At Punch-1+: Shock 1/AC 15. Add Punch skill to damage. Trauma Die 1d6, Rating ×2.</div>
+            <span class="fn">Natural Immunity 1</span>
+            <div class="fd">Max System Strain +2. +4 bonus on all anti-disease saving throws. All disease are reduced one level in severity, Mild diseases auto-resisted.</div>
           </div>
         </div>
 
@@ -175,7 +175,7 @@
           <div class="irow">
             <div class="ic"><span class="lbl">HP</span><span class="val">14</span></div>
             <div class="ic"><span class="lbl">Hit Dice</span><span class="val">1d6+3 / level</span></div>
-            <div class="ic"><span class="lbl">Trauma Target</span><span class="val">7 (Hard to Kill)</span></div>
+            <div class="ic"><span class="lbl">Trauma Target</span><span class="val">7</span></div>
           </div>
 
           <div class="trow" style="margin-top:6px;">
@@ -213,6 +213,13 @@
           <div class="trow">
             <span class="tlbl">Stowed</span>
             <div class="tboxes" id="enc-s"></div>
+            <span style="font-size:9px;color:var(--dust);margin-left:3px;">/16</span>
+          </div>
+		  
+		  <div class="sec" style="margin-top:10px;">System Strain</div>
+          <div class="trow">
+            <span class="tlbl">Current Strain</span>
+            <div class="tboxes" id="strain"></div>
             <span style="font-size:9px;color:var(--dust);margin-left:3px;">/16</span>
           </div>
         </div>
@@ -404,8 +411,9 @@ function makeTrack(id,count,cls){
     el.appendChild(b);
   }
 }
-makeTrack('hp',12,'hp');
+makeTrack('hp',14,'hp');
 makeTrack('stress',10,'st');
 makeTrack('enc-r',8,'');
 makeTrack('enc-s',16,'');
+makeTrack('strain',16,'');
 </script>
