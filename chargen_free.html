@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWN — Free Edit Character Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Cabin+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --p:#f5ead8;--p2:#ede0c4;--ink:#2a1f0e;--ink2:#5c4a2a;--rust:#8b3a1a;--rust2:#c4561f;--dust:#9e8a6a;--faded:#c9b89a;--grn:#2d4a2d;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#1a1410;color:var(--ink);font-family:'Special Elite',serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px;}
+h1{font-family:'Rye',serif;color:var(--p);font-size:28px;letter-spacing:3px;margin-bottom:4px;text-align:center;}
+.subtitle{font-family:'Cabin Condensed',sans-serif;color:var(--dust);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;text-align:center;}
+.app{background:var(--p);border:3px solid var(--ink2);border-radius:2px;width:100%;max-width:960px;position:relative;overflow:hidden;}
+.app::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(90,60,20,0.07) 27px,rgba(90,60,20,0.07) 28px);pointer-events:none;z-index:0;}
+.app>*{position:relative;z-index:1;}
+.toolbar{background:var(--ink);padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:4px solid var(--rust);}
+.toolbar .btn{font-family:'Cabin Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border:1.5px solid var(--rust);background:var(--rust);color:var(--p);border-radius:1px;cursor:pointer;}
+.toolbar .btn:hover{background:var(--rust2);}
+.toolbar .btn.sec{background:transparent;border-color:var(--dust);color:var(--dust);}
+.toolbar .btn.sec:hover{background:var(--ink2);color:var(--p);}
+.toolbar-spacer{flex:1;}
+.toolbar-label{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:2px;color:var(--dust);text-transform:uppercase;}
+.body{padding:16px 20px;}
+.sec{font-family:'Rye',serif;font-size:13px;color:var(--rust);letter-spacing:2px;border-bottom:2px solid var(--rust);padding-bottom:2px;margin:14px 0 8px;}
+.sec:first-child{margin-top:0;}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+.col{flex:1;min-width:100px;}
+label{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:2px;}
+input[type=text],input[type=number],select,textarea{font-family:'Special Elite',serif;font-size:13px;color:var(--ink);background:var(--p2);border:1.5px solid var(--ink2);border-radius:1px;padding:5px 8px;width:100%;}
+input[type=number]{width:70px;}
+textarea{resize:vertical;min-height:50px;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;}
+.attr-box{background:var(--p2);border:1.5px solid var(--ink2);border-radius:1px;padding:6px 8px;text-align:center;}
+.attr-box label{margin-bottom:4px;}
+.attr-box input[type=number]{width:50px;text-align:center;font-family:'Rye',serif;font-size:18px;border:none;background:transparent;color:var(--ink);}
+.attr-box .mod{font-size:11px;color:var(--ink2);margin-top:2px;}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;}
+.skill-row{display:flex;align-items:center;justify-content:space-between;border-bottom:1px dotted var(--faded);padding:3px 0;}
+.skill-row .sn{font-size:12px;color:var(--ink2);flex:1;}
+.skill-row input[type=number]{width:40px;text-align:center;font-family:'Cabin Condensed',sans-serif;font-size:12px;font-weight:700;padding:2px;border:1px solid var(--faded);background:var(--p2);}
+.list-block{margin-bottom:10px;}
+.list-item{display:flex;gap:6px;align-items:flex-start;margin-bottom:4px;}
+.list-item input[type=text],.list-item textarea{flex:1;}
+.list-item .remove-btn{font-family:'Cabin Condensed',sans-serif;font-size:10px;color:var(--rust);cursor:pointer;border:1px solid var(--faded);background:var(--p2);padding:2px 6px;border-radius:1px;flex-shrink:0;margin-top:2px;}
+.list-item .remove-btn:hover{background:var(--rust);color:var(--p);}
+.add-btn{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border:1px dashed var(--rust2);background:transparent;color:var(--rust);border-radius:1px;cursor:pointer;display:inline-block;}
+.add-btn:hover{background:var(--rust);color:var(--p);border-style:solid;}
+.fb{background:var(--p2);border-left:3px solid var(--rust);padding:6px 8px;margin-bottom:6px;}
+.fb input,.fb textarea{margin-bottom:4px;}
+.note{font-size:10px;color:var(--dust);font-family:'Cabin Condensed',sans-serif;letter-spacing:1px;margin-top:2px;}
+.hr{border:none;border-top:1px solid var(--faded);margin:10px 0;}
+.tab-row{display:flex;border-bottom:2px solid var(--rust);margin-bottom:10px;}
+.tb{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;border:1px solid transparent;border-bottom:none;background:var(--p);color:var(--ink2);border-radius:1px 1px 0 0;}
+.tb.active{background:var(--p2);color:var(--rust);border-color:var(--ink2);border-bottom:2px solid var(--p2);margin-bottom:-2px;}
+.tp{display:none;}.tp.active{display:block;}
+</style>
+</head>
+<body>
+
+<h1>Ashes Without Number</h1>
+<div class="subtitle">Free Edit Character Sheet</div>
+
+<div class="app" id="app">
+  <div class="toolbar">
+    <span class="toolbar-label">Free Edit</span>
+    <span class="toolbar-spacer"></span>
+    <button class="btn" onclick="exportHTML()">Download Sheet HTML</button>
+    <button class="btn sec" onclick="saveToStorage()">Save Draft</button>
+    <button class="btn sec" onclick="loadFromStorage()">Load Draft</button>
+  </div>
+  <div class="body">
+    <div class="tab-row">
+      <button class="tb active" onclick="showTab('core',this)">Core</button>
+      <button class="tb" onclick="showTab('combat',this)">Combat</button>
+      <button class="tb" onclick="showTab('skills',this)">Skills</button>
+      <button class="tb" onclick="showTab('gear',this)">Gear</button>
+      <button class="tb" onclick="showTab('rules',this)">Rules</button>
+    </div>
+
+    <!-- ═══ CORE TAB ═══ -->
+    <div id="tab-core" class="tp active">
+      <div class="sec">Attributes</div>
+      <div class="grid3" id="attr-grid"></div>
+
+      <div class="sec">Identity</div>
+      <div class="row">
+        <div class="col"><label>Character Name</label><input type="text" id="f-name" placeholder="Name..."></div>
+        <div class="col"><label>Background</label><input type="text" id="f-background" placeholder="Background..."></div>
+      </div>
+      <div class="row">
+        <div class="col"><label>Class / Role</label><input type="text" id="f-class" placeholder="Survivor, Warrior, etc."></div>
+        <div class="col" style="max-width:80px;"><label>Level</label><input type="number" id="f-level" value="1" min="1" max="10"></div>
+        <div class="col" style="max-width:120px;"><label>Experience</label><input type="text" id="f-xp" placeholder="0 XP"></div>
+      </div>
+      <div class="row">
+        <div class="col"><label>Player Name</label><input type="text" id="f-player" placeholder="Player..."></div>
+        <div class="col"><label>Campaign</label><input type="text" id="f-campaign" placeholder="Campaign name..."></div>
+      </div>
+      <div class="row">
+        <div class="col"><label>Edges</label><input type="text" id="f-edges-line" placeholder="Edge 1, Edge 2, ..."></div>
+      </div>
+
+      <div class="sec">Description</div>
+      <textarea id="f-desc" rows="4" placeholder="Physical description, personality, mannerisms..."></textarea>
+
+      <div class="sec">Saving Throws</div>
+      <div class="grid4">
+        <div class="attr-box"><label>Physical</label><input type="text" id="f-save-phys" placeholder="15+"><div class="mod"><input type="text" id="f-save-phys-note" placeholder="mod note" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
+        <div class="attr-box"><label>Evasion</label><input type="text" id="f-save-evas" placeholder="15+"><div class="mod"><input type="text" id="f-save-evas-note" placeholder="mod note" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
+        <div class="attr-box"><label>Mental</label><input type="text" id="f-save-ment" placeholder="15+"><div class="mod"><input type="text" id="f-save-ment-note" placeholder="mod note" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
+        <div class="attr-box"><label>Luck</label><input type="text" id="f-save-luck" placeholder="15+"><div class="mod"><input type="text" id="f-save-luck-note" placeholder="no modifier" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
+      </div>
+    </div>
+
+    <!-- ═══ COMBAT TAB ═══ -->
+    <div id="tab-combat" class="tp">
+      <div class="grid2">
+        <div>
+          <div class="sec">Combat Stats</div>
+          <div class="row">
+            <div class="col"><label>Attack Bonus</label><input type="text" id="f-atkbonus" placeholder="+0 base"></div>
+            <div class="col"><label>To-Hit Notes</label><input type="text" id="f-tohit" placeholder="e.g. +5 Punch"></div>
+          </div>
+          <div class="row">
+            <div class="col"><label>Armor Class</label><input type="text" id="f-ac" placeholder="10"></div>
+            <div class="col"><label>Base Move</label><input type="text" id="f-move" placeholder="10m (×1)"></div>
+          </div>
+
+          <div class="sec">Melee Attacks</div>
+          <div id="melee-list" class="list-block"></div>
+          <button class="add-btn" onclick="addMelee()">+ Add Melee Attack</button>
+
+          <div class="sec" style="margin-top:12px;">Ranged Attacks</div>
+          <div id="ranged-list" class="list-block"></div>
+          <button class="add-btn" onclick="addRanged()">+ Add Ranged Attack</button>
+
+          <div class="sec" style="margin-top:12px;">Foci</div>
+          <div id="foci-list" class="list-block"></div>
+          <button class="add-btn" onclick="addFocus()">+ Add Focus</button>
+        </div>
+        <div>
+          <div class="sec">HP & Tracks</div>
+          <div class="row">
+            <div class="col"><label>Max HP</label><input type="number" id="f-hp" value="1" min="1"></div>
+            <div class="col"><label>Hit Dice</label><input type="text" id="f-hitdice" placeholder="1d6 / level"></div>
+            <div class="col"><label>Trauma Target</label><input type="text" id="f-trauma" placeholder="6"></div>
+          </div>
+
+          <div class="sec" style="margin-top:10px;">Edges Detail</div>
+          <div id="edges-list" class="list-block"></div>
+          <button class="add-btn" onclick="addEdge()">+ Add Edge</button>
+
+          <div class="sec" style="margin-top:10px;">Encumbrance</div>
+          <div class="row">
+            <div class="col"><label>Readied Max</label><input type="number" id="f-enc-r" value="5" min="0"></div>
+            <div class="col"><label>Stowed Max</label><input type="number" id="f-enc-s" value="10" min="0"></div>
+          </div>
+
+          <div class="sec" style="margin-top:10px;">System Strain</div>
+          <div class="row">
+            <div class="col"><label>Max System Strain</label><input type="number" id="f-strain" value="10" min="0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SKILLS TAB ═══ -->
+    <div id="tab-skills" class="tp">
+      <div class="sec">Skills</div>
+      <div class="note" style="margin-bottom:8px;">Set each skill level. -1 = untrained, 0 = competent, 1+ = professional.</div>
+      <div class="skill-grid" id="skill-grid"></div>
+
+      <div class="sec" style="margin-top:12px;">Custom Skills</div>
+      <div class="note" style="margin-bottom:6px;">Add skills not in the standard list.</div>
+      <div id="custom-skills-list" class="list-block"></div>
+      <button class="add-btn" onclick="addCustomSkill()">+ Add Custom Skill</button>
+
+      <div class="sec" style="margin-top:12px;">Skill Origins</div>
+      <textarea id="f-origins" rows="6" placeholder="Document how each skill was acquired...&#10;e.g. Wanderer free skill: Survive-0&#10;Learning pick 1: Exert-0&#10;Focus bonus: Punch-0 → Punch-1"></textarea>
+    </div>
+
+    <!-- ═══ GEAR TAB ═══ -->
+    <div id="tab-gear" class="tp">
+      <div class="grid2">
+        <div>
+          <div class="sec">Weapons</div>
+          <div id="weapon-list" class="list-block"></div>
+          <button class="add-btn" onclick="addWeapon()">+ Add Weapon</button>
+
+          <div class="sec" style="margin-top:12px;">Worn & Carried</div>
+          <div id="gear-list" class="list-block"></div>
+          <button class="add-btn" onclick="addGear()">+ Add Item</button>
+        </div>
+        <div>
+          <div class="sec">Currency</div>
+          <div class="grid3" style="margin-bottom:8px;">
+            <div class="attr-box"><label>Jingle</label><input type="text" id="f-cur1" placeholder="—" style="text-align:center;font-size:14px;border:none;background:transparent;width:100%;"></div>
+            <div class="attr-box"><label>Scrip</label><input type="text" id="f-cur2" placeholder="—" style="text-align:center;font-size:14px;border:none;background:transparent;width:100%;"></div>
+            <div class="attr-box"><label>Marks</label><input type="text" id="f-cur3" placeholder="—" style="text-align:center;font-size:14px;border:none;background:transparent;width:100%;"></div>
+          </div>
+          <div class="row"><div class="col"><label>Other Currency</label><input type="text" id="f-cur-other" placeholder="TL2 Scrap Units, etc."></div></div>
+
+          <div class="sec" style="margin-top:10px;">Wounds & Trauma</div>
+          <div id="wound-list" class="list-block"></div>
+          <button class="add-btn" onclick="addWound()">+ Add Wound Entry</button>
+
+          <div class="sec" style="margin-top:10px;">Mutations</div>
+          <div class="row"><div class="col"><label>Rad Points</label><input type="text" id="f-radpoints" placeholder="0"></div></div>
+          <div id="mutation-list" class="list-block"></div>
+          <button class="add-btn" onclick="addMutation()">+ Add Mutation</button>
+
+          <div class="sec" style="margin-top:10px;">Stress Log</div>
+          <div id="stress-log-list" class="list-block"></div>
+          <button class="add-btn" onclick="addStressLog()">+ Add Stress Entry</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ RULES TAB ═══ -->
+    <div id="tab-rules" class="tp">
+      <div class="grid2">
+        <div>
+          <div class="sec">Rules Notes</div>
+          <div class="note" style="margin-bottom:6px;">Add any rules, reference tables, or reminders.</div>
+          <div id="rules-list" class="list-block"></div>
+          <button class="add-btn" onclick="addRule()">+ Add Rules Block</button>
+        </div>
+        <div>
+          <div class="sec">Premise</div>
+          <textarea id="f-premise" rows="3" placeholder="Campaign premise..."></textarea>
+
+          <div class="sec" style="margin-top:10px;">Notes</div>
+          <textarea id="f-notes" rows="5" placeholder="Session notes, reminders, anything..."></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// TABS
+// ═══════════════════════════════════════════════════════════════
+function showTab(name,btn){
+  document.querySelectorAll('.tp').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ATTRIBUTES
+// ═══════════════════════════════════════════════════════════════
+const ATTRS = ['STR','DEX','CON','INT','WIS','CHA'];
+const ATTR_NAMES = {STR:'Strength',DEX:'Dexterity',CON:'Constitution',INT:'Intelligence',WIS:'Wisdom',CHA:'Charisma'};
+function calcMod(s){if(s<=3)return -2;if(s<=7)return -1;if(s<=13)return 0;if(s<=17)return 1;return s>=18?2:0;}
+function modStr(m){return m>=0?'+'+m:''+m;}
+
+function buildAttrs(){
+  const g=document.getElementById('attr-grid');
+  g.innerHTML='';
+  ATTRS.forEach(a=>{
+    const d=document.createElement('div');d.className='attr-box';
+    d.innerHTML=`<label>${ATTR_NAMES[a]}</label>
+      <input type="number" id="f-attr-${a}" value="10" min="3" max="18" onchange="updateAttrMod('${a}')">
+      <div class="mod" id="f-mod-${a}">mod +0</div>`;
+    g.appendChild(d);
+  });
+}
+function updateAttrMod(a){
+  const v=parseInt(document.getElementById('f-attr-'+a).value)||10;
+  document.getElementById('f-mod-'+a).textContent='mod '+modStr(calcMod(v));
+}
+
+// ═══════════════════════════════════════════════════════════════
+// SKILLS
+// ═══════════════════════════════════════════════════════════════
+const SKILLS = [
+  'Administer','Connect','Drive','Exert','Fix','Heal','Know','Lead',
+  'Notice','Perform','Pray','Program','Punch','Shoot','Sneak','Stab',
+  'Survive','Talk','Trade','Work'
+];
+
+function buildSkills(){
+  const g=document.getElementById('skill-grid');
+  g.innerHTML='';
+  SKILLS.forEach(s=>{
+    const d=document.createElement('div');d.className='skill-row';
+    d.innerHTML=`<span class="sn">${s}</span><input type="number" id="f-skill-${s}" value="-1" min="-1" max="4">`;
+    g.appendChild(d);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// DYNAMIC LISTS
+// ═══════════════════════════════════════════════════════════════
+let lists = {
+  melee:[], ranged:[], foci:[], edges:[],
+  customSkills:[], weapons:[], gear:[], wounds:[],
+  mutations:[], stressLog:[], rules:[]
+};
+let nextId = 1;
+
+function addToList(key, fields, containerId){
+  collectListData(key);
+  const id = nextId++;
+  lists[key].push({id, ...fields});
+  renderList(key, containerId);
+}
+function removeFromList(key, id, containerId){
+  collectListData(key);
+  lists[key] = lists[key].filter(x=>x.id!==id);
+  renderList(key, containerId);
+}
+
+// Generic multi-field list renderer
+function renderList(key, containerId){
+  const c = document.getElementById(containerId);
+  const items = lists[key];
+  c.innerHTML = '';
+  items.forEach(item=>{
+    const div = document.createElement('div');
+    div.className = 'fb';
+    let html = '';
+    item._fields.forEach(f=>{
+      if(f.type==='textarea'){
+        html += `<label>${f.label}</label><textarea id="li-${item.id}-${f.key}" rows="2" placeholder="${f.placeholder||''}">${item[f.key]||''}</textarea>`;
+      } else {
+        html += `<label>${f.label}</label><input type="text" id="li-${item.id}-${f.key}" value="${esc(item[f.key]||'')}" placeholder="${f.placeholder||''}">`;
+      }
+    });
+    html += `<button class="add-btn" style="margin-top:4px;border-color:var(--rust);color:var(--rust);" onclick="removeFromList('${key}',${item.id},'${containerId}')">Remove</button>`;
+    div.innerHTML = html;
+    c.appendChild(div);
+  });
+}
+
+function collectListData(key){
+  lists[key].forEach(item=>{
+    item._fields.forEach(f=>{
+      const el = document.getElementById(`li-${item.id}-${f.key}`);
+      if(el) item[f.key] = el.value;
+    });
+  });
+}
+
+function addMelee(){
+  const fields = [
+    {key:'name',label:'Name',placeholder:'Weapon name'},
+    {key:'detail',label:'Details',placeholder:'Dmg, Shock, to-hit, skill, etc.',type:'textarea'},
+  ];
+  addToList('melee',{_fields:fields},'melee-list');
+}
+function addRanged(){
+  const fields = [
+    {key:'name',label:'Name',placeholder:'Weapon name'},
+    {key:'detail',label:'Details',placeholder:'Dmg, range, ammo, to-hit, etc.',type:'textarea'},
+  ];
+  addToList('ranged',{_fields:fields},'ranged-list');
+}
+function addFocus(){
+  const fields = [
+    {key:'name',label:'Focus Name & Level',placeholder:'e.g. Unarmed Combatant 1'},
+    {key:'detail',label:'Effect',placeholder:'Describe the focus effect...',type:'textarea'},
+  ];
+  addToList('foci',{_fields:fields},'foci-list');
+}
+function addEdge(){
+  const fields = [
+    {key:'name',label:'Edge Name',placeholder:'e.g. Hard to Kill'},
+    {key:'detail',label:'Effect',placeholder:'Describe the edge effect...',type:'textarea'},
+  ];
+  addToList('edges',{_fields:fields},'edges-list');
+}
+function addCustomSkill(){
+  const fields = [
+    {key:'name',label:'Skill Name',placeholder:'Custom skill'},
+    {key:'level',label:'Level',placeholder:'-1'},
+  ];
+  addToList('customSkills',{_fields:fields},'custom-skills-list');
+}
+function addWeapon(){
+  const fields = [
+    {key:'name',label:'Weapon Name',placeholder:'Name'},
+    {key:'detail',label:'Stats',placeholder:'Dmg, Shock, Enc, Skill, etc.'},
+  ];
+  addToList('weapons',{_fields:fields},'weapon-list');
+}
+function addGear(){
+  const fields = [
+    {key:'name',label:'Item',placeholder:'Item name'},
+    {key:'note',label:'Notes',placeholder:'worn, enc 1, etc.'},
+  ];
+  addToList('gear',{_fields:fields},'gear-list');
+}
+function addWound(){
+  const fields = [
+    {key:'source',label:'Source',placeholder:'What caused it'},
+    {key:'effect',label:'Effect',placeholder:'Effect'},
+    {key:'healed',label:'Healed?',placeholder:'Y/N'},
+  ];
+  addToList('wounds',{_fields:fields},'wound-list');
+}
+function addMutation(){
+  const fields = [
+    {key:'name',label:'Mutation',placeholder:'Name'},
+    {key:'detail',label:'Effect',placeholder:'Description'},
+  ];
+  addToList('mutations',{_fields:fields},'mutation-list');
+}
+function addStressLog(){
+  const fields = [
+    {key:'trigger',label:'Trigger',placeholder:'What happened'},
+    {key:'type',label:'Type',placeholder:'Type'},
+    {key:'pts',label:'Points',placeholder:'#'},
+  ];
+  addToList('stressLog',{_fields:fields},'stress-log-list');
+}
+function addRule(){
+  const fields = [
+    {key:'title',label:'Title',placeholder:'Rule or reference name'},
+    {key:'content',label:'Content',placeholder:'Rule text, table, notes...',type:'textarea'},
+  ];
+  addToList('rules',{_fields:fields},'rules-list');
+}
+
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+// ═══════════════════════════════════════════════════════════════
+// LOCAL STORAGE SAVE/LOAD
+// ═══════════════════════════════════════════════════════════════
+function gatherAll(){
+  // Collect all list data from DOM
+  Object.keys(lists).forEach(k=>{
+    const containerMap = {melee:'melee-list',ranged:'ranged-list',foci:'foci-list',edges:'edges-list',
+      customSkills:'custom-skills-list',weapons:'weapon-list',gear:'gear-list',wounds:'wound-list',
+      mutations:'mutation-list',stressLog:'stress-log-list',rules:'rules-list'};
+    collectListData(k);
+  });
+
+  const data = {lists: JSON.parse(JSON.stringify(lists)), fields:{}};
+  document.querySelectorAll('input[id^="f-"],textarea[id^="f-"],select[id^="f-"]').forEach(el=>{
+    data.fields[el.id] = el.value;
+  });
+  return data;
+}
+
+function saveToStorage(){
+  const data = gatherAll();
+  localStorage.setItem('awn-free-sheet', JSON.stringify(data));
+  alert('Draft saved to browser storage.');
+}
+
+function loadFromStorage(){
+  const raw = localStorage.getItem('awn-free-sheet');
+  if(!raw){alert('No saved draft found.');return;}
+  const data = JSON.parse(raw);
+  // Restore fields
+  if(data.fields){
+    Object.keys(data.fields).forEach(id=>{
+      const el=document.getElementById(id);
+      if(el){el.value=data.fields[id];if(id.startsWith('f-attr-')){updateAttrMod(id.replace('f-attr-',''));}}
+    });
+  }
+  // Restore lists
+  if(data.lists){
+    lists = data.lists;
+    nextId = 1;
+    Object.values(lists).forEach(arr=>arr.forEach(item=>{if(item.id>=nextId)nextId=item.id+1;}));
+    const containerMap = {melee:'melee-list',ranged:'ranged-list',foci:'foci-list',edges:'edges-list',
+      customSkills:'custom-skills-list',weapons:'weapon-list',gear:'gear-list',wounds:'wound-list',
+      mutations:'mutation-list',stressLog:'stress-log-list',rules:'rules-list'};
+    Object.keys(lists).forEach(k=>renderList(k,containerMap[k]));
+  }
+  alert('Draft loaded.');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// EXPORT
+// ═══════════════════════════════════════════════════════════════
+function exportHTML(){
+  const d = gatherAll();
+  const f = d.fields;
+  const v = id => f[id]||'';
+
+  const hp = parseInt(v('f-hp'))||1;
+  const encR = parseInt(v('f-enc-r'))||5;
+  const encS = parseInt(v('f-enc-s'))||10;
+  const maxStrain = parseInt(v('f-strain'))||10;
+
+  // Attribute blocks
+  function attrBlock(a){
+    const s=parseInt(v('f-attr-'+a))||10;
+    const m=calcMod(s);
+    return `<div class="sbox"><span class="slbl">${ATTR_NAMES[a]}</span><span class="sval">${s}</span><span class="smod">mod ${modStr(m)}</span></div>`;
+  }
+
+  // Melee blocks
+  let meleeHTML = '';
+  lists.melee.forEach(item=>{
+    meleeHTML += `<div class="fb"><span class="fn">${esc(item.name||'Melee')}</span><div class="fd">${esc(item.detail||'').replace(/\n/g,'<br>')}</div></div>\n`;
+  });
+  if(!meleeHTML) meleeHTML = '<div class="fb"><span class="fn">None</span><div class="fd">No melee weapon</div></div>';
+
+  // Ranged blocks
+  let rangedHTML = '';
+  lists.ranged.forEach(item=>{
+    rangedHTML += `<div class="fb"><span class="fn">${esc(item.name||'Ranged')}</span><div class="fd">${esc(item.detail||'').replace(/\n/g,'<br>')}</div></div>\n`;
+  });
+  if(!rangedHTML) rangedHTML = '<div class="fb"><span class="fn">None</span><div class="fd">No ranged weapon</div></div>';
+
+  // Foci blocks
+  let fociHTML = '';
+  lists.foci.forEach(item=>{
+    fociHTML += `<div class="fb"><span class="fn">${esc(item.name||'Focus')}</span><div class="fd">${esc(item.detail||'').replace(/\n/g,'<br>')}</div></div>\n`;
+  });
+  if(!fociHTML) fociHTML = '<div class="fb"><span class="fn">None</span></div>';
+
+  // Edge detail blocks
+  let edgeDetailHTML = '';
+  lists.edges.forEach(item=>{
+    edgeDetailHTML += `<div class="fb"><span class="fn">${esc(item.name||'Edge')}</span><div class="fd">${esc(item.detail||'').replace(/\n/g,'<br>')}</div></div>\n`;
+  });
+  if(!edgeDetailHTML) edgeDetailHTML = '<div class="fb"><span class="fn">None</span></div>';
+
+  // Skill rows
+  let skillRows = '';
+  SKILLS.forEach(s=>{
+    const lv = parseInt(v('f-skill-'+s));
+    const cls = lv>=1?'sr r1':lv===0?'sr r0':'sr';
+    skillRows += `<div class="sl"><span class="sn">${s}</span><span class="${cls}">${lv}</span></div>\n`;
+  });
+  // Custom skills
+  lists.customSkills.forEach(item=>{
+    const lv = parseInt(item.level)||(-1);
+    const cls = lv>=1?'sr r1':lv===0?'sr r0':'sr';
+    skillRows += `<div class="sl"><span class="sn">${esc(item.name||'?')}</span><span class="${cls}">${lv}</span></div>\n`;
+  });
+
+  // Gear rows
+  let gearRows = '';
+  lists.gear.forEach(item=>{
+    gearRows += `<div class="gi"><span class="gn">${esc(item.name||'')}</span><span class="ge">${esc(item.note||'')}</span></div>\n`;
+  });
+  if(!gearRows) gearRows = '<div class="gi"><span class="gn">No items</span></div>';
+
+  // Weapon gear blocks
+  let weaponGearHTML = '';
+  lists.weapons.forEach(item=>{
+    weaponGearHTML += `<div class="fb"><span class="fn">${esc(item.name||'Weapon')}</span><div class="fd">${esc(item.detail||'')}</div></div>\n`;
+  });
+  if(!weaponGearHTML) weaponGearHTML = '<div class="fb"><span class="fn">None</span></div>';
+
+  // Wound rows
+  let woundRows = '';
+  lists.wounds.forEach(item=>{
+    woundRows += `<tr><td>${esc(item.source||'')}</td><td>${esc(item.effect||'')}</td><td>${esc(item.healed||'')}</td></tr>\n`;
+  });
+  for(let i=lists.wounds.length;i<3;i++) woundRows += '<tr><td style="height:20px;"> </td><td> </td><td> </td></tr>\n';
+
+  // Mutation text
+  let mutationHTML = '';
+  if(lists.mutations.length){
+    lists.mutations.forEach(item=>{
+      mutationHTML += `<div class="fb"><span class="fn">${esc(item.name||'')}</span><div class="fd">${esc(item.detail||'')}</div></div>\n`;
+    });
+  } else {
+    mutationHTML = '<div class="nb">No mutations.</div>';
+  }
+
+  // Stress log rows
+  let stressRows = '';
+  lists.stressLog.forEach(item=>{
+    stressRows += `<tr><td>${esc(item.trigger||'')}</td><td>${esc(item.type||'')}</td><td>${esc(item.pts||'')}</td></tr>\n`;
+  });
+  for(let i=lists.stressLog.length;i<3;i++) stressRows += '<tr><td style="height:20px;"> </td><td> </td><td> </td></tr>\n';
+
+  // Rules blocks
+  let rulesHTML = '';
+  lists.rules.forEach(item=>{
+    rulesHTML += `<div class="sec" style="margin-top:10px;">${esc(item.title||'Rule')}</div>
+          <div class="nb" style="font-style:normal;font-size:11px;line-height:1.8;">${esc(item.content||'').replace(/\n/g,'<br>')}</div>\n`;
+  });
+
+  const sheet = `
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Cabin+Condensed:wght@400;700&display=swap');
+:root {
+  --p:#f5ead8;--p2:#ede0c4;--ink:#2a1f0e;--ink2:#5c4a2a;--rust:#8b3a1a;--rust2:#c4561f;--dust:#9e8a6a;--faded:#c9b89a;--grn:#2d4a2d;
+}
+.sheet{background:var(--p);color:var(--ink);font-family:'Special Elite',serif;border:3px solid var(--ink2);border-radius:2px;position:relative;overflow:hidden;zoom:1.25;}
+.sheet::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(90,60,20,0.07) 27px,rgba(90,60,20,0.07) 28px);pointer-events:none;z-index:0;}
+.sheet>*{position:relative;z-index:1;}
+.hdr{background:var(--ink);color:var(--p);padding:14px 20px 10px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;border-bottom:4px solid var(--rust);}
+.char-name{font-family:'Rye',serif;font-size:32px;letter-spacing:3px;line-height:1;color:var(--p);margin:0;}
+.char-sub{font-family:'Special Elite',serif;font-size:11px;letter-spacing:3px;color:var(--faded);margin-top:4px;}
+.sys-tag{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:2px;color:var(--dust);text-align:right;line-height:1.6;}
+.sys-tag strong{color:var(--rust2);display:block;font-size:12px;}
+.body{padding:14px 16px;}
+.tab-row{display:flex;border-bottom:2px solid var(--rust);margin-bottom:10px;}
+.tb{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;border:1px solid transparent;border-bottom:none;background:var(--p);color:var(--ink2);border-radius:1px 1px 0 0;}
+.tb.active{background:var(--p2);color:var(--rust);border-color:var(--ink2);border-bottom:2px solid var(--p2);margin-bottom:-2px;}
+.tp{display:none;}.tp.active{display:block;}
+.sec{font-family:'Rye',serif;font-size:12px;color:var(--rust);letter-spacing:2px;border-bottom:2px solid var(--rust);padding-bottom:2px;margin:10px 0 6px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
+.four{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;}
+.sbox{background:var(--p2);border:1.5px solid var(--ink2);border-radius:1px;padding:6px 8px;text-align:center;}
+.slbl{font-family:'Cabin Condensed',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:1px;}
+.sval{font-family:'Rye',serif;font-size:20px;color:var(--ink);line-height:1;display:block;}
+.smod{font-size:11px;color:var(--ink2);}
+.irow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:5px;}
+.ic{flex:1;min-width:80px;}
+.ic .lbl{font-family:'Cabin Condensed',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--rust);display:block;}
+.ic .val{font-size:12px;color:var(--ink);border-bottom:1px dashed var(--faded);display:block;padding-bottom:1px;min-height:18px;}
+.trow{display:flex;align-items:center;gap:6px;margin-bottom:5px;}
+.tlbl{font-family:'Cabin Condensed',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink2);width:72px;flex-shrink:0;}
+.tboxes{display:flex;gap:3px;flex-wrap:wrap;}
+.tbox{width:17px;height:17px;border:1.5px solid var(--ink2);border-radius:1px;background:var(--p);display:inline-block;cursor:pointer;flex-shrink:0;font-size:10px;line-height:17px;text-align:center;color:var(--ink);user-select:none;}
+.tbox.on{background:var(--rust);border-color:var(--rust);color:var(--p);}
+.tbox.hp.on{background:var(--grn);border-color:var(--grn);}
+.tbox.st.on{background:#4a1a0a;border-color:#4a1a0a;}
+.fb{background:var(--p2);border-left:3px solid var(--rust);padding:5px 8px;margin-bottom:5px;border-radius:0;}
+.fn{font-family:'Rye',serif;font-size:12px;color:var(--rust);display:block;}
+.fd{font-size:11px;color:var(--ink2);line-height:1.5;margin-top:2px;}
+.sk{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;}
+.sl{display:flex;align-items:center;justify-content:space-between;border-bottom:1px dotted var(--faded);padding:2px 0;font-size:12px;}
+.sn{color:var(--ink2);}
+.sr{font-family:'Cabin Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--dust);background:var(--p2);border:1px solid var(--faded);padding:0 4px;border-radius:1px;min-width:20px;text-align:center;}
+.sr.r1{color:var(--ink);border-color:var(--ink2);}
+.sr.r0{color:var(--rust2);border-color:var(--rust2);}
+.gi{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px dotted var(--faded);padding:2px 0;font-size:12px;}
+.gn{color:var(--ink);flex:1;}
+.ge{font-family:'Cabin Condensed',sans-serif;font-size:10px;color:var(--dust);letter-spacing:1px;margin-left:6px;}
+.wtbl{width:100%;border-collapse:collapse;font-size:11px;}
+.wtbl th{font-family:'Cabin Condensed',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--rust);text-align:left;border-bottom:1px solid var(--rust);padding:2px 4px;}
+.wtbl td{padding:2px 4px;border-bottom:1px dotted var(--faded);color:var(--ink2);vertical-align:top;}
+.nb{background:var(--p2);border:1px dashed var(--faded);padding:6px 8px;font-size:11px;color:var(--ink2);line-height:1.6;font-style:italic;border-radius:1px;}
+.rtbl{width:100%;border-collapse:collapse;font-size:10px;}
+.rtbl th{font-family:'Cabin Condensed',sans-serif;font-size:8px;letter-spacing:1px;text-transform:uppercase;color:var(--rust);text-align:left;padding:2px 4px;border-bottom:1px solid var(--rust);}
+.rtbl td{padding:2px 4px;border-bottom:1px dotted var(--faded);color:var(--ink2);}
+</style>
+
+<div class="sheet">
+  <div class="hdr">
+    <div>
+      <p class="char-name">${esc(v('f-name'))||'Unnamed Survivor'}</p>
+      <div class="char-sub">${esc(v('f-player')?(v('f-player')+' \u00b7 '):'')}Level ${esc(v('f-level')||'1')} ${esc(v('f-class')||'Survivor')} &nbsp;&middot;&nbsp; ${esc(v('f-background')||'Unknown')}</div>
+    </div>
+    <div class="sys-tag"><strong>${esc(v('f-player')||'')}</strong>${esc(v('f-campaign')||'Campaign')} &nbsp;&middot;&nbsp; Ashes Without Number</div>
+  </div>
+
+  <div class="body">
+    <div class="tab-row">
+      <button class="tb active" onclick="showTab('core',this)">Core</button>
+      <button class="tb" onclick="showTab('combat',this)">Combat</button>
+      <button class="tb" onclick="showTab('skills',this)">Skills</button>
+      <button class="tb" onclick="showTab('gear',this)">Gear</button>
+      <button class="tb" onclick="showTab('rules',this)">Rules</button>
+    </div>
+
+    <div id="tab-core" class="tp active">
+      <div class="sec">Attributes</div>
+      <div class="three" style="margin-bottom:10px;">
+        ${ATTRS.slice(0,3).map(a=>attrBlock(a)).join('\n        ')}
+      </div>
+      <div class="three" style="margin-bottom:10px;">
+        ${ATTRS.slice(3).map(a=>attrBlock(a)).join('\n        ')}
+      </div>
+
+      <div class="sec">Identity</div>
+      <div class="irow">
+        <div class="ic"><span class="lbl">Full Name</span><span class="val">${esc(v('f-name'))||'\u2014'}</span></div>
+        <div class="ic"><span class="lbl">Background</span><span class="val">${esc(v('f-background'))||'\u2014'}</span></div>
+      </div>
+      <div class="irow">
+        <div class="ic"><span class="lbl">Class</span><span class="val">${esc(v('f-class'))||'Survivor'}</span></div>
+        <div class="ic"><span class="lbl">Level</span><span class="val">${esc(v('f-level'))||'1'}</span></div>
+        <div class="ic"><span class="lbl">Experience</span><span class="val">${esc(v('f-xp'))||'0 XP'}</span></div>
+      </div>
+      <div class="irow">
+        <div class="ic"><span class="lbl">Edges</span><span class="val">${esc(v('f-edges-line'))||'\u2014'}</span></div>
+      </div>
+
+      <div class="sec">Description</div>
+      <div class="nb" style="font-style:normal;">${esc(v('f-desc'))||'No description provided.'}</div>
+
+      <div class="sec">Saving Throws</div>
+      <div class="four">
+        <div class="sbox"><span class="slbl">Physical</span><span class="sval">${esc(v('f-save-phys'))||'15+'}</span><span class="smod">${esc(v('f-save-phys-note'))}</span></div>
+        <div class="sbox"><span class="slbl">Evasion</span><span class="sval">${esc(v('f-save-evas'))||'15+'}</span><span class="smod">${esc(v('f-save-evas-note'))}</span></div>
+        <div class="sbox"><span class="slbl">Mental</span><span class="sval">${esc(v('f-save-ment'))||'15+'}</span><span class="smod">${esc(v('f-save-ment-note'))}</span></div>
+        <div class="sbox"><span class="slbl">Luck</span><span class="sval">${esc(v('f-save-luck'))||'15+'}</span><span class="smod">${esc(v('f-save-luck-note'))||'no modifier'}</span></div>
+      </div>
+    </div>
+
+    <div id="tab-combat" class="tp">
+      <div class="two">
+        <div>
+          <div class="sec">Combat Stats</div>
+          <div class="irow">
+            <div class="ic"><span class="lbl">Attack Bonus</span><span class="val">${esc(v('f-atkbonus'))||'+0 base'}</span></div>
+            <div class="ic"><span class="lbl">To-Hit</span><span class="val">${esc(v('f-tohit'))||''}</span></div>
+          </div>
+          <div class="irow">
+            <div class="ic"><span class="lbl">Armor Class</span><span class="val">${esc(v('f-ac'))||'10'}</span></div>
+            <div class="ic"><span class="lbl">Base Move</span><span class="val">${esc(v('f-move'))||'10m (\u00d71)'}</span></div>
+          </div>
+
+          <div class="sec">Melee Attack</div>
+          ${meleeHTML}
+
+          <div class="sec">Ranged Attack</div>
+          ${rangedHTML}
+
+          <div class="sec">Foci</div>
+          ${fociHTML}
+        </div>
+
+        <div>
+          <div class="sec">HP &amp; Tracks</div>
+          <div class="irow">
+            <div class="ic"><span class="lbl">HP</span><span class="val">${hp}</span></div>
+            <div class="ic"><span class="lbl">Hit Dice</span><span class="val">${esc(v('f-hitdice'))||'1d6 / level'}</span></div>
+            <div class="ic"><span class="lbl">Trauma Target</span><span class="val">${esc(v('f-trauma'))||'6'}</span></div>
+          </div>
+
+          <div class="trow" style="margin-top:6px;">
+            <span class="tlbl">Current HP</span>
+            <div class="tboxes" id="hp"></div>
+          </div>
+
+          <div class="sec" style="margin-top:10px;">Stress</div>
+          <div style="display:flex;justify-content:space-between;font-family:'Cabin Condensed',sans-serif;font-size:8px;letter-spacing:1px;color:var(--dust);margin-bottom:2px;">
+            <span>Hardened 1-3</span><span>Unstable 4-7</span><span>Traumatized 8-10</span>
+          </div>
+          <div class="trow">
+            <span class="tlbl">Stress</span>
+            <div class="tboxes" id="stress"></div>
+          </div>
+          <div style="font-size:9px;color:var(--dust);font-family:'Cabin Condensed',sans-serif;letter-spacing:1px;margin-top:1px;padding-left:78px;">at 4: trauma check &middot; at 10: break</div>
+
+          <div class="sec" style="margin-top:10px;">Edges Detail</div>
+          ${edgeDetailHTML}
+
+          <div class="sec" style="margin-top:10px;">Encumbrance</div>
+          <div class="trow">
+            <span class="tlbl">Readied</span>
+            <div class="tboxes" id="enc-r"></div>
+            <span style="font-size:9px;color:var(--dust);margin-left:3px;">/${encR}</span>
+          </div>
+          <div class="trow">
+            <span class="tlbl">Stowed</span>
+            <div class="tboxes" id="enc-s"></div>
+            <span style="font-size:9px;color:var(--dust);margin-left:3px;">/${encS}</span>
+          </div>
+
+          <div class="sec" style="margin-top:10px;">System Strain</div>
+          <div class="trow">
+            <span class="tlbl">Current Strain</span>
+            <div class="tboxes" id="strain"></div>
+            <span style="font-size:9px;color:var(--dust);margin-left:3px;">/${maxStrain}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-skills" class="tp">
+      <div class="sec">Skills</div>
+      <div class="sk">
+        ${skillRows}
+      </div>
+
+      <div class="sec" style="margin-top:12px;">Skill Origins</div>
+      <div class="nb" style="font-style:normal;font-size:11px;line-height:1.8;">
+        ${esc(v('f-origins')).replace(/\n/g,'<br>')||'No origins recorded.'}
+      </div>
+    </div>
+
+    <div id="tab-gear" class="tp">
+      <div class="two">
+        <div>
+          <div class="sec">Weapons</div>
+          ${weaponGearHTML}
+
+          <div class="sec">Worn &amp; Carried</div>
+          ${gearRows}
+        </div>
+        <div>
+          <div class="sec">Currency</div>
+          <div class="three" style="margin-bottom:8px;">
+            <div class="sbox"><span class="slbl">Jingle</span><span class="sval" style="font-size:16px;">${esc(v('f-cur1'))||'\u2014'}</span></div>
+            <div class="sbox"><span class="slbl">Scrip</span><span class="sval" style="font-size:16px;">${esc(v('f-cur2'))||'\u2014'}</span></div>
+            <div class="sbox"><span class="slbl">Marks</span><span class="sval" style="font-size:16px;">${esc(v('f-cur3'))||'\u2014'}</span></div>
+          </div>
+          <div class="ic"><span class="lbl">Other Currency</span><span class="val">${esc(v('f-cur-other'))||'\u2014'}</span></div>
+
+          <div class="sec" style="margin-top:10px;">Wounds &amp; Trauma</div>
+          <table class="wtbl">
+            <tr><th>Source</th><th>Effect</th><th>Healed</th></tr>
+            ${woundRows}
+          </table>
+
+          <div class="sec" style="margin-top:10px;">Rad Mutations</div>
+          <div class="irow">
+            <div class="ic"><span class="lbl">Rad Points</span><span class="val">${esc(v('f-radpoints'))||'0'}</span></div>
+          </div>
+          ${mutationHTML}
+
+          <div class="sec" style="margin-top:10px;">Stress Log</div>
+          <table class="wtbl">
+            <tr><th>Trigger</th><th>Type</th><th>Pts</th></tr>
+            ${stressRows}
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-rules" class="tp">
+      <div class="two">
+        <div>
+          ${rulesHTML || '<div class="sec">Rules Notes</div><div class="nb">No rules notes added.</div>'}
+        </div>
+        <div>
+          <div class="sec">Premise</div>
+          <div class="nb">${esc(v('f-premise'))||'No premise set.'}</div>
+
+          <div class="sec" style="margin-top:10px;">Notes</div>
+          <div class="nb">${esc(v('f-notes'))||''}</div>
+          <div style="border:1px dashed var(--faded);min-height:60px;background:var(--p2);border-radius:1px;padding:4px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(name,btn){
+  document.querySelectorAll('.tp').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+}
+function makeTrack(id,count,cls){
+  const el=document.getElementById(id);
+  if(!el)return;
+  for(let i=0;i<count;i++){
+    const b=document.createElement('div');
+    b.className='tbox '+cls;
+    b.dataset.i=i;
+    b.addEventListener('click',function(){
+      const all=el.querySelectorAll('.tbox');
+      if(this.classList.contains('on')){
+        for(let j=parseInt(this.dataset.i);j<all.length;j++)all[j].classList.remove('on');
+      } else {
+        for(let j=0;j<=parseInt(this.dataset.i);j++)all[j].classList.add('on');
+      }
+    });
+    el.appendChild(b);
+  }
+}
+makeTrack('hp',${hp},'hp');
+makeTrack('stress',10,'st');
+makeTrack('enc-r',${encR},'');
+makeTrack('enc-s',${encS},'');
+makeTrack('strain',${maxStrain},'');
+<\/script>`;
+
+  const blob = new Blob([sheet], {type:'text/html'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = ((v('f-name'))||'character').toLowerCase().replace(/[^a-z0-9]+/g,'_') + '_character_sheet.html';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════
+buildAttrs();
+buildSkills();
+</script>
+</body>
+</html>
