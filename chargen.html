@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashes Without Number — Character Generator</title>
+<title>AWN — Free Edit Character Sheet</title>
 <link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Cabin+Condensed:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -13,1468 +13,582 @@
 body{background:#1a1410;color:var(--ink);font-family:'Special Elite',serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px;}
 h1{font-family:'Rye',serif;color:var(--p);font-size:28px;letter-spacing:3px;margin-bottom:4px;text-align:center;}
 .subtitle{font-family:'Cabin Condensed',sans-serif;color:var(--dust);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;text-align:center;}
-.app{background:var(--p);border:3px solid var(--ink2);border-radius:2px;width:100%;max-width:900px;position:relative;overflow:hidden;}
+.app{background:var(--p);border:3px solid var(--ink2);border-radius:2px;width:100%;max-width:960px;position:relative;overflow:hidden;}
 .app::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(90,60,20,0.07) 27px,rgba(90,60,20,0.07) 28px);pointer-events:none;z-index:0;}
 .app>*{position:relative;z-index:1;}
-.step-bar{background:var(--ink);padding:10px 16px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:4px solid var(--rust);}
-.step-pip{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:1px;color:var(--dust);background:transparent;border:1px solid var(--ink2);cursor:default;}
-.step-pip.active{background:var(--rust);color:var(--p);border-color:var(--rust);}
-.step-pip.done{background:var(--grn);color:var(--p);border-color:var(--grn);}
-.step-content{padding:16px 20px;min-height:400px;}
-.sec{font-family:'Rye',serif;font-size:14px;color:var(--rust);letter-spacing:2px;border-bottom:2px solid var(--rust);padding-bottom:2px;margin:14px 0 8px;}
+.toolbar{background:var(--ink);padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:4px solid var(--rust);}
+.toolbar .btn{font-family:'Cabin Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border:1.5px solid var(--rust);background:var(--rust);color:var(--p);border-radius:1px;cursor:pointer;}
+.toolbar .btn:hover{background:var(--rust2);}
+.toolbar .btn.sec{background:transparent;border-color:var(--dust);color:var(--dust);}
+.toolbar .btn.sec:hover{background:var(--ink2);color:var(--p);}
+.toolbar-spacer{flex:1;}
+.toolbar-label{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:2px;color:var(--dust);text-transform:uppercase;}
+.body{padding:16px 20px;}
+.sec{font-family:'Rye',serif;font-size:13px;color:var(--rust);letter-spacing:2px;border-bottom:2px solid var(--rust);padding-bottom:2px;margin:14px 0 8px;}
 .sec:first-child{margin-top:0;}
-.desc{font-size:12px;color:var(--ink2);line-height:1.6;margin-bottom:10px;}
 .row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
-.col{flex:1;min-width:120px;}
+.col{flex:1;min-width:100px;}
 label{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:2px;}
 input[type=text],input[type=number],select,textarea{font-family:'Special Elite',serif;font-size:13px;color:var(--ink);background:var(--p2);border:1.5px solid var(--ink2);border-radius:1px;padding:5px 8px;width:100%;}
-textarea{resize:vertical;min-height:60px;}
-select{cursor:pointer;}
-input[type=number]{width:60px;}
-.btn{font-family:'Cabin Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border:1.5px solid var(--rust);background:var(--rust);color:var(--p);border-radius:1px;cursor:pointer;margin-top:6px;}
-.btn:hover{background:var(--rust2);}
-.btn.sec-btn{background:var(--p2);color:var(--ink);border-color:var(--ink2);}
-.btn.sec-btn:hover{background:var(--faded);}
-.btn:disabled{opacity:0.4;cursor:not-allowed;}
-.nav-row{display:flex;justify-content:space-between;margin-top:16px;padding-top:10px;border-top:1px solid var(--faded);}
-.sbox{background:var(--p2);border:1.5px solid var(--ink2);border-radius:1px;padding:6px 8px;text-align:center;}
-.sval{font-family:'Rye',serif;font-size:20px;color:var(--ink);display:block;}
-.smod{font-size:11px;color:var(--ink2);}
+input[type=number]{width:70px;}
+textarea{resize:vertical;min-height:50px;}
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px;}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;}
-.pick-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
-.pick-card{background:var(--p2);border:1.5px solid var(--faded);border-radius:1px;padding:8px;cursor:pointer;transition:border-color 0.15s;}
-.pick-card:hover{border-color:var(--rust2);}
-.pick-card.selected{border-color:var(--rust);background:#f0dfc0;box-shadow:inset 0 0 0 1px var(--rust);}
-.pick-card .pname{font-family:'Rye',serif;font-size:11px;color:var(--rust);margin-bottom:2px;}
-.pick-card .pdesc{font-size:10px;color:var(--ink2);line-height:1.4;}
-.pick-card.disabled{opacity:0.35;cursor:not-allowed;pointer-events:none;}
-.skill-tag{display:inline-block;font-family:'Cabin Condensed',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:var(--rust);color:var(--p);padding:1px 5px;border-radius:1px;margin:1px 2px;}
-.skill-tag.g{background:var(--grn);}
-.tbl{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:8px;}
-.tbl th{font-family:'Cabin Condensed',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--rust);text-align:left;border-bottom:1px solid var(--rust);padding:2px 4px;}
-.tbl td{padding:3px 4px;border-bottom:1px dotted var(--faded);color:var(--ink2);}
-.warn{background:#f8e8d0;border-left:3px solid var(--rust2);padding:6px 10px;font-size:11px;color:var(--rust);margin:8px 0;line-height:1.5;}
-.note{font-size:10px;color:var(--dust);font-family:'Cabin Condensed',sans-serif;letter-spacing:1px;margin-top:4px;}
-.fb{background:var(--p2);border-left:3px solid var(--rust);padding:5px 8px;margin-bottom:5px;}
-.fn{font-family:'Rye',serif;font-size:12px;color:var(--rust);}
-.fd{font-size:11px;color:var(--ink2);line-height:1.5;margin-top:2px;}
-.checkbox-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:12px;color:var(--ink2);}
-.checkbox-row input[type=checkbox]{accent-color:var(--rust);}
-.skill-summary{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;margin:8px 0;}
-.skill-line{display:flex;align-items:center;justify-content:space-between;border-bottom:1px dotted var(--faded);padding:2px 0;font-size:12px;}
-.skill-line .sn{color:var(--ink2);}
-.skill-line .sr{font-family:'Cabin Condensed',sans-serif;font-size:11px;font-weight:700;padding:0 4px;border-radius:1px;min-width:20px;text-align:center;border:1px solid var(--faded);color:var(--dust);background:var(--p2);}
-.skill-line .sr.r0{color:var(--rust2);border-color:var(--rust2);}
-.skill-line .sr.r1{color:var(--ink);border-color:var(--ink2);}
-.eq-item{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px dotted var(--faded);padding:2px 0;font-size:12px;}
-.eq-item .gn{color:var(--ink);flex:1;}
-.eq-item .ge{font-family:'Cabin Condensed',sans-serif;font-size:10px;color:var(--dust);letter-spacing:1px;margin-left:6px;}
-.roll-btn{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border:1px solid var(--rust2);background:var(--p2);color:var(--rust);border-radius:1px;cursor:pointer;}
-.roll-btn:hover{background:var(--rust);color:var(--p);}
-.hidden{display:none!important;}
+.attr-box{background:var(--p2);border:1.5px solid var(--ink2);border-radius:1px;padding:6px 8px;text-align:center;}
+.attr-box label{margin-bottom:4px;}
+.attr-box input[type=number]{width:50px;text-align:center;font-family:'Rye',serif;font-size:18px;border:none;background:transparent;color:var(--ink);}
+.attr-box .mod{font-size:11px;color:var(--ink2);margin-top:2px;}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;}
+.skill-row{display:flex;align-items:center;justify-content:space-between;border-bottom:1px dotted var(--faded);padding:3px 0;}
+.skill-row .sn{font-size:12px;color:var(--ink2);flex:1;}
+.skill-row input[type=number]{width:40px;text-align:center;font-family:'Cabin Condensed',sans-serif;font-size:12px;font-weight:700;padding:2px;border:1px solid var(--faded);background:var(--p2);}
+.list-block{margin-bottom:10px;}
+.list-item{display:flex;gap:6px;align-items:flex-start;margin-bottom:4px;}
+.list-item input[type=text],.list-item textarea{flex:1;}
+.list-item .remove-btn{font-family:'Cabin Condensed',sans-serif;font-size:10px;color:var(--rust);cursor:pointer;border:1px solid var(--faded);background:var(--p2);padding:2px 6px;border-radius:1px;flex-shrink:0;margin-top:2px;}
+.list-item .remove-btn:hover{background:var(--rust);color:var(--p);}
+.add-btn{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border:1px dashed var(--rust2);background:transparent;color:var(--rust);border-radius:1px;cursor:pointer;display:inline-block;}
+.add-btn:hover{background:var(--rust);color:var(--p);border-style:solid;}
+.fb{background:var(--p2);border-left:3px solid var(--rust);padding:6px 8px;margin-bottom:6px;}
+.fb input,.fb textarea{margin-bottom:4px;}
+.note{font-size:10px;color:var(--dust);font-family:'Cabin Condensed',sans-serif;letter-spacing:1px;margin-top:2px;}
+.hr{border:none;border-top:1px solid var(--faded);margin:10px 0;}
+.tab-row{display:flex;border-bottom:2px solid var(--rust);margin-bottom:10px;}
+.tb{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;border:1px solid transparent;border-bottom:none;background:var(--p);color:var(--ink2);border-radius:1px 1px 0 0;}
+.tb.active{background:var(--p2);color:var(--rust);border-color:var(--ink2);border-bottom:2px solid var(--p2);margin-bottom:-2px;}
+.tp{display:none;}.tp.active{display:block;}
 </style>
 </head>
 <body>
 
 <h1>Ashes Without Number</h1>
-<div class="subtitle">Character Generator</div>
+<div class="subtitle">Character Sheet</div>
 
 <div class="app" id="app">
-  <div class="step-bar" id="step-bar"></div>
-  <div class="step-content" id="step-content"></div>
+  <div class="toolbar">
+    <span class="toolbar-label">Character Sheet</span>
+    <span class="toolbar-spacer"></span>
+    <button class="btn" onclick="exportHTML()">Download Sheet HTML</button>
+    <button class="btn sec" onclick="saveToStorage()">Save Draft</button>
+    <button class="btn sec" onclick="loadFromStorage()">Load Draft</button>
+  </div>
+  <div class="body">
+    <div class="tab-row">
+      <button class="tb active" onclick="showTab('core',this)">Core</button>
+      <button class="tb" onclick="showTab('combat',this)">Combat</button>
+      <button class="tb" onclick="showTab('skills',this)">Skills</button>
+      <button class="tb" onclick="showTab('gear',this)">Gear</button>
+      <button class="tb" onclick="showTab('rules',this)">Rules</button>
+    </div>
+
+    <!-- ═══ CORE TAB ═══ -->
+    <div id="tab-core" class="tp active">
+      <div class="sec">Attributes</div>
+      <div class="grid3" id="attr-grid"></div>
+
+      <div class="sec">Identity</div>
+      <div class="row">
+        <div class="col"><label>Character Name</label><input type="text" id="f-name" placeholder="Name..."></div>
+        <div class="col"><label>Background</label><input type="text" id="f-background" placeholder="Background..."></div>
+      </div>
+      <div class="row">
+        <div class="col"><label>Class / Role</label><input type="text" id="f-class" placeholder="Survivor, Warrior, etc."></div>
+        <div class="col" style="max-width:80px;"><label>Level</label><input type="number" id="f-level" value="1" min="1" max="10"></div>
+        <div class="col" style="max-width:120px;"><label>Experience</label><input type="text" id="f-xp" placeholder="0 XP"></div>
+      </div>
+      <div class="row">
+        <div class="col"><label>Player Name</label><input type="text" id="f-player" placeholder="Player..."></div>
+        <div class="col"><label>Campaign</label><input type="text" id="f-campaign" placeholder="Campaign name..."></div>
+      </div>
+      <div class="row">
+        <div class="col"><label>Edges</label><input type="text" id="f-edges-line" placeholder="Edge 1, Edge 2, ..."></div>
+      </div>
+
+      <div class="sec">Description</div>
+      <textarea id="f-desc" rows="4" placeholder="Physical description, personality, mannerisms..."></textarea>
+
+      <div class="sec">Saving Throws</div>
+      <div class="grid4">
+        <div class="attr-box"><label>Physical</label><input type="text" id="f-save-phys" placeholder="15+"><div class="mod"><input type="text" id="f-save-phys-note" placeholder="mod note" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
+        <div class="attr-box"><label>Evasion</label><input type="text" id="f-save-evas" placeholder="15+"><div class="mod"><input type="text" id="f-save-evas-note" placeholder="mod note" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
+        <div class="attr-box"><label>Mental</label><input type="text" id="f-save-ment" placeholder="15+"><div class="mod"><input type="text" id="f-save-ment-note" placeholder="mod note" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
+        <div class="attr-box"><label>Luck</label><input type="text" id="f-save-luck" placeholder="15+"><div class="mod"><input type="text" id="f-save-luck-note" placeholder="no modifier" style="font-size:10px;border:none;background:transparent;text-align:center;width:100%;color:var(--ink2);"></div></div>
+      </div>
+    </div>
+
+    <!-- ═══ COMBAT TAB ═══ -->
+    <div id="tab-combat" class="tp">
+      <div class="grid2">
+        <div>
+          <div class="sec">Combat Stats</div>
+          <div class="row">
+            <div class="col"><label>Attack Bonus</label><input type="text" id="f-atkbonus" placeholder="+0 base"></div>
+            <div class="col"><label>To-Hit Notes</label><input type="text" id="f-tohit" placeholder="e.g. +5 Punch"></div>
+          </div>
+          <div class="row">
+            <div class="col"><label>Armor Class</label><input type="text" id="f-ac" placeholder="10"></div>
+            <div class="col"><label>Base Move</label><input type="text" id="f-move" placeholder="10m (×1)"></div>
+          </div>
+
+          <div class="sec">Melee Attacks</div>
+          <div id="melee-list" class="list-block"></div>
+          <button class="add-btn" onclick="addMelee()">+ Add Melee Attack</button>
+
+          <div class="sec" style="margin-top:12px;">Ranged Attacks</div>
+          <div id="ranged-list" class="list-block"></div>
+          <button class="add-btn" onclick="addRanged()">+ Add Ranged Attack</button>
+
+          <div class="sec" style="margin-top:12px;">Foci</div>
+          <div id="foci-list" class="list-block"></div>
+          <button class="add-btn" onclick="addFocus()">+ Add Focus</button>
+        </div>
+        <div>
+          <div class="sec">HP & Tracks</div>
+          <div class="row">
+            <div class="col"><label>Max HP</label><input type="number" id="f-hp" value="1" min="1"></div>
+            <div class="col"><label>Hit Dice</label><input type="text" id="f-hitdice" placeholder="1d6 / level"></div>
+            <div class="col"><label>Trauma Target</label><input type="text" id="f-trauma" placeholder="6"></div>
+          </div>
+
+          <div class="sec" style="margin-top:10px;">Edges Detail</div>
+          <div id="edges-list" class="list-block"></div>
+          <button class="add-btn" onclick="addEdge()">+ Add Edge</button>
+
+          <div class="sec" style="margin-top:10px;">Encumbrance</div>
+          <div class="row">
+            <div class="col"><label>Readied Max</label><input type="number" id="f-enc-r" value="5" min="0"></div>
+            <div class="col"><label>Stowed Max</label><input type="number" id="f-enc-s" value="10" min="0"></div>
+          </div>
+
+          <div class="sec" style="margin-top:10px;">System Strain</div>
+          <div class="row">
+            <div class="col"><label>Max System Strain</label><input type="number" id="f-strain" value="10" min="0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SKILLS TAB ═══ -->
+    <div id="tab-skills" class="tp">
+      <div class="sec">Skills</div>
+      <div class="note" style="margin-bottom:8px;">Set each skill level. -1 = untrained, 0 = competent, 1+ = professional.</div>
+      <div class="skill-grid" id="skill-grid"></div>
+
+      <div class="sec" style="margin-top:12px;">Custom Skills</div>
+      <div class="note" style="margin-bottom:6px;">Add skills not in the standard list.</div>
+      <div id="custom-skills-list" class="list-block"></div>
+      <button class="add-btn" onclick="addCustomSkill()">+ Add Custom Skill</button>
+
+      <div class="sec" style="margin-top:12px;">Skill Origins</div>
+      <textarea id="f-origins" rows="6" placeholder="Document how each skill was acquired...&#10;e.g. Wanderer free skill: Survive-0&#10;Learning pick 1: Exert-0&#10;Focus bonus: Punch-0 → Punch-1"></textarea>
+    </div>
+
+    <!-- ═══ GEAR TAB ═══ -->
+    <div id="tab-gear" class="tp">
+      <div class="grid2">
+        <div>
+          <div class="sec">Weapons</div>
+          <div id="weapon-list" class="list-block"></div>
+          <button class="add-btn" onclick="addWeapon()">+ Add Weapon</button>
+
+          <div class="sec" style="margin-top:12px;">Worn & Carried</div>
+          <div id="gear-list" class="list-block"></div>
+          <button class="add-btn" onclick="addGear()">+ Add Item</button>
+        </div>
+        <div>
+          <div class="sec">Currency</div>
+          <div class="grid3" style="margin-bottom:8px;">
+            <div class="attr-box"><label>Jingle</label><input type="text" id="f-cur1" placeholder="—" style="text-align:center;font-size:14px;border:none;background:transparent;width:100%;"></div>
+            <div class="attr-box"><label>Scrip</label><input type="text" id="f-cur2" placeholder="—" style="text-align:center;font-size:14px;border:none;background:transparent;width:100%;"></div>
+            <div class="attr-box"><label>Marks</label><input type="text" id="f-cur3" placeholder="—" style="text-align:center;font-size:14px;border:none;background:transparent;width:100%;"></div>
+          </div>
+          <div class="row"><div class="col"><label>Other Currency</label><input type="text" id="f-cur-other" placeholder="TL2 Scrap Units, etc."></div></div>
+
+          <div class="sec" style="margin-top:10px;">Wounds & Trauma</div>
+          <div id="wound-list" class="list-block"></div>
+          <button class="add-btn" onclick="addWound()">+ Add Wound Entry</button>
+
+          <div class="sec" style="margin-top:10px;">Mutations</div>
+          <div class="row"><div class="col"><label>Rad Points</label><input type="text" id="f-radpoints" placeholder="0"></div></div>
+          <div id="mutation-list" class="list-block"></div>
+          <button class="add-btn" onclick="addMutation()">+ Add Mutation</button>
+
+          <div class="sec" style="margin-top:10px;">Stress Log</div>
+          <div id="stress-log-list" class="list-block"></div>
+          <button class="add-btn" onclick="addStressLog()">+ Add Stress Entry</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ RULES TAB ═══ -->
+    <div id="tab-rules" class="tp">
+      <div class="grid2">
+        <div>
+          <div class="sec">Rules Notes</div>
+          <div class="note" style="margin-bottom:6px;">Add any rules, reference tables, or reminders.</div>
+          <div id="rules-list" class="list-block"></div>
+          <button class="add-btn" onclick="addRule()">+ Add Rules Block</button>
+        </div>
+        <div>
+          <div class="sec">Premise</div>
+          <textarea id="f-premise" rows="3" placeholder="Campaign premise..."></textarea>
+
+          <div class="sec" style="margin-top:10px;">Notes</div>
+          <textarea id="f-notes" rows="5" placeholder="Session notes, reminders, anything..."></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <script>
 // ═══════════════════════════════════════════════════════════════
-// DATA
+// TABS
 // ═══════════════════════════════════════════════════════════════
+function showTab(name,btn){
+  document.querySelectorAll('.tp').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+}
 
+// ═══════════════════════════════════════════════════════════════
+// ATTRIBUTES
+// ═══════════════════════════════════════════════════════════════
+const ATTRS = ['STR','DEX','CON','INT','WIS','CHA'];
+const ATTR_NAMES = {STR:'Strength',DEX:'Dexterity',CON:'Constitution',INT:'Intelligence',WIS:'Wisdom',CHA:'Charisma'};
+function calcMod(s){if(s<=3)return -2;if(s<=7)return -1;if(s<=13)return 0;if(s<=17)return 1;return s>=18?2:0;}
+function modStr(m){return m>=0?'+'+m:''+m;}
+
+function buildAttrs(){
+  const g=document.getElementById('attr-grid');
+  g.innerHTML='';
+  ATTRS.forEach(a=>{
+    const d=document.createElement('div');d.className='attr-box';
+    d.innerHTML=`<label>${ATTR_NAMES[a]}</label>
+      <input type="number" id="f-attr-${a}" value="10" min="3" max="18" onchange="updateAttrMod('${a}')">
+      <div class="mod" id="f-mod-${a}">mod +0</div>`;
+    g.appendChild(d);
+  });
+}
+function updateAttrMod(a){
+  const v=parseInt(document.getElementById('f-attr-'+a).value)||10;
+  document.getElementById('f-mod-'+a).textContent='mod '+modStr(calcMod(v));
+}
+
+// ═══════════════════════════════════════════════════════════════
+// SKILLS
+// ═══════════════════════════════════════════════════════════════
 const SKILLS = [
   'Administer','Connect','Drive','Exert','Fix','Heal','Know','Lead',
   'Notice','Perform','Pray','Program','Punch','Shoot','Sneak','Stab',
   'Survive','Talk','Trade','Work'
 ];
-const COMBAT_SKILLS = ['Punch','Shoot','Stab'];
-const ATTRS = ['STR','DEX','CON','INT','WIS','CHA'];
-const ATTR_NAMES = {STR:'Strength',DEX:'Dexterity',CON:'Constitution',INT:'Intelligence',WIS:'Wisdom',CHA:'Charisma'};
 
-function mod(score){
-  if(score<=3)return -2;
-  if(score<=7)return -1;
-  if(score<=13)return 0;
-  if(score<=17)return 1;
-  return score>=18?2:0;
-}
-function modStr(m){return m>=0?'+'+m:''+m;}
-function roll(n,d){let t=0;for(let i=0;i<n;i++)t+=Math.floor(Math.random()*d)+1;return t;}
-
-// Backgrounds: {name, desc, freeSkill, quickSkills, growth[6], learning[8]}
-// growth entries: "+1 Any Stat", "+2 Physical", "+2 Mental", skill name, "Any Skill", "Any Combat"
-const BACKGROUNDS = [
-  {name:'Courtesan',desc:'You traded your company for protection or profit.',freeSkill:'Talk',quickSkills:['Perform','Connect'],
-   growth:['+1 Any Stat','+1 Any Stat','+2 Physical','+2 Mental','Talk','Any Skill'],
-   learning:['Talk','Perform','Connect','Trade','Sneak','Notice','Heal','Any Skill']},
-  {name:'Crafter',desc:'You know how to make something out of very little.',freeSkill:'Fix',quickSkills:['Trade','Connect'],
-   growth:['+1 Any Stat','+2 Mental','+2 Mental','+2 Physical','Fix','Any Skill'],
-   learning:['Fix','Trade','Connect','Notice','Sneak','Know','Program','Any Skill']},
-  {name:'Diplomat',desc:'You survived by your persuasiveness.',freeSkill:'Talk',quickSkills:['Lead','Connect'],
-   growth:['+1 Any Stat','+2 Mental','+2 Mental','+2 Mental','Talk','Any Skill'],
-   learning:['Lead','Talk','Connect','Perform','Know','Sneak','Notice','Any Skill']},
-  {name:'Entertainer',desc:'You provided diversion from unhappy lives.',freeSkill:'Perform',quickSkills:['Lead','Connect'],
-   growth:['+1 Any Stat','+1 Any Stat','+2 Mental','+2 Physical','Perform','Any Skill'],
-   learning:['Perform','Lead','Connect','Talk','Trade','Sneak','Any Combat','Any Skill']},
-  {name:'Farmer',desc:'You knew how to raise a crop with nothing more than hand tools.',freeSkill:'Work',quickSkills:['Survive','Exert'],
-   growth:['+1 Any Stat','+2 Physical','+2 Physical','+2 Physical','Any Skill','Any Skill'],
-   learning:['Any Combat','Survive','Work','Notice','Exert','Heal','Fix','Any Skill']},
-  {name:'Healer',desc:'You are skilled in tending to the sick.',freeSkill:'Heal',quickSkills:['Notice','Know'],
-   growth:['+1 Any Stat','+2 Physical','+2 Mental','+2 Mental','Heal','Any Skill'],
-   learning:['Heal','Notice','Know','Talk','Administer','Connect','Drive','Any Skill']},
-  {name:'Hunter',desc:'You made your living through tracking and killing game.',freeSkill:'Survive',quickSkills:['Shoot','Sneak'],
-   growth:['+1 Any Stat','+1 Any Stat','+2 Physical','+2 Mental','Survive','Any Skill'],
-   learning:['Any Combat','Survive','Sneak','Connect','Heal','Exert','Talk','Any Skill']},
-  {name:'Noble',desc:'You belong to a recognized elite.',freeSkill:'Lead',quickSkills:['Notice','Connect'],
-   growth:['+1 Any Stat','+2 Mental','+2 Mental','+2 Mental','Connect','Any Skill'],
-   learning:['Lead','Talk','Connect','Perform','Know','Heal','Notice','Any Skill']},
-  {name:'Outcast',desc:'You survived on the margins of society.',freeSkill:'Survive',quickSkills:['Sneak','Any Combat'],
-   growth:['+1 Any Stat','+1 Any Stat','+2 Physical','+2 Mental','Survive','Any Skill'],
-   learning:['Any Combat','Sneak','Notice','Survive','Connect','Heal','Exert','Any Skill']},
-  {name:'Priest',desc:'You bring word from unseen powers.',freeSkill:'Lead',quickSkills:['Talk','Connect'],
-   growth:['+1 Any Stat','+2 Mental','+2 Mental','+2 Mental','Connect','Any Skill'],
-   learning:['Lead','Talk','Connect','Perform','Know','Heal','Notice','Any Skill']},
-  {name:'Raider',desc:'It\'s easier to take than to make.',freeSkill:'Any Combat',quickSkills:['Exert','Lead'],
-   growth:['+1 Any Stat','+2 Physical','+2 Physical','+2 Physical','Any Combat','Any Skill'],
-   learning:['Any Combat','Exert','Lead','Notice','Survive','Heal','Drive','Any Skill']},
-  {name:'Rider',desc:'You are accustomed to getting cargo delivered despite hardships.',freeSkill:'Drive',quickSkills:['Any Combat','Survive'],
-   growth:['+1 Any Stat','+2 Physical','+2 Physical','+2 Mental','Drive','Any Skill'],
-   learning:['Drive','Any Combat','Survive','Notice','Trade','Exert','Connect','Any Skill']},
-  {name:'Savage',desc:'You rely on nothing more than primitive tools and survival skills.',freeSkill:'Survive',quickSkills:['Any Combat','Sneak'],
-   growth:['+1 Any Stat','+2 Physical','+2 Physical','+2 Physical','Survive','Any Skill'],
-   learning:['Any Combat','Sneak','Survive','Exert','Notice','Heal','Survive','Any Skill']},
-  {name:'Scavenger',desc:'You made your living by fixing or repurposing things.',freeSkill:'Notice',quickSkills:['Fix','Survive'],
-   growth:['+1 Any Stat','+2 Mental','+2 Physical','+2 Physical','Notice','Any Skill'],
-   learning:['Survive','Drive','Fix','Trade','Sneak','Notice','Any Combat','Any Skill']},
-  {name:'Scholar',desc:'Knowledge remains a precious resource.',freeSkill:'Know',quickSkills:['Talk','Administer'],
-   growth:['+1 Any Stat','+2 Mental','+2 Mental','+2 Mental','Know','Any Skill'],
-   learning:['Know','Talk','Administer','Connect','Heal','Fix','Program','Any Skill']},
-  {name:'Scout',desc:'You made your living through careful reconnaissance.',freeSkill:'Sneak',quickSkills:['Notice','Survive'],
-   growth:['+1 Any Stat','+2 Mental','+2 Physical','+2 Physical','Sneak','Any Skill'],
-   learning:['Any Combat','Sneak','Notice','Survive','Connect','Exert','Drive','Any Skill']},
-  {name:'Slave',desc:'You learned to labor and to endure — and to escape.',freeSkill:'Exert',quickSkills:['Sneak','Survive'],
-   growth:['+1 Any Stat','+1 Any Stat','+2 Mental','+2 Physical','Exert','Any Skill'],
-   learning:['Exert','Sneak','Survive','Talk','Heal','Perform','Any Combat','Any Skill']},
-  {name:'Trader',desc:'You know how to cut deals with strangers.',freeSkill:'Trade',quickSkills:['Notice','Connect'],
-   growth:['+1 Any Stat','+2 Mental','+2 Mental','+2 Physical','Trade','Any Skill'],
-   learning:['Trade','Notice','Connect','Fix','Talk','Administer','Any Combat','Any Skill']},
-  {name:'Wanderer',desc:'You somehow survived the waves of desperate refugees.',freeSkill:'Survive',quickSkills:['Sneak','Any Combat'],
-   growth:['+1 Any Stat','+1 Any Stat','+2 Physical','+2 Mental','Survive','Any Skill'],
-   learning:['Any Combat','Survive','Sneak','Talk','Connect','Notice','Exert','Any Skill']},
-  {name:'Warrior',desc:'Your place was to fight and win.',freeSkill:'Any Combat',quickSkills:['Exert','Lead'],
-   growth:['+1 Any Stat','+2 Physical','+2 Physical','+2 Physical','Any Combat','Any Skill'],
-   learning:['Any Combat','Exert','Lead','Notice','Survive','Heal','Drive','Any Skill']},
-];
-
-const EDGES_UNIVERSAL = [
-  {id:'beacon',name:'Beacon of Hope',desc:'Gain Lead as bonus skill. +1 CHA modifier (max +2). Followers gain +1 Morale. Once/session, convince an NPC of anything non-impossible.',bonusSkill:'Lead',modCHA:1},
-  {id:'comrade',name:'Comrade',desc:'Once/day per PC ally or good NPC friend, as Instant, let them reroll any roll.'},
-  {id:'educated',name:'Educated',desc:'Pick a bonus skill of your choice. +1 skill point per level gained.',bonusSkill:'Any Skill'},
-  {id:'focused',name:'Focused',desc:'Begin play with an extra Focus pick. May be taken more than once.',extraFocus:true,repeatable:true},
-  {id:'ghost',name:'Ghost',desc:'Gain Sneak as bonus skill. Fighting Withdrawal is On Turn. Once/scene reroll failed Sneak. Once/day invisible move action.',bonusSkill:'Sneak'},
-  {id:'hardtokill',name:'Hard to Kill',desc:'Roll 1d6+2 per level for HP instead of 1d6. Trauma Target +1 (base 6 becomes 7).'},
-  {id:'killingblow',name:'Killing Blow',desc:'Gain a combat skill as bonus. +1 damage per 2 levels (rounded up). Trauma Die +1.',bonusSkill:'Any Combat'},
-  {id:'masterful',name:'Masterful Expertise',desc:'Once/scene, as Instant, reroll a failed non-combat skill check.'},
-  {id:'ontarget',name:'On Target',desc:'Gain a combat skill as bonus. Attack bonus = full character level instead of half.',bonusSkill:'Any Combat'},
-  {id:'prodigy',name:'Prodigy',desc:'Pick a non-CON attribute; it becomes 18 with +3 modifier. Cannot be taken with Underdog Rule.',requiresAttrPick:true},
-  {id:'survivor',name:'Survivor\'s Fortune',desc:'Once/session on any bad event, roll d6: 1=unaffected, 2-5=avert, 6=redirected to enemy.'},
-  {id:'veteran',name:'Veteran\'s Luck',desc:'Once/scene as Instant, turn a miss into a hit or a hit against you into a miss.'},
-];
-
-const EDGES_MUTANT = [
-  {id:'hardgenetics',name:'Hardened Genetics',desc:'Immune to mutation. +4 radiation saves. +1 to one attribute modifier (max +2). Cannot take Mutant.',modAttr:true},
-  {id:'mutant',name:'Mutant',desc:'Gain 2 mutation points. One attribute suffers -1 modifier after mutations chosen.'},
-  {id:'mutaccel',name:'Mutation Acceleration',desc:'Requires Mutant. Gain 2 additional mutation points.',requires:'mutant'},
-];
-
-const EDGES_DEADLANDS = [
-  {id:'sysimmunity',name:'Systemic Immunity',desc:'Gain both levels of Natural Immunity. Immune to zombie infection. CON modifier +1 (max +2).'},
-  {id:'theyre_here',name:'They\'re Here',desc:'Gain Notice as bonus skill. +1 WIS modifier (max +2). Cannot be surprised. Intuitive danger sense.',bonusSkill:'Notice',modWIS:1},
-];
-
-const EDGES_AFTERFALL = [
-  {id:'coldblood',name:'Cold Blood',desc:'You no longer gain Stress. Irrelevant if Stress rules not in use.'},
-  {id:'faceless',name:'Faceless',desc:'CHA modifier becomes +0. Gain both levels of Gray Man. Once/day reroll failed Sneak.'},
-  {id:'forged',name:'Forged By Fire',desc:'No starting Edges. Instead gain one Edge each at levels 2, 3, and 4, plus standard level 5 Edge.'},
-];
-
-const FOCI = [
-  {id:'alert',name:'Alert',desc:'L1: Notice bonus skill. Cannot be surprised. Group rolls initiative twice, takes higher.\nL2: Always act first in combat.',bonusSkill:'Notice',levels:2},
-  {id:'apex',name:'Apex Predator',desc:'L1: Survive and Shoot bonus skills. Once/scene force beasts Morale check. +half level damage to beasts.\nL2: Once/scene, force beast Physical save or take max HP extra damage.',bonusSkill:'Survive',bonusSkill2:'Shoot',levels:2},
-  {id:'armsmaster',name:'Armsmaster',desc:'L1: Stab bonus skill. Ready Stowed melee/thrown as Instant. Add Stab level to melee/thrown damage and Shock.\nL2: Melee Shock treats targets as AC 10. +1 to-hit melee/thrown.',bonusSkill:'Stab',levels:2},
-  {id:'assassin',name:'Assassin',desc:'L1: Sneak bonus skill. Conceal knife/pistol-sized object. Draw as On Turn. Point-blank surprise attacks can\'t miss.\nL2: Move action on Execution Attack round, can split before/after.',bonusSkill:'Sneak',levels:2},
-  {id:'authority',name:'Authority',desc:'L1: Lead bonus skill. Once/day, Cha/Lead check to get NPC compliance.\nL2: Followers gain Lead skill bonus to Morale, hit rolls, +1 skill checks.',bonusSkill:'Lead',levels:2},
-  {id:'close',name:'Close Combatant',desc:'L1: Any combat skill bonus. Use pistol-sized ranged in melee. Ignore melee Shock even unarmored.\nL2: Melee Shock treats all targets as AC 10. Fighting Withdrawal is On Turn.',bonusSkill:'Any Combat',levels:2},
-  {id:'deadeye',name:'Deadeye',desc:'L1: Shoot bonus skill. Ready Stowed ranged as Instant. Use rifle in melee at -4. Add Shoot level to ranged damage.\nL2: Reload as On Turn. No melee penalty for ranged. Once/scene auto-hit inanimate target.',bonusSkill:'Shoot',levels:2},
-  {id:'diplomat_f',name:'Diplomat',desc:'L1: Talk bonus skill. Speak all local languages. Reroll 1s on negotiation dice.\nL2: Once/session, shift NPC reaction one step friendlier.',bonusSkill:'Talk',levels:2},
-  {id:'grayman',name:'Gray Man',desc:'L1: Sneak bonus skill. Belongings appear worthless. Enemies won\'t target you unless only option.\nL2: Blend into any group. Once/day become forgotten for rest of scene.',bonusSkill:'Sneak',levels:2},
-  {id:'healer_f',name:'Healer',desc:'L1: Heal bonus skill. Stabilize mortally-wounded as On Turn. Roll 3d6 drop lowest on Heal checks.\nL2: Applied healing devices heal double. Once/day heal group 1d6+Heal, no System Strain.',bonusSkill:'Heal',levels:2},
-  {id:'henchkeeper',name:'Henchkeeper',desc:'L1: Lead bonus skill. Acquire henchmen in 24h. One per 3 levels.\nL2: Henchmen fight as Tough Survivors. Can recruit skilled NPCs.',bonusSkill:'Lead',levels:2},
-  {id:'ironstomach',name:'Iron Stomach',desc:'L1: Survive bonus skill. No disease check from water. Half food needs. +2 vs poison/disease.\nL2: System Strain max +2. Feed self by foraging. Immune to most poisons.',bonusSkill:'Survive',levels:2},
-  {id:'natimmunity',name:'Natural Immunity',desc:'L1: Max System Strain +2. +4 vs disease saves. Diseases reduced one severity.\nL2: System Strain max +2 more. Immune to all normal diseases.',levels:2},
-  {id:'pathfinder',name:'Pathfinder',desc:'L1: Survive bonus skill. Always know direction. Group can\'t Go Astray. Bonus travel time.\nL2: Scouting takes half time. Group not Exposed on roads.',bonusSkill:'Survive',levels:2},
-  {id:'roadwarrior',name:'Road Warrior',desc:'L1: Drive bonus skill. Once/scene reroll Drive. Vehicle bonus HP = 2×level. Bonus attack while driving.\nL2: Vehicle +1 Speed. Allies no shooting penalty. Once/scene Veteran\'s Luck for vehicle.',bonusSkill:'Drive',levels:2},
-  {id:'robotwhisperer',name:'Robot Whisperer',desc:'L1: Fix or Program bonus skill. Once/day reroll robot social check. +2 robot Reaction. +4 hit/damage vs robots.\nL2: Once/scene, command robot (Mental save to resist).',bonusSkill:'Fix',levels:2},
-  {id:'scrapsmith',name:'Scrapsmith',desc:'L1: Fix bonus skill. Building costs half scrap. Once/session conjure a device.\nL2: Repair gear without scrap. 50% more scrap from breakdown.',bonusSkill:'Fix',levels:2},
-  {id:'shocking',name:'Shocking Assault',desc:'L1: Punch or Stab bonus skill. Melee Shock treats all targets as AC 10.\nL2: +2 bonus to Shock damage rating of melee/unarmed.',bonusSkill:'Punch',levels:2},
-  {id:'skilledcombat',name:'Skilled Combat Rider',desc:'L1: Drive/Ride bonus skill. Mount shares your AC. Take damage for mount. Beast counts as combat-trained.\nL2: Beast counts as war beast. No ranged mounted penalty. Mount +10 HP.',bonusSkill:'Drive',levels:2},
-  {id:'slippery',name:'Slippery',desc:'L1: Punch or Exert bonus skill. +4 vs grapple. Slip restraints as Main Action. Fighting Withdrawal as On Turn.\nL2: Cannot be grappled. DEX modifier +1 (max +2).',bonusSkill:'Punch',levels:2},
-  {id:'snipereye',name:'Sniper\'s Eye',desc:'L1: Shoot bonus skill. Roll 3d6 drop lowest on ranged Execution Attacks.\nL2: Can\'t miss ranged Execution Attacks. Target -4 Physical save. Double damage on save.',bonusSkill:'Shoot',levels:2},
-  {id:'sparkbrilliance',name:'Spark of Brilliance',desc:'L1: Any skill bonus. Pick 3 skills; once/day treat one as level-4 for a scene.\nL2: N/A (single level).',bonusSkill:'Any Skill',levels:1},
-  {id:'specialist',name:'Specialist',desc:'L1: Non-combat skill bonus. Roll 3d6 drop lowest for that skill.\nL2: Roll 4d6 drop two lowest for that skill.',bonusSkill:'Any Skill',levels:2,repeatable:true},
-  {id:'strongback',name:'Strong Back',desc:'L1: Exert bonus skill. STR treated as 18 for Encumbrance. Carry teammate as 6 Enc.\nL2: STR modifier +1 (max +2). Stowed counts as Readied.',bonusSkill:'Exert',levels:2},
-  {id:'survivalist',name:'Survivalist',desc:'L1: Survive bonus skill. Sleep without shelter. Double foraging rolls. Self-sustain in any landscape.\nL2: CON modifier +1 (max +2). Sleep lightly (count as awake for danger detection).',bonusSkill:'Survive',levels:2},
-  {id:'tinker',name:'Tinker',desc:'L1: Fix bonus skill. Double Maintenance score. Mods cost half.\nL2: Fix treated as +1 for mods. Advanced mods need one fewer experimental component.',bonusSkill:'Fix',levels:2},
-  {id:'unarmed',name:'Unarmed Combatant',desc:'L1: Punch bonus skill. Unarmed = melee weapon. Damage scales with Punch level (0→1d6, 1→1d8, 2→1d10, 3→1d12, 4→1d12+1). Punch-1+: Shock=Punch/AC15. Trauma 1d6 ×2.\nL2: Miss deals 1d6 + Shock. Trauma Die 1d8.',bonusSkill:'Punch',levels:2},
-  {id:'unnumbered',name:'Unnumbered Friends',desc:'L1: Connect bonus skill. Once/session GM picks a friend in any group. They\'ll do favors.\nL2: CHA modifier +1 (max +2). Once/session, befriend someone in an hour.',bonusSkill:'Connect',levels:2},
-  {id:'unstablemut',name:'Unstable Mutant',desc:'L1: Gain random positive mutation, rerolled monthly. Once/day reroll for 4 System Strain.\nL2: Roll twice, pick one. Once/week choose specific mutation for a scene.',levels:2,requiresMutant:true},
-  {id:'uniquegift',name:'Unique Gift',desc:'Work with GM to define a unique ability roughly equivalent to other Foci.',levels:2},
-  {id:'whirlwind',name:'Whirlwind Assault',desc:'L1: Stab or Punch bonus skill. Once/scene, apply Shock to all foes in melee range.\nL2: First kill in a round grants bonus attack on any target in range.',bonusSkill:'Stab',levels:2},
-  {id:'zombiesmasher',name:'Zombie Smasher',desc:'L1: As Main Action, kill up to 6 zombies of 1 HD or less. Extra uses add System Strain.\nL2: Attack roll vs zombies always counts as natural 20. +8 damage to zombies.',levels:2},
-];
-
-const EQUIP_TABLE = [
-  {roll:1,name:'Sixgun + 12 rounds',enc:1},
-  {roll:2,name:'Camping kit with cooking tools',enc:2},
-  {roll:3,name:'Hand tool (axe or saw)',enc:1},
-  {roll:4,name:'Leather clothing AC 13',enc:1,isArmor:true,ac:13},
-  {roll:5,name:'Crowbar',enc:1},
-  {roll:6,name:'Lockpicking kit',enc:1},
-  {roll:7,name:'Pair of binoculars',enc:1},
-  {roll:8,name:'Sentimental token of the past',enc:0},
-  {roll:9,name:'Powder rifle + 5 rounds',enc:2},
-  {roll:10,name:'20 rounds of ammo or arrows',enc:0},
-  {roll:11,name:'First aid kit',enc:1},
-  {roll:12,name:'1d6+4 TL2 scrap units',enc:1},
-  {roll:13,name:'Exceptionally fine clothing set',enc:2},
-  {roll:14,name:'1d4 days of rations',enc:1},
-  {roll:15,name:'Lantern and 2 oil flasks',enc:3},
-  {roll:16,name:'Toolbox with basic hand tools',enc:3},
-  {roll:17,name:'Brush gun or shotgun + 4 rounds',enc:2},
-  {roll:18,name:'20 meters of rope',enc:2},
-  {roll:19,name:'Suit of scrap mail AC 15',enc:2,isArmor:true,ac:15},
-  {roll:20,name:'TL2 melee weapon of choice',enc:1},
-];
-
-const MELEE_WEAPONS = [
-  {name:'Knife/Dagger',dmg:'1d4',shock:'1/AC15',enc:1,attr:'STR/DEX',skill:'Stab'},
-  {name:'Short sword/Machete',dmg:'1d6',shock:'2/AC15',enc:1,attr:'STR/DEX',skill:'Stab'},
-  {name:'Spear',dmg:'1d6+1',shock:'2/AC13',enc:2,attr:'STR',skill:'Stab',thrown:'10/30m'},
-  {name:'Sword/Axe',dmg:'1d8',shock:'3/AC15',enc:1,attr:'STR',skill:'Stab'},
-  {name:'Great sword/Great axe',dmg:'1d10',shock:'4/AC18',enc:2,attr:'STR',skill:'Stab',twohand:true},
-  {name:'Club/Staff',dmg:'1d6',shock:'1/AC15',enc:1,attr:'STR',skill:'Stab'},
-  {name:'Big club/Mace',dmg:'1d10',shock:'5/AC18',enc:2,attr:'STR',skill:'Stab'},
-  {name:'Hatchet',dmg:'1d6',shock:'1/AC15',enc:1,attr:'STR/DEX',skill:'Stab',thrown:'10/30m'},
-];
-
-// ═══════════════════════════════════════════════════════════════
-// STATE
-// ═══════════════════════════════════════════════════════════════
-
-const C = {
-  // Identity
-  name:'', background:'', campaignName:'', playerName:'',
-  description:'', premise:'', notes:'',
-  // Step 1
-  attrMethod:'pointbuy', // 'roll' or 'pointbuy'
-  attrs:{STR:10,DEX:10,CON:10,INT:10,WIS:10,CHA:10},
-  attrBonuses:{STR:0,DEX:0,CON:0,INT:0,WIS:0,CHA:0}, // from growth/edges
-  replaced14:false,
-  // Step 2
-  bgIndex:-1,
-  bgMethod:'pick', // 'pick' or 'roll'
-  skills:{}, // skill -> level (-1, 0, 1)
-  skillOrigins:[], // array of strings
-  // Step 3
-  edges:[], // array of edge ids
-  edgeBonusSkills:[], // resolved bonus skills from edges
-  prodigyAttr:'',
-  // Campaign toggles
-  campaignEdges:{universal:true,mutant:false,deadlands:false,afterfall:false},
-  // Step 4
-  foci:[], // array of {id, level}
-  fociBonusSkills:[],
-  // Step 5
-  freeSkill:'',
-  equipMethod:'pick', // 'pick' or 'roll'
-  equipPick:'',
-  equipRolls:[],
-  meleeWeapon:'', // starter melee
-  customEquip:[], // additional items user typed
-  // Step 6 - derived
-  level:1,
-  xp:0,
-};
-
-let currentStep = 0;
-const STEPS = ['Attributes','Background','Edges','Foci','Final Touches','Summary'];
-
-// ═══════════════════════════════════════════════════════════════
-// HELPERS
-// ═══════════════════════════════════════════════════════════════
-
-function getAttr(a){return Math.min(18, C.attrs[a] + C.attrBonuses[a]);}
-function getMod(a){
-  let s = getAttr(a);
-  let m = mod(s);
-  // Prodigy override
-  if(C.edges.includes('prodigy') && C.prodigyAttr===a) { s=18; m=3; }
-  // Beacon of Hope CHA bonus
-  if(a==='CHA' && C.edges.includes('beacon')) m = Math.min(2, m+1);
-  return m;
-}
-function getScore(a){
-  if(C.edges.includes('prodigy') && C.prodigyAttr===a) return 18;
-  return getAttr(a);
-}
-function getSkillLevel(sk){
-  return C.skills[sk] !== undefined ? C.skills[sk] : -1;
-}
-function totalModifiers(){
-  return ATTRS.reduce((s,a)=>s+getMod(a),0);
-}
-function isUnderdog(){ return totalModifiers() <= -1; }
-function edgeCount(){
-  let n = 2;
-  if(isUnderdog()) n++;
-  return n;
-}
-
-function initSkills(){
-  C.skills = {};
-  C.skillOrigins = [];
-}
-
-function grantSkill(sk, origin){
-  let cur = getSkillLevel(sk);
-  if(cur < 0){
-    C.skills[sk] = 0;
-    C.skillOrigins.push(origin+': '+sk+'-0');
-    return sk;
-  } else if(cur === 0){
-    C.skills[sk] = 1;
-    C.skillOrigins.push(origin+': '+sk+'-0 → '+sk+'-1');
-    return sk;
-  } else {
-    // already at 1, need free pick - return null to signal
-    return null;
-  }
-}
-
-function getAllEdges(){
-  let all = [];
-  if(C.campaignEdges.universal) all = all.concat(EDGES_UNIVERSAL);
-  if(C.campaignEdges.mutant) all = all.concat(EDGES_MUTANT);
-  if(C.campaignEdges.deadlands) all = all.concat(EDGES_DEADLANDS);
-  if(C.campaignEdges.afterfall) all = all.concat(EDGES_AFTERFALL);
-  return all;
-}
-
-function getEdgeById(id){
-  return getAllEdges().find(e=>e.id===id) || EDGES_UNIVERSAL.concat(EDGES_MUTANT,EDGES_DEADLANDS,EDGES_AFTERFALL).find(e=>e.id===id);
-}
-
-function getFocusById(id){return FOCI.find(f=>f.id===id);}
-
-function focusPicks(){
-  let n = 1;
-  C.edges.forEach(eid=>{if(eid==='focused')n++;});
-  return n;
-}
-
-// HP calculation
-function getHP(){
-  let conMod = getMod('CON');
-  let htk = C.edges.includes('hardtokill');
-  let perDie = htk ? 2 : 0;
-  // At level 1: 1d6 + perDie + conMod, minimum 1
-  // We'll use an average for the generator (user can reroll)
-  // Actually let's roll it
-  let total = 0;
-  for(let i=0;i<C.level;i++){
-    let r = roll(1,6) + perDie + conMod;
-    if(r<1)r=1;
-    total += r;
-  }
-  return Math.max(1, total);
-}
-
-function getAtkBonus(){
-  if(C.edges.includes('ontarget')) return C.level;
-  return Math.floor(C.level/2);
-}
-
-function getSave(base){
-  return 16 - C.level;
-}
-
-function getPhysSave(){
-  let s = getSave();
-  let m = Math.max(getMod('STR'), getMod('CON'));
-  return {target: 16-C.level, mod: m};
-}
-function getEvasionSave(){
-  let m = Math.max(getMod('INT'), getMod('DEX'));
-  return {target: 16-C.level, mod: m};
-}
-function getMentalSave(){
-  let m = Math.max(getMod('WIS'), getMod('CHA'));
-  return {target: 16-C.level, mod: m};
-}
-
-function getMaxStrain(){
-  let base = getScore('CON');
-  // Natural Immunity
-  let niLvl = 0;
-  C.foci.forEach(f=>{if(f.id==='natimmunity')niLvl=f.level;});
-  if(niLvl>=1) base+=2;
-  if(niLvl>=2) base+=2;
-  // Iron Stomach level 2
-  let isLvl = 0;
-  C.foci.forEach(f=>{if(f.id==='ironstomach')isLvl=f.level;});
-  if(isLvl>=2) base+=2;
-  return base;
-}
-
-function getEncReadied(){ return Math.floor(getScore('STR')/2); }
-function getEncStowed(){ return getScore('STR'); }
-
-// ═══════════════════════════════════════════════════════════════
-// RENDERING
-// ═══════════════════════════════════════════════════════════════
-
-function renderStepBar(){
-  const bar = document.getElementById('step-bar');
-  bar.innerHTML = STEPS.map((s,i)=>{
-    let cls = 'step-pip';
-    if(i < currentStep) cls += ' done';
-    if(i === currentStep) cls += ' active';
-    return `<div class="${cls}">${i+1}. ${s}</div>`;
-  }).join('');
-}
-
-function render(){
-  renderStepBar();
-  const el = document.getElementById('step-content');
-  switch(currentStep){
-    case 0: renderStep1(el); break;
-    case 1: renderStep2(el); break;
-    case 2: renderStep3(el); break;
-    case 3: renderStep4(el); break;
-    case 4: renderStep5(el); break;
-    case 5: renderStep6(el); break;
-  }
-}
-
-function nav(html){
-  let prev = currentStep > 0 ? `<button class="btn sec-btn" onclick="goStep(${currentStep-1})">Back</button>` : '<span></span>';
-  let next = currentStep < STEPS.length-1 ? `<button class="btn" onclick="goStep(${currentStep+1})">Next</button>` : '';
-  return `<div class="nav-row">${prev}${next}</div>`;
-}
-
-function goStep(n){
-  // Save current step state before leaving
-  saveCurrentStep();
-  currentStep = n;
-  render();
-  window.scrollTo(0, 0);
-}
-
-function saveCurrentStep(){
-  switch(currentStep){
-    case 0: saveStep1(); break;
-    case 1: saveStep2(); break;
-    case 2: saveStep3(); break;
-    case 3: saveStep4(); break;
-    case 4: saveStep5(); break;
-  }
-}
-
-// ── STEP 1: ATTRIBUTES ──────────────────────────────────────
-
-function renderStep1(el){
-  let html = `<div class="sec">Step 1 — Attributes</div>
-  <div class="desc">Choose a method to generate your six attributes.</div>
-  <div class="row" style="margin-bottom:12px;">
-    <label style="display:inline;margin-right:16px;cursor:pointer;">
-      <input type="radio" name="attrMethod" value="pointbuy" ${C.attrMethod==='pointbuy'?'checked':''} onchange="setAttrMethod(this.value)"> Point-Buy Array (14, 12, 11, 10, 9, 7)
-    </label>
-    <label style="display:inline;cursor:pointer;">
-      <input type="radio" name="attrMethod" value="roll" ${C.attrMethod==='roll'?'checked':''} onchange="setAttrMethod(this.value)"> Roll 3d6 in order
-    </label>
-  </div>`;
-
-  if(C.attrMethod==='roll'){
-    html += `<button class="roll-btn" onclick="rollAttrs()" style="margin-bottom:10px;">Roll 3d6 × 6</button>
-    <div class="note">After rolling, you may replace any one score with 14.</div>`;
-  }
-
-  html += `<div class="grid3" style="margin-top:10px;">`;
-  ATTRS.forEach(a=>{
-    let val = C.attrs[a];
-    let m = mod(val);
-    if(C.attrMethod==='pointbuy'){
-      html += `<div class="sbox">
-        <label>${ATTR_NAMES[a]}</label>
-        <select id="attr-${a}" onchange="assignAttr('${a}',this.value)" style="width:70px;text-align:center;font-size:16px;">
-          ${[14,12,11,10,9,7].map(v=>`<option value="${v}" ${val===v?'selected':''}>${v}</option>`).join('')}
-        </select>
-        <span class="smod">mod ${modStr(mod(val))}</span>
-      </div>`;
-    } else {
-      html += `<div class="sbox">
-        <label>${ATTR_NAMES[a]}</label>
-        <span class="sval">${val}</span>
-        <span class="smod">mod ${modStr(m)}</span>
-        ${!C.replaced14 ? `<button class="roll-btn" style="margin-top:4px;font-size:9px;" onclick="replace14('${a}')">Set to 14</button>` : ''}
-      </div>`;
-    }
-  });
-  html += `</div>`;
-
-  // Identity fields
-  html += `<div class="sec">Identity</div>
-  <div class="row">
-    <div class="col"><label>Character Name</label><input type="text" id="charName" value="${esc(C.name)}" placeholder="Enter name..."></div>
-    <div class="col"><label>Player Name</label><input type="text" id="playerName" value="${esc(C.playerName)}" placeholder="Player..."></div>
-  </div>
-  <div class="row">
-    <div class="col"><label>Campaign Name</label><input type="text" id="campaignName" value="${esc(C.campaignName)}" placeholder="Campaign..."></div>
-  </div>
-  <div class="row">
-    <div class="col"><label>Description</label><textarea id="charDesc" placeholder="Physical description, personality, etc.">${esc(C.description)}</textarea></div>
-  </div>`;
-
-  // Campaign edge toggles
-  html += `<div class="sec">Campaign Edge Categories</div>
-  <div class="desc">Enable the edge categories your GM allows.</div>
-  <div class="checkbox-row"><input type="checkbox" checked disabled> Universal (always on)</div>
-  <div class="checkbox-row"><input type="checkbox" id="tog-mutant" ${C.campaignEdges.mutant?'checked':''}> Mutant Wasteland</div>
-  <div class="checkbox-row"><input type="checkbox" id="tog-deadlands" ${C.campaignEdges.deadlands?'checked':''}> Deadlands</div>
-  <div class="checkbox-row"><input type="checkbox" id="tog-afterfall" ${C.campaignEdges.afterfall?'checked':''}> After the Fall</div>`;
-
-  html += nav();
-  el.innerHTML = html;
-}
-
-function setAttrMethod(v){
-  C.attrMethod = v;
-  C.replaced14 = false;
-  if(v==='pointbuy'){
-    C.attrs = {STR:14,DEX:12,CON:11,INT:10,WIS:9,CHA:7};
-  }
-  render();
-}
-
-function rollAttrs(){
-  C.replaced14 = false;
-  ATTRS.forEach(a=>{ C.attrs[a] = roll(3,6); });
-  render();
-}
-
-function replace14(a){
-  C.attrs[a] = 14;
-  C.replaced14 = true;
-  render();
-}
-
-function saveStep1(){
-  let el;
-  el = document.getElementById('charName'); if(el) C.name = el.value;
-  el = document.getElementById('playerName'); if(el) C.playerName = el.value;
-  el = document.getElementById('campaignName'); if(el) C.campaignName = el.value;
-  el = document.getElementById('charDesc'); if(el) C.description = el.value;
-  el = document.getElementById('tog-mutant'); if(el) C.campaignEdges.mutant = el.checked;
-  el = document.getElementById('tog-deadlands'); if(el) C.campaignEdges.deadlands = el.checked;
-  el = document.getElementById('tog-afterfall'); if(el) C.campaignEdges.afterfall = el.checked;
-}
-
-function assignAttr(a, v){
-  C.attrs[a] = parseInt(v);
-  render();
-}
-
-// ── STEP 2: BACKGROUND ──────────────────────────────────────
-
-function renderStep2(el){
-  let html = `<div class="sec">Step 2 — Background</div>
-  <div class="desc">Pick or roll a background. Each provides a free skill and additional skill choices.</div>
-  <div class="row" style="margin-bottom:8px;">
-    <button class="roll-btn" onclick="rollBackground()">Roll d20</button>
-  </div>
-  <div class="pick-grid">`;
-
-  BACKGROUNDS.forEach((bg,i)=>{
-    let sel = C.bgIndex===i ? 'selected' : '';
-    html += `<div class="pick-card ${sel}" onclick="pickBackground(${i})">
-      <div class="pname">${bg.name}</div>
-      <div class="pdesc">${bg.desc}<br>
-      <span class="skill-tag">Free: ${bg.freeSkill}</span>
-      <span class="skill-tag g">Quick: ${bg.quickSkills.join(', ')}</span></div>
-    </div>`;
-  });
-  html += `</div>`;
-
-  // If background selected, show skill choices
-  if(C.bgIndex >= 0){
-    let bg = BACKGROUNDS[C.bgIndex];
-    html += `<div class="sec" style="margin-top:14px;">Background Skills — ${bg.name}</div>
-    <div class="desc">Free skill: <strong>${bg.freeSkill}</strong></div>
-    <div class="desc">Choose how to get additional skills:</div>
-    <div class="row" style="margin-bottom:8px;">
-      <label style="display:inline;margin-right:16px;cursor:pointer;">
-        <input type="radio" name="bgMethod" value="pick" ${C.bgMethod==='pick'?'checked':''} onchange="setBgMethod(this.value)"> Pick 2 from Learning table
-      </label>
-      <label style="display:inline;cursor:pointer;">
-        <input type="radio" name="bgMethod" value="roll" ${C.bgMethod==='roll'?'checked':''} onchange="setBgMethod(this.value)"> Roll 3× on Growth/Learning
-      </label>
-    </div>`;
-
-    // Show tables
-    html += `<div class="grid2"><div>
-    <table class="tbl"><tr><th>d6</th><th>Growth</th></tr>`;
-    bg.growth.forEach((g,i)=>{
-      html += `<tr><td>${i+1}</td><td>${g}</td></tr>`;
-    });
-    html += `</table></div><div>
-    <table class="tbl"><tr><th>d8</th><th>Learning</th></tr>`;
-    bg.learning.forEach((l,i)=>{
-      html += `<tr><td>${i+1}</td><td>${l}</td></tr>`;
-    });
-    html += `</table></div></div>`;
-
-    if(C.bgMethod==='pick'){
-      html += `<div class="desc">Pick any two skills from the Learning table:</div>
-      <div class="row">
-        <div class="col"><label>Learning Pick 1</label>${skillSelect('bgPick1', bg.learning, C._bgPick1||'')}</div>
-        <div class="col"><label>Learning Pick 2</label>${skillSelect('bgPick2', bg.learning, C._bgPick2||'')}</div>
-      </div>
-      <div class="note" style="margin-bottom:4px;">Quick Skills are a suggested default — you can pick any skills from the table above instead.</div>
-      <button class="roll-btn" onclick="useQuickSkills()">Use Quick Skills (${bg.quickSkills.join(', ')})</button>`;
-    } else {
-      html += `<div class="desc">Divide 3 rolls between Growth (d6) and Learning (d8):</div>
-      <div id="bg-rolls">`;
-      if(!C._bgRolls || C._bgRolls.length===0){
-        html += `<div class="row">
-          <button class="roll-btn" onclick="rollBgGrowth()">Roll Growth (d6)</button>
-          <button class="roll-btn" onclick="rollBgLearning()">Roll Learning (d8)</button>
-        </div>
-        <div class="note">Rolls made: 0/3</div>`;
-      } else {
-        C._bgRolls.forEach((r,i)=>{
-          html += `<div class="fb"><span class="fn">Roll ${i+1}: ${r.table} table</span><div class="fd">Rolled ${r.die}: ${r.result}</div></div>`;
-        });
-        let remaining = 3 - C._bgRolls.length;
-        if(remaining > 0){
-          html += `<div class="row">
-            <button class="roll-btn" onclick="rollBgGrowth()">Roll Growth (d6)</button>
-            <button class="roll-btn" onclick="rollBgLearning()">Roll Learning (d8)</button>
-          </div>
-          <div class="note">Rolls remaining: ${remaining}/3</div>`;
-        }
-      }
-      html += `</div>`;
-    }
-
-    // Show "Any Skill" / "Any Combat" resolution if needed
-    html += renderAnySkillResolvers('bg');
-  }
-
-  html += nav();
-  el.innerHTML = html;
-}
-
-function skillSelect(id, options, selected){
-  // Deduplicate
-  let opts = [...new Set(options)];
-  let html = `<select id="${id}">`;
-  html += `<option value="">— choose —</option>`;
-  opts.forEach(o=>{
-    if(o==='Any Skill'){
-      SKILLS.forEach(s=>{
-        html += `<option value="${s}" ${selected===s?'selected':''}>${s} (Any Skill)</option>`;
-      });
-    } else if(o==='Any Combat'){
-      COMBAT_SKILLS.forEach(s=>{
-        html += `<option value="${s}" ${selected===s?'selected':''}>${s} (Any Combat)</option>`;
-      });
-    } else {
-      html += `<option value="${o}" ${selected===o?'selected':''}>${o}</option>`;
-    }
-  });
-  html += `</select>`;
-  return html;
-}
-
-function renderAnySkillResolvers(prefix){
-  // Placeholder - resolved inline via selects
-  return '';
-}
-
-function pickBackground(i){
-  C.bgIndex = i;
-  C._bgRolls = [];
-  C._bgPick1 = '';
-  C._bgPick2 = '';
-  render();
-}
-
-function rollBackground(){
-  let r = roll(1,20) - 1;
-  C.bgIndex = r;
-  C._bgRolls = [];
-  render();
-}
-
-function setBgMethod(v){
-  C.bgMethod = v;
-  C._bgRolls = [];
-  render();
-}
-
-function useQuickSkills(){
-  let bg = BACKGROUNDS[C.bgIndex];
-  // Quick skills might be "Any Combat" - resolve to first combat skill
-  let qs = bg.quickSkills.map(s => {
-    if(s==='Any Combat') return 'Punch';
-    if(s==='Any Skill') return 'Survive';
-    return s;
-  });
-  C._bgPick1 = qs[0];
-  C._bgPick2 = qs[1] || '';
-  render();
-}
-
-function rollBgGrowth(){
-  if(!C._bgRolls) C._bgRolls=[];
-  if(C._bgRolls.length>=3) return;
-  let bg = BACKGROUNDS[C.bgIndex];
-  let d = roll(1,6);
-  let result = bg.growth[d-1];
-  C._bgRolls.push({table:'Growth',die:d,result:result});
-  render();
-}
-
-function rollBgLearning(){
-  if(!C._bgRolls) C._bgRolls=[];
-  if(C._bgRolls.length>=3) return;
-  let bg = BACKGROUNDS[C.bgIndex];
-  let d = roll(1,8);
-  let result = bg.learning[d-1];
-  C._bgRolls.push({table:'Learning',die:d,result:result});
-  render();
-}
-
-function saveStep2(){
-  if(C.bgIndex < 0) return;
-  let bg = BACKGROUNDS[C.bgIndex];
-
-  // Reset skills and origins
-  initSkills();
-  C.attrBonuses = {STR:0,DEX:0,CON:0,INT:0,WIS:0,CHA:0};
-
-  // Free skill
-  let free = bg.freeSkill;
-  if(free === 'Any Combat') free = 'Punch'; // default
-  if(free === 'Any Skill') free = 'Survive';
-  grantSkill(free, bg.name+' free skill');
-
-  if(C.bgMethod === 'pick'){
-    let el1 = document.getElementById('bgPick1');
-    let el2 = document.getElementById('bgPick2');
-    C._bgPick1 = el1 ? el1.value : C._bgPick1;
-    C._bgPick2 = el2 ? el2.value : C._bgPick2;
-    if(C._bgPick1) grantSkill(C._bgPick1, bg.name+' learning pick 1');
-    if(C._bgPick2) grantSkill(C._bgPick2, bg.name+' learning pick 2');
-  } else {
-    // Process rolls
-    (C._bgRolls||[]).forEach((r,i)=>{
-      let result = r.result;
-      if(result === '+1 Any Stat'){
-        // Default to STR, user can reassign
-        C.attrBonuses.STR += 1;
-        C.skillOrigins.push(`${bg.name} growth roll ${i+1}: +1 STR`);
-      } else if(result === '+2 Physical'){
-        C.attrBonuses.STR += 2;
-        C.skillOrigins.push(`${bg.name} growth roll ${i+1}: +2 STR`);
-      } else if(result === '+2 Mental'){
-        C.attrBonuses.INT += 2;
-        C.skillOrigins.push(`${bg.name} growth roll ${i+1}: +2 INT`);
-      } else if(result === 'Any Skill'){
-        grantSkill('Survive', bg.name+' roll '+r.table);
-      } else if(result === 'Any Combat'){
-        grantSkill('Punch', bg.name+' roll '+r.table);
-      } else {
-        grantSkill(result, bg.name+' roll '+r.table);
-      }
-    });
-  }
-}
-
-// ── STEP 3: EDGES ────────────────────────────────────────────
-
-function renderStep3(el){
-  let nEdges = edgeCount();
-  let html = `<div class="sec">Step 3 — Edges (pick ${nEdges})</div>
-  <div class="desc">Every PC picks ${nEdges} Edges at creation.${isUnderdog()?' <strong>Underdog Rule active:</strong> bonus Edge granted (total modifiers ≤ -1).':''}</div>`;
-
-  if(C.edges.includes('prodigy')){
-    html += `<div class="warn">Prodigy: pick a non-CON attribute to set to 18 (+3 modifier).
-    <select id="prodigyAttr" onchange="C.prodigyAttr=this.value">
-      <option value="">— choose —</option>
-      ${['STR','DEX','INT','WIS','CHA'].map(a=>`<option value="${a}" ${C.prodigyAttr===a?'selected':''}>${ATTR_NAMES[a]}</option>`).join('')}
-    </select></div>`;
-  }
-
-  let allEdges = getAllEdges();
-  let groups = [
-    {label:'Universal',edges:EDGES_UNIVERSAL,show:C.campaignEdges.universal},
-    {label:'Mutant Wasteland',edges:EDGES_MUTANT,show:C.campaignEdges.mutant},
-    {label:'Deadlands',edges:EDGES_DEADLANDS,show:C.campaignEdges.deadlands},
-    {label:'After the Fall',edges:EDGES_AFTERFALL,show:C.campaignEdges.afterfall},
-  ];
-
-  groups.forEach(g=>{
-    if(!g.show) return;
-    html += `<div class="sec" style="font-size:11px;">${g.label} Edges</div><div class="pick-grid">`;
-    g.edges.forEach(edge=>{
-      let sel = C.edges.includes(edge.id) ? 'selected' : '';
-      let dis = '';
-      // Can't pick same edge twice (unless repeatable)
-      if(!edge.repeatable && C.edges.includes(edge.id) && C.edges.filter(e=>e===edge.id).length >= 1){
-        // It's already selected, allow toggle off
-      }
-      // Prodigy can't be taken with underdog
-      if(edge.id==='prodigy' && isUnderdog()) dis = 'disabled';
-      // Mutaccel requires mutant
-      if(edge.id==='mutaccel' && !C.edges.includes('mutant')) dis = 'disabled';
-
-      html += `<div class="pick-card ${sel} ${dis}" onclick="toggleEdge('${edge.id}')">
-        <div class="pname">${edge.name}</div>
-        <div class="pdesc">${edge.desc}</div>
-      </div>`;
-    });
-    html += `</div>`;
-  });
-
-  // Show bonus skill resolvers for edges that grant "Any Combat" or "Any Skill"
-  let needsResolve = [];
-  C.edges.forEach(eid=>{
-    let e = getEdgeById(eid);
-    if(e && e.bonusSkill === 'Any Combat'){
-      needsResolve.push({eid, type:'combat', label:e.name+' bonus skill'});
-    }
-    if(e && e.bonusSkill === 'Any Skill'){
-      needsResolve.push({eid, type:'any', label:e.name+' bonus skill'});
-    }
-  });
-
-  if(needsResolve.length){
-    html += `<div class="sec">Resolve Bonus Skills</div>`;
-    needsResolve.forEach(nr=>{
-      let opts = nr.type==='combat' ? COMBAT_SKILLS : SKILLS;
-      let cur = C._edgeSkillResolve && C._edgeSkillResolve[nr.eid] || '';
-      html += `<div class="row"><div class="col"><label>${nr.label}</label>
-        <select id="edgeSkill-${nr.eid}" onchange="setEdgeSkillResolve('${nr.eid}',this.value)">
-          <option value="">— choose —</option>
-          ${opts.map(s=>`<option value="${s}" ${cur===s?'selected':''}>${s}</option>`).join('')}
-        </select></div></div>`;
-    });
-  }
-
-  html += `<div class="note" style="margin-top:8px;">Selected: ${C.edges.length}/${nEdges}</div>`;
-  html += nav();
-  el.innerHTML = html;
-}
-
-function toggleEdge(id){
-  let idx = C.edges.indexOf(id);
-  if(idx >= 0){
-    C.edges.splice(idx, 1);
-  } else {
-    let nEdges = edgeCount();
-    // For repeatable edges (focused), allow multiple
-    let e = getEdgeById(id);
-    if(!e) return;
-    if(!e.repeatable && C.edges.includes(id)) return;
-    if(C.edges.length >= nEdges && !e.repeatable) return;
-    if(C.edges.length >= nEdges + 2) return; // hard cap
-    C.edges.push(id);
-  }
-  render();
-}
-
-function setEdgeSkillResolve(eid, val){
-  if(!C._edgeSkillResolve) C._edgeSkillResolve = {};
-  C._edgeSkillResolve[eid] = val;
-}
-
-function saveStep3(){
-  // Apply edge bonus skills
-  C.edges.forEach(eid=>{
-    let e = getEdgeById(eid);
-    if(!e) return;
-    if(e.bonusSkill){
-      let sk = e.bonusSkill;
-      if(sk === 'Any Combat' || sk === 'Any Skill'){
-        sk = (C._edgeSkillResolve && C._edgeSkillResolve[eid]) || (sk==='Any Combat'?'Punch':'Survive');
-      }
-      grantSkill(sk, e.name+' edge bonus');
-    }
-  });
-
-  // Apply prodigy
-  let pa = document.getElementById('prodigyAttr');
-  if(pa) C.prodigyAttr = pa.value;
-}
-
-// ── STEP 4: FOCI ─────────────────────────────────────────────
-
-function renderStep4(el){
-  let nPicks = focusPicks();
-  let html = `<div class="sec">Step 4 — Foci (${nPicks} pick${nPicks>1?'s':''})</div>
-  <div class="desc">Pick ${nPicks} Focus level${nPicks>1?'s':''}. You may take level 2 of a Focus if you already have level 1.</div>`;
-
-  // Show current picks
-  if(C.foci.length > 0){
-    html += `<div style="margin-bottom:10px;">`;
-    C.foci.forEach((f,i)=>{
-      let focus = getFocusById(f.id);
-      html += `<div class="fb"><span class="fn">${focus?focus.name:'?'} ${f.level}</span>
-        <button class="roll-btn" style="float:right;" onclick="removeFocus(${i})">Remove</button>
-        <div class="fd">${focus?focus.desc:''}</div></div>`;
-    });
-    html += `</div>`;
-  }
-
-  // List all foci for picking
-  if(C.foci.length < nPicks){
-    html += `<div class="pick-grid">`;
-    FOCI.forEach(focus=>{
-      let existing = C.foci.find(f=>f.id===focus.id);
-      let curLevel = existing ? existing.level : 0;
-      let nextLevel = curLevel + 1;
-      let canPick = nextLevel <= focus.levels;
-      let dis = !canPick ? 'disabled' : '';
-
-      html += `<div class="pick-card ${dis}" onclick="${canPick?`addFocus('${focus.id}',${nextLevel})`:''}">
-        <div class="pname">${focus.name} ${canPick?'(Level '+nextLevel+')':''}</div>
-        <div class="pdesc">${focus.desc}${focus.bonusSkill?'<br><span class="skill-tag">Bonus: '+focus.bonusSkill+'</span>':''}</div>
-      </div>`;
-    });
-    html += `</div>`;
-  }
-
-  // Bonus skill resolvers for foci
-  let needsResolve = [];
-  C.foci.forEach((f,i)=>{
-    let focus = getFocusById(f.id);
-    if(!focus) return;
-    if(focus.bonusSkill === 'Any Combat'){
-      needsResolve.push({idx:i, fid:f.id, type:'combat', label:focus.name+' bonus skill'});
-    }
-    if(focus.bonusSkill === 'Any Skill'){
-      needsResolve.push({idx:i, fid:f.id, type:'any', label:focus.name+' bonus skill'});
-    }
-  });
-  if(needsResolve.length){
-    html += `<div class="sec">Resolve Focus Bonus Skills</div>`;
-    needsResolve.forEach(nr=>{
-      let opts = nr.type==='combat' ? COMBAT_SKILLS : SKILLS;
-      let cur = C._fociSkillResolve && C._fociSkillResolve[nr.fid] || '';
-      html += `<div class="row"><div class="col"><label>${nr.label}</label>
-        <select id="fociSkill-${nr.fid}" onchange="setFociSkillResolve('${nr.fid}',this.value)">
-          <option value="">— choose —</option>
-          ${opts.map(s=>`<option value="${s}" ${cur===s?'selected':''}>${s}</option>`).join('')}
-        </select></div></div>`;
-    });
-  }
-
-  html += `<div class="note">Picks used: ${C.foci.length}/${nPicks}</div>`;
-  html += nav();
-  el.innerHTML = html;
-}
-
-function addFocus(id, level){
-  let existing = C.foci.find(f=>f.id===id);
-  if(existing){
-    existing.level = level;
-  } else {
-    C.foci.push({id, level});
-  }
-  render();
-}
-
-function removeFocus(idx){
-  C.foci.splice(idx, 1);
-  render();
-}
-
-function setFociSkillResolve(fid, val){
-  if(!C._fociSkillResolve) C._fociSkillResolve = {};
-  C._fociSkillResolve[fid] = val;
-}
-
-function saveStep4(){
-  C.foci.forEach(f=>{
-    let focus = getFocusById(f.id);
-    if(!focus) return;
-    if(focus.bonusSkill && f.level >= 1){
-      let sk = focus.bonusSkill;
-      if(sk === 'Any Combat' || sk === 'Any Skill'){
-        sk = (C._fociSkillResolve && C._fociSkillResolve[f.id]) || (sk==='Any Combat'?'Punch':'Survive');
-      }
-      grantSkill(sk, focus.name+' focus bonus');
-    }
-    if(focus.bonusSkill2 && f.level >= 1){
-      grantSkill(focus.bonusSkill2, focus.name+' focus bonus');
-    }
-  });
-}
-
-// ── STEP 5: FINAL TOUCHES ────────────────────────────────────
-
-function renderStep5(el){
-  let html = `<div class="sec">Step 5 — Final Touches</div>`;
-
-  // Free bonus skill
-  html += `<div class="desc">Pick one free bonus skill (level-0, or level-1 if already at 0). Cannot pick a skill already at level-1.</div>
-  <div class="row"><div class="col"><label>Free Bonus Skill</label>
-    <select id="freeSkill">
-      <option value="">— choose —</option>
-      ${SKILLS.map(s=>{
-        let cur = getSkillLevel(s);
-        let dis = cur >= 1 ? 'disabled' : '';
-        return `<option value="${s}" ${dis} ${C.freeSkill===s?'selected':''}>${s} (currently ${cur >= 0 ? cur : 'untrained'})</option>`;
-      }).join('')}
-    </select>
-  </div></div>`;
-
-  // Starting melee weapon
-  html += `<div class="sec">Starting Equipment</div>
-  <div class="desc">All PCs start with: a primitive melee weapon OR bow+20 arrows, knife, backpack, sleeping bag, tinderbox, 3 torches, 1d4 days food/water, and one set of clothing.</div>
-  <div class="row"><div class="col"><label>Primitive Melee Weapon</label>
-    <select id="meleeWeapon">
-      <option value="">— choose —</option>
-      ${MELEE_WEAPONS.map((w,i)=>`<option value="${i}" ${C.meleeWeapon===''+i?'selected':''}>${w.name} (${w.dmg}, Shock ${w.shock})</option>`).join('')}
-      <option value="bow" ${C.meleeWeapon==='bow'?'selected':''}>Primitive bow + 20 arrows</option>
-    </select>
-  </div></div>`;
-
-  // Campaign equipment table
-  html += `<div class="desc">Additional equipment: pick one item OR roll three times on the campaign table.</div>
-  <div class="row" style="margin-bottom:8px;">
-    <label style="display:inline;margin-right:16px;cursor:pointer;">
-      <input type="radio" name="equipMethod" value="pick" ${C.equipMethod==='pick'?'checked':''} onchange="C.equipMethod=this.value;render()"> Pick one item
-    </label>
-    <label style="display:inline;cursor:pointer;">
-      <input type="radio" name="equipMethod" value="roll" ${C.equipMethod==='roll'?'checked':''} onchange="C.equipMethod=this.value;render()"> Roll three times
-    </label>
-  </div>`;
-
-  if(C.equipMethod==='pick'){
-    html += `<div class="row"><div class="col"><label>Campaign Equipment</label>
-      <select id="equipPick">
-        <option value="">— choose —</option>
-        ${EQUIP_TABLE.map((e,i)=>`<option value="${i}" ${C.equipPick===''+i?'selected':''}>${e.roll}. ${e.name} (Enc ${e.enc})</option>`).join('')}
-      </select>
-    </div></div>`;
-  } else {
-    if(!C.equipRolls || C.equipRolls.length===0){
-      html += `<button class="roll-btn" onclick="rollEquip3()">Roll 3 × d20</button>`;
-    } else {
-      html += `<div style="margin-bottom:8px;">`;
-      C.equipRolls.forEach((r,i)=>{
-        let item = EQUIP_TABLE[r];
-        html += `<div class="fb"><span class="fn">Roll ${i+1}: ${item.name}</span><div class="fd">Enc ${item.enc}</div></div>`;
-      });
-      html += `<button class="roll-btn" onclick="rollEquip3()">Reroll</button></div>`;
-    }
-  }
-
-  // Food/water roll
-  html += `<div class="row"><div class="col"><label>Days of food/water (1d4)</label>
-    <input type="number" id="foodDays" min="1" max="4" value="${C._foodDays||roll(1,4)}" style="width:60px;">
-  </div></div>`;
-
-  // Premise and notes
-  html += `<div class="sec">Campaign Details</div>
-  <div class="row"><div class="col"><label>Premise</label><textarea id="premise" placeholder="Campaign premise...">${esc(C.premise)}</textarea></div></div>
-  <div class="row"><div class="col"><label>Notes</label><textarea id="notes" placeholder="Additional notes...">${esc(C.notes)}</textarea></div></div>`;
-
-  html += nav();
-  el.innerHTML = html;
-}
-
-function rollEquip3(){
-  C.equipRolls = [];
-  for(let i=0;i<3;i++){
-    C.equipRolls.push(roll(1,20)-1);
-  }
-  render();
-}
-
-function saveStep5(){
-  let el;
-  el = document.getElementById('freeSkill'); if(el && el.value) { C.freeSkill = el.value; grantSkill(el.value, 'Free bonus skill'); }
-  el = document.getElementById('meleeWeapon'); if(el) C.meleeWeapon = el.value;
-  el = document.getElementById('equipPick'); if(el) C.equipPick = el.value;
-  el = document.getElementById('foodDays'); if(el) C._foodDays = parseInt(el.value)||1;
-  el = document.getElementById('premise'); if(el) C.premise = el.value;
-  el = document.getElementById('notes'); if(el) C.notes = el.value;
-}
-
-// ── STEP 6: SUMMARY & EXPORT ────────────────────────────────
-
-function renderStep6(el){
-  // Compute derived stats
-  let hp = getHP();
-  C._hp = hp;
-  let atkBonus = getAtkBonus();
-  let htk = C.edges.includes('hardtokill');
-  let conMod = getMod('CON');
-  let hitDie = htk ? `1d6+${2+conMod}` : (conMod!==0 ? `1d6${modStr(conMod)}` : '1d6');
-  let traumaTarget = htk ? 7 : 6;
-  let maxStrain = getMaxStrain();
-
-  let phys = getPhysSave();
-  let evas = getEvasionSave();
-  let ment = getMentalSave();
-  let luck = {target: 16-C.level, mod: 0};
-
-  let bg = C.bgIndex >= 0 ? BACKGROUNDS[C.bgIndex] : {name:'None'};
-
-  let html = `<div class="sec">Character Summary</div>`;
-
-  // Attributes
-  html += `<div class="grid3">`;
-  ATTRS.forEach(a=>{
-    let s = getScore(a);
-    let m = getMod(a);
-    let extra = '';
-    if(C.edges.includes('prodigy') && C.prodigyAttr===a) { extra = ' (Prodigy)'; m=3; }
-    html += `<div class="sbox"><label>${ATTR_NAMES[a]}</label><span class="sval">${s}</span><span class="smod">mod ${modStr(m)}${extra}</span></div>`;
-  });
-  html += `</div>`;
-
-  // Identity
-  html += `<div class="row">
-    <div class="col"><label>Name</label><span style="font-size:14px;">${esc(C.name)||'—'}</span></div>
-    <div class="col"><label>Background</label><span style="font-size:14px;">${bg.name}</span></div>
-    <div class="col"><label>Level</label><span style="font-size:14px;">1</span></div>
-  </div>`;
-
-  // Edges
-  html += `<div class="sec">Edges</div>`;
-  C.edges.forEach(eid=>{
-    let e = getEdgeById(eid);
-    if(!e) return;
-    let extra = '';
-    if(eid==='prodigy') extra = ` (${ATTR_NAMES[C.prodigyAttr]||'?'})`;
-    html += `<div class="fb"><span class="fn">${e.name}${extra}</span><div class="fd">${e.desc}</div></div>`;
-  });
-
-  // Foci
-  html += `<div class="sec">Foci</div>`;
-  C.foci.forEach(f=>{
-    let focus = getFocusById(f.id);
-    if(!focus) return;
-    html += `<div class="fb"><span class="fn">${focus.name} ${f.level}</span><div class="fd">${focus.desc}</div></div>`;
-  });
-
-  // Combat stats
-  html += `<div class="sec">Combat</div>
-  <div class="grid4">
-    <div class="sbox"><label>Attack Bonus</label><span class="sval">+${atkBonus}</span></div>
-    <div class="sbox"><label>HP</label><span class="sval">${hp}</span><span class="smod">${hitDie}/level</span></div>
-    <div class="sbox"><label>Trauma Target</label><span class="sval">${traumaTarget}</span></div>
-    <div class="sbox"><label>AC</label><span class="sval">${getAC()}</span></div>
-  </div>`;
-
-  // Saves
-  html += `<div class="sec">Saving Throws</div>
-  <div class="grid4">
-    <div class="sbox"><label>Physical</label><span class="sval">${phys.target-phys.mod}+</span><span class="smod">${phys.mod?modStr(phys.mod):''}</span></div>
-    <div class="sbox"><label>Evasion</label><span class="sval">${evas.target-evas.mod}+</span><span class="smod">${evas.mod?modStr(evas.mod):''}</span></div>
-    <div class="sbox"><label>Mental</label><span class="sval">${ment.target-ment.mod}+</span><span class="smod">${ment.mod?modStr(ment.mod):''}</span></div>
-    <div class="sbox"><label>Luck</label><span class="sval">${luck.target}+</span></div>
-  </div>`;
-
-  // Skills
-  html += `<div class="sec">Skills</div>
-  <div class="skill-summary">`;
+function buildSkills(){
+  const g=document.getElementById('skill-grid');
+  g.innerHTML='';
   SKILLS.forEach(s=>{
-    let lv = getSkillLevel(s);
-    let cls = lv >= 1 ? 'sr r1' : lv === 0 ? 'sr r0' : 'sr';
-    html += `<div class="skill-line"><span class="sn">${s}</span><span class="${cls}">${lv}</span></div>`;
+    const d=document.createElement('div');d.className='skill-row';
+    d.innerHTML=`<span class="sn">${s}</span><input type="number" id="f-skill-${s}" value="-1" min="-1" max="4">`;
+    g.appendChild(d);
   });
-  html += `</div>`;
-
-  // Skill origins
-  html += `<div class="sec">Skill Origins</div>
-  <div class="fb" style="font-size:11px;line-height:1.8;">`;
-  C.skillOrigins.forEach(o=>{
-    html += `${esc(o)}<br>`;
-  });
-  html += `</div>`;
-
-  // Equipment
-  html += `<div class="sec">Equipment</div>`;
-  getEquipmentList().forEach(item=>{
-    html += `<div class="eq-item"><span class="gn">${esc(item.name)}</span><span class="ge">${item.note}</span></div>`;
-  });
-
-  // Encumbrance & Strain
-  html += `<div class="sec">Tracks</div>
-  <div class="grid3">
-    <div class="sbox"><label>Readied Enc</label><span class="sval">${getEncReadied()}</span></div>
-    <div class="sbox"><label>Stowed Enc</label><span class="sval">${getEncStowed()}</span></div>
-    <div class="sbox"><label>Max Strain</label><span class="sval">${maxStrain}</span></div>
-  </div>`;
-
-  // Export buttons
-  html += `<div class="sec">Export</div>
-  <div class="row">
-    <button class="btn" onclick="exportHTML()">Download Character Sheet HTML</button>
-    <button class="btn sec-btn" onclick="rerollHP()">Reroll HP</button>
-  </div>`;
-
-  html += nav();
-  el.innerHTML = html;
 }
 
-function getAC(){
-  // Check equipment for armor
-  let ac = 10 + getMod('DEX');
-  let equips = getEquipmentList();
-  equips.forEach(e=>{
-    if(e.ac && e.ac > ac) ac = e.ac;
-  });
-  return ac;
+// ═══════════════════════════════════════════════════════════════
+// DYNAMIC LISTS
+// ═══════════════════════════════════════════════════════════════
+let lists = {
+  melee:[], ranged:[], foci:[], edges:[],
+  customSkills:[], weapons:[], gear:[], wounds:[],
+  mutations:[], stressLog:[], rules:[]
+};
+let nextId = 1;
+
+function addToList(key, fields, containerId){
+  collectListData(key);
+  const id = nextId++;
+  lists[key].push({id, ...fields});
+  renderList(key, containerId);
+}
+function removeFromList(key, id, containerId){
+  collectListData(key);
+  lists[key] = lists[key].filter(x=>x.id!==id);
+  renderList(key, containerId);
 }
 
-function getEquipmentList(){
-  let items = [];
-  // Clothing
-  items.push({name:'Clothing appropriate to climate', note:'worn'});
-  // Melee weapon
-  if(C.meleeWeapon === 'bow'){
-    items.push({name:'Primitive bow', note:'ready, enc 1'});
-    items.push({name:'20 arrows', note:'enc 1'});
-  } else if(C.meleeWeapon !== ''){
-    let w = MELEE_WEAPONS[parseInt(C.meleeWeapon)];
-    if(w) items.push({name:w.name+' (primitive)', note:'ready, enc '+w.enc});
-  }
-  items.push({name:'Knife', note:'enc 1'});
-  items.push({name:'Backpack', note:'enc 1'});
-  items.push({name:'Sleeping bag', note:'enc 1'});
-  items.push({name:'Tinderbox', note:'*'});
-  items.push({name:'3 torches', note:'enc 1 ea'});
-  items.push({name:(C._foodDays||1)+' days food & water', note:'enc 1 ea'});
+// Generic multi-field list renderer
+function renderList(key, containerId){
+  const c = document.getElementById(containerId);
+  const items = lists[key];
+  c.innerHTML = '';
+  items.forEach(item=>{
+    const div = document.createElement('div');
+    div.className = 'fb';
+    let html = '';
+    item._fields.forEach(f=>{
+      if(f.type==='textarea'){
+        html += `<label>${f.label}</label><textarea id="li-${item.id}-${f.key}" rows="2" placeholder="${f.placeholder||''}">${item[f.key]||''}</textarea>`;
+      } else {
+        html += `<label>${f.label}</label><input type="text" id="li-${item.id}-${f.key}" value="${esc(item[f.key]||'')}" placeholder="${f.placeholder||''}">`;
+      }
+    });
+    html += `<button class="add-btn" style="margin-top:4px;border-color:var(--rust);color:var(--rust);" onclick="removeFromList('${key}',${item.id},'${containerId}')">Remove</button>`;
+    div.innerHTML = html;
+    c.appendChild(div);
+  });
+}
 
-  // Campaign equipment
-  if(C.equipMethod==='pick' && C.equipPick!==''){
-    let item = EQUIP_TABLE[parseInt(C.equipPick)];
-    if(item) items.push({name:item.name, note:'enc '+item.enc, ac:item.ac});
-  } else if(C.equipMethod==='roll' && C.equipRolls && C.equipRolls.length){
-    C.equipRolls.forEach(r=>{
-      let item = EQUIP_TABLE[r];
-      if(item) items.push({name:item.name, note:'enc '+item.enc, ac:item.ac});
+function collectListData(key){
+  lists[key].forEach(item=>{
+    item._fields.forEach(f=>{
+      const el = document.getElementById(`li-${item.id}-${f.key}`);
+      if(el) item[f.key] = el.value;
+    });
+  });
+}
+
+function addMelee(){
+  const fields = [
+    {key:'name',label:'Name',placeholder:'Weapon name'},
+    {key:'detail',label:'Details',placeholder:'Dmg, Shock, to-hit, skill, etc.',type:'textarea'},
+  ];
+  addToList('melee',{_fields:fields},'melee-list');
+}
+function addRanged(){
+  const fields = [
+    {key:'name',label:'Name',placeholder:'Weapon name'},
+    {key:'detail',label:'Details',placeholder:'Dmg, range, ammo, to-hit, etc.',type:'textarea'},
+  ];
+  addToList('ranged',{_fields:fields},'ranged-list');
+}
+function addFocus(){
+  const fields = [
+    {key:'name',label:'Focus Name & Level',placeholder:'e.g. Unarmed Combatant 1'},
+    {key:'detail',label:'Effect',placeholder:'Describe the focus effect...',type:'textarea'},
+  ];
+  addToList('foci',{_fields:fields},'foci-list');
+}
+function addEdge(){
+  const fields = [
+    {key:'name',label:'Edge Name',placeholder:'e.g. Hard to Kill'},
+    {key:'detail',label:'Effect',placeholder:'Describe the edge effect...',type:'textarea'},
+  ];
+  addToList('edges',{_fields:fields},'edges-list');
+}
+function addCustomSkill(){
+  const fields = [
+    {key:'name',label:'Skill Name',placeholder:'Custom skill'},
+    {key:'level',label:'Level',placeholder:'-1'},
+  ];
+  addToList('customSkills',{_fields:fields},'custom-skills-list');
+}
+function addWeapon(){
+  const fields = [
+    {key:'name',label:'Weapon Name',placeholder:'Name'},
+    {key:'detail',label:'Stats',placeholder:'Dmg, Shock, Enc, Skill, etc.'},
+  ];
+  addToList('weapons',{_fields:fields},'weapon-list');
+}
+function addGear(){
+  const fields = [
+    {key:'name',label:'Item',placeholder:'Item name'},
+    {key:'note',label:'Notes',placeholder:'worn, enc 1, etc.'},
+  ];
+  addToList('gear',{_fields:fields},'gear-list');
+}
+function addWound(){
+  const fields = [
+    {key:'source',label:'Source',placeholder:'What caused it'},
+    {key:'effect',label:'Effect',placeholder:'Effect'},
+    {key:'healed',label:'Healed?',placeholder:'Y/N'},
+  ];
+  addToList('wounds',{_fields:fields},'wound-list');
+}
+function addMutation(){
+  const fields = [
+    {key:'name',label:'Mutation',placeholder:'Name'},
+    {key:'detail',label:'Effect',placeholder:'Description'},
+  ];
+  addToList('mutations',{_fields:fields},'mutation-list');
+}
+function addStressLog(){
+  const fields = [
+    {key:'trigger',label:'Trigger',placeholder:'What happened'},
+    {key:'type',label:'Type',placeholder:'Type'},
+    {key:'pts',label:'Points',placeholder:'#'},
+  ];
+  addToList('stressLog',{_fields:fields},'stress-log-list');
+}
+function addRule(){
+  const fields = [
+    {key:'title',label:'Title',placeholder:'Rule or reference name'},
+    {key:'content',label:'Content',placeholder:'Rule text, table, notes...',type:'textarea'},
+  ];
+  addToList('rules',{_fields:fields},'rules-list');
+}
+
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+// ═══════════════════════════════════════════════════════════════
+// LOCAL STORAGE SAVE/LOAD
+// ═══════════════════════════════════════════════════════════════
+function gatherAll(){
+  // Collect all list data from DOM
+  Object.keys(lists).forEach(k=>{
+    const containerMap = {melee:'melee-list',ranged:'ranged-list',foci:'foci-list',edges:'edges-list',
+      customSkills:'custom-skills-list',weapons:'weapon-list',gear:'gear-list',wounds:'wound-list',
+      mutations:'mutation-list',stressLog:'stress-log-list',rules:'rules-list'};
+    collectListData(k);
+  });
+
+  const data = {lists: JSON.parse(JSON.stringify(lists)), fields:{}};
+  document.querySelectorAll('input[id^="f-"],textarea[id^="f-"],select[id^="f-"]').forEach(el=>{
+    data.fields[el.id] = el.value;
+  });
+  return data;
+}
+
+function saveToStorage(){
+  const data = gatherAll();
+  localStorage.setItem('awn-free-sheet', JSON.stringify(data));
+  alert('Draft saved to browser storage.');
+}
+
+function loadFromStorage(){
+  const raw = localStorage.getItem('awn-free-sheet');
+  if(!raw){alert('No saved draft found.');return;}
+  const data = JSON.parse(raw);
+  // Restore fields
+  if(data.fields){
+    Object.keys(data.fields).forEach(id=>{
+      const el=document.getElementById(id);
+      if(el){el.value=data.fields[id];if(id.startsWith('f-attr-')){updateAttrMod(id.replace('f-attr-',''));}}
     });
   }
-
-  return items;
+  // Restore lists
+  if(data.lists){
+    lists = data.lists;
+    nextId = 1;
+    Object.values(lists).forEach(arr=>arr.forEach(item=>{if(item.id>=nextId)nextId=item.id+1;}));
+    const containerMap = {melee:'melee-list',ranged:'ranged-list',foci:'foci-list',edges:'edges-list',
+      customSkills:'custom-skills-list',weapons:'weapon-list',gear:'gear-list',wounds:'wound-list',
+      mutations:'mutation-list',stressLog:'stress-log-list',rules:'rules-list'};
+    Object.keys(lists).forEach(k=>renderList(k,containerMap[k]));
+  }
+  alert('Draft loaded.');
 }
 
-function rerollHP(){
-  C._hp = getHP();
-  render();
-}
-
-function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-
 // ═══════════════════════════════════════════════════════════════
-// HTML EXPORT — generates sheet matching soyo_kyoko format
+// EXPORT
 // ═══════════════════════════════════════════════════════════════
-
 function exportHTML(){
-  let bg = C.bgIndex >= 0 ? BACKGROUNDS[C.bgIndex] : {name:'Unknown'};
-  let hp = C._hp || getHP();
-  let atkBonus = getAtkBonus();
-  let htk = C.edges.includes('hardtokill');
-  let conMod = getMod('CON');
-  let hitDie = htk ? `1d6+${2+conMod}` : (conMod!==0 ? `1d6${modStr(conMod)}` : '1d6');
-  let traumaTarget = htk ? 7 : 6;
-  let maxStrain = getMaxStrain();
-  let ac = getAC();
-  let encR = getEncReadied();
-  let encS = getEncStowed();
+  const d = gatherAll();
+  const f = d.fields;
+  const v = id => f[id]||'';
 
-  let phys = getPhysSave();
-  let evas = getEvasionSave();
-  let ment = getMentalSave();
+  const hp = parseInt(v('f-hp'))||1;
+  const encR = parseInt(v('f-enc-r'))||5;
+  const encS = parseInt(v('f-enc-s'))||10;
+  const maxStrain = parseInt(v('f-strain'))||10;
 
-  let edgeNames = C.edges.map(eid=>{
-    let e = getEdgeById(eid);
-    let extra = eid==='prodigy' ? ' ('+ATTR_NAMES[C.prodigyAttr]+')' : '';
-    return e ? e.name+extra : eid;
+  // Attribute blocks
+  function attrBlock(a){
+    const s=parseInt(v('f-attr-'+a))||10;
+    const m=calcMod(s);
+    return `<div class="sbox"><span class="slbl">${ATTR_NAMES[a]}</span><span class="sval">${s}</span><span class="smod">mod ${modStr(m)}</span></div>`;
+  }
+
+  // Melee blocks
+  let meleeHTML = '';
+  lists.melee.forEach(item=>{
+    meleeHTML += `<div class="fb"><span class="fn">${esc(item.name||'Melee')}</span><div class="fd">${esc(item.detail||'').replace(/\n/g,'<br>')}</div></div>\n`;
   });
+  if(!meleeHTML) meleeHTML = '<div class="fb"><span class="fn">None</span><div class="fd">No melee weapon</div></div>';
 
-  // Build weapon blocks
-  let meleeBlock = '';
-  let rangedBlock = '';
-  let weaponGearBlocks = '';
-
-  // Check for unarmed combatant
-  let unarmedLvl = 0;
-  C.foci.forEach(f=>{if(f.id==='unarmed')unarmedLvl=f.level;});
-  let punchLvl = getSkillLevel('Punch');
-
-  if(unarmedLvl >= 1){
-    let dmgDie = punchLvl <= 0 ? '1d6' : punchLvl===1 ? '1d8' : punchLvl===2 ? '1d10' : punchLvl===3 ? '1d12' : '1d12+1';
-    let strMod = getMod('STR');
-    let dmgBonus = strMod + Math.max(0, punchLvl);
-    let shock = punchLvl >= 1 ? `${punchLvl + strMod} / AC 15` : 'None';
-    let toHit = atkBonus + strMod + punchLvl;
-    meleeBlock = `<div class="fb">
-            <span class="fn">Unarmed</span>
-            <div class="fd">
-              Dmg: ${dmgDie}+${dmgBonus} (STR${modStr(strMod)}, Punch+${punchLvl})<br>
-              Shock: ${shock}<br>
-              Trauma Die: 1d${unarmedLvl>=2?8:6} &nbsp;&middot;&nbsp; Trauma Rating: &times;2<br>
-              To-hit: +${toHit} &nbsp;&middot;&nbsp; Skill: Punch-${punchLvl}
-            </div>
-          </div>`;
-    weaponGearBlocks += `<div class="fb">
-            <span class="fn">Unarmed (hands)</span>
-            <div class="fd">${dmgDie}+${dmgBonus} dmg &middot; Shock ${shock} &middot; Enc 0 &middot; Skill: Punch-${punchLvl}</div>
-          </div>`;
-  }
-
-  // Melee weapon if any
-  if(C.meleeWeapon !== '' && C.meleeWeapon !== 'bow'){
-    let w = MELEE_WEAPONS[parseInt(C.meleeWeapon)];
-    if(w){
-      let attr = w.attr.includes('/')?'STR/DEX':'STR';
-      let aMod = attr==='STR/DEX' ? Math.max(getMod('STR'),getMod('DEX')) : getMod('STR');
-      let skillLvl = getSkillLevel(w.skill);
-      let toHit = atkBonus + aMod + skillLvl;
-      meleeBlock += `<div class="fb">
-            <span class="fn">${esc(w.name)}</span>
-            <div class="fd">
-              Dmg: ${w.dmg}${aMod?modStr(aMod):''} &nbsp;&middot;&nbsp; Shock: ${w.shock}<br>
-              To-hit: ${modStr(toHit)} &nbsp;&middot;&nbsp; Skill: ${w.skill}-${skillLvl} &nbsp;&middot;&nbsp; Enc: ${w.enc}
-            </div>
-          </div>`;
-      if(!unarmedLvl) {
-        weaponGearBlocks += `<div class="fb">
-            <span class="fn">${esc(w.name)}</span>
-            <div class="fd">${w.dmg}${aMod?modStr(aMod):''} dmg &middot; Shock ${w.shock} &middot; Enc ${w.enc} &middot; Skill: ${w.skill}-${skillLvl}</div>
-          </div>`;
-      }
-    }
-  }
-
-  if(!meleeBlock){
-    meleeBlock = `<div class="fb"><span class="fn">None</span><div class="fd">No melee weapon</div></div>`;
-  }
-
-  rangedBlock = `<div class="fb"><span class="fn">None</span><div class="fd">No ranged weapon</div></div>`;
-  // Check for ranged weapons in equipment
-  let equips = getEquipmentList();
-  equips.forEach(e=>{
-    if(e.name.includes('Sixgun')){
-      let shootLvl = getSkillLevel('Shoot');
-      let dexMod = getMod('DEX');
-      let toHit = atkBonus + dexMod + shootLvl;
-      rangedBlock = `<div class="fb"><span class="fn">Sixgun</span>
-        <div class="fd">Dmg: 1d8 &middot; Ammo: 6/12 rounds<br>Range: Medium (30m) / Long (100m)<br>To-hit: ${modStr(toHit)} &middot; Skill: Shoot-${shootLvl}</div></div>`;
-      weaponGearBlocks += `<div class="fb"><span class="fn">Sixgun</span>
-        <div class="fd">1d8 dmg &middot; 12 rounds &middot; Enc 1 &middot; Skill: Shoot-${shootLvl}</div></div>`;
-    }
-    if(e.name.includes('Powder rifle')){
-      let shootLvl = getSkillLevel('Shoot');
-      let dexMod = getMod('DEX');
-      let toHit = atkBonus + dexMod + shootLvl;
-      rangedBlock = `<div class="fb"><span class="fn">Powder Rifle</span>
-        <div class="fd">Dmg: 1d10+2 &middot; Ammo: 1/5 rounds<br>Range: Long (100m) / V.Long (300m)<br>To-hit: ${modStr(toHit)} &middot; Skill: Shoot-${shootLvl}</div></div>`;
-    }
-    if(e.name.includes('Brush gun') || e.name.includes('shotgun')){
-      let shootLvl = getSkillLevel('Shoot');
-      let dexMod = getMod('DEX');
-      let toHit = atkBonus + dexMod + shootLvl;
-      rangedBlock = `<div class="fb"><span class="fn">${esc(e.name.split('+')[0].trim())}</span>
-        <div class="fd">Dmg: 2d6 &middot; Ammo: 2/4 rounds<br>Range: Medium (30m)<br>To-hit: ${modStr(toHit)} &middot; Skill: Shoot-${shootLvl}</div></div>`;
-    }
-    if(e.name.includes('bow')){
-      let shootLvl = getSkillLevel('Shoot');
-      let dexMod = getMod('DEX');
-      let toHit = atkBonus + dexMod + shootLvl;
-      rangedBlock = `<div class="fb"><span class="fn">Primitive Bow</span>
-        <div class="fd">Dmg: 1d6 &middot; Ammo: 20 arrows<br>Range: Medium (30m) / Long (100m)<br>To-hit: ${modStr(toHit)} &middot; Skill: Shoot-${shootLvl}</div></div>`;
-    }
+  // Ranged blocks
+  let rangedHTML = '';
+  lists.ranged.forEach(item=>{
+    rangedHTML += `<div class="fb"><span class="fn">${esc(item.name||'Ranged')}</span><div class="fd">${esc(item.detail||'').replace(/\n/g,'<br>')}</div></div>\n`;
   });
+  if(!rangedHTML) rangedHTML = '<div class="fb"><span class="fn">None</span><div class="fd">No ranged weapon</div></div>';
 
   // Foci blocks
-  let fociBlocks = '';
-  C.foci.forEach(f=>{
-    let focus = getFocusById(f.id);
-    if(!focus) return;
-    fociBlocks += `<div class="fb">
-            <span class="fn">${esc(focus.name)} ${f.level}</span>
-            <div class="fd">${esc(focus.desc).replace(/\\n/g,'<br>')}</div>
-          </div>`;
+  let fociHTML = '';
+  lists.foci.forEach(item=>{
+    fociHTML += `<div class="fb"><span class="fn">${esc(item.name||'Focus')}</span><div class="fd">${esc(item.detail||'').replace(/\n/g,'<br>')}</div></div>\n`;
   });
+  if(!fociHTML) fociHTML = '<div class="fb"><span class="fn">None</span></div>';
 
   // Edge detail blocks
-  let edgeDetailBlocks = '';
-  C.edges.forEach(eid=>{
-    let e = getEdgeById(eid);
-    if(!e) return;
-    let extra = eid==='prodigy' ? ' ('+ATTR_NAMES[C.prodigyAttr]+')' : '';
-    edgeDetailBlocks += `<div class="fb">
-            <span class="fn">${esc(e.name)}${extra}</span>
-            <div class="fd">${esc(e.desc)}</div>
-          </div>`;
+  let edgeDetailHTML = '';
+  lists.edges.forEach(item=>{
+    edgeDetailHTML += `<div class="fb"><span class="fn">${esc(item.name||'Edge')}</span><div class="fd">${esc(item.detail||'').replace(/\n/g,'<br>')}</div></div>\n`;
   });
+  if(!edgeDetailHTML) edgeDetailHTML = '<div class="fb"><span class="fn">None</span></div>';
 
   // Skill rows
   let skillRows = '';
   SKILLS.forEach(s=>{
-    let lv = getSkillLevel(s);
-    let cls = lv >= 1 ? 'sr r1' : lv === 0 ? 'sr r0' : 'sr';
+    const lv = parseInt(v('f-skill-'+s));
+    const cls = lv>=1?'sr r1':lv===0?'sr r0':'sr';
     skillRows += `<div class="sl"><span class="sn">${s}</span><span class="${cls}">${lv}</span></div>\n`;
   });
-
-  // Skill origins
-  let originLines = C.skillOrigins.map(o=>esc(o)).join('<br>\n        ');
+  // Custom skills
+  lists.customSkills.forEach(item=>{
+    const lv = parseInt(item.level)||(-1);
+    const cls = lv>=1?'sr r1':lv===0?'sr r0':'sr';
+    skillRows += `<div class="sl"><span class="sn">${esc(item.name||'?')}</span><span class="${cls}">${lv}</span></div>\n`;
+  });
 
   // Gear rows
   let gearRows = '';
-  equips.forEach(e=>{
-    gearRows += `<div class="gi"><span class="gn">${esc(e.name)}</span><span class="ge">${esc(e.note)}</span></div>\n`;
+  lists.gear.forEach(item=>{
+    gearRows += `<div class="gi"><span class="gn">${esc(item.name||'')}</span><span class="ge">${esc(item.note||'')}</span></div>\n`;
+  });
+  if(!gearRows) gearRows = '<div class="gi"><span class="gn">No items</span></div>';
+
+  // Weapon gear blocks
+  let weaponGearHTML = '';
+  lists.weapons.forEach(item=>{
+    weaponGearHTML += `<div class="fb"><span class="fn">${esc(item.name||'Weapon')}</span><div class="fd">${esc(item.detail||'')}</div></div>\n`;
+  });
+  if(!weaponGearHTML) weaponGearHTML = '<div class="fb"><span class="fn">None</span></div>';
+
+  // Wound rows
+  let woundRows = '';
+  lists.wounds.forEach(item=>{
+    woundRows += `<tr><td>${esc(item.source||'')}</td><td>${esc(item.effect||'')}</td><td>${esc(item.healed||'')}</td></tr>\n`;
+  });
+  for(let i=lists.wounds.length;i<3;i++) woundRows += '<tr><td style="height:20px;"> </td><td> </td><td> </td></tr>\n';
+
+  // Mutation text
+  let mutationHTML = '';
+  if(lists.mutations.length){
+    lists.mutations.forEach(item=>{
+      mutationHTML += `<div class="fb"><span class="fn">${esc(item.name||'')}</span><div class="fd">${esc(item.detail||'')}</div></div>\n`;
+    });
+  } else {
+    mutationHTML = '<div class="nb">No mutations.</div>';
+  }
+
+  // Stress log rows
+  let stressRows = '';
+  lists.stressLog.forEach(item=>{
+    stressRows += `<tr><td>${esc(item.trigger||'')}</td><td>${esc(item.type||'')}</td><td>${esc(item.pts||'')}</td></tr>\n`;
+  });
+  for(let i=lists.stressLog.length;i<3;i++) stressRows += '<tr><td style="height:20px;"> </td><td> </td><td> </td></tr>\n';
+
+  // Rules blocks
+  let rulesHTML = '';
+  lists.rules.forEach(item=>{
+    rulesHTML += `<div class="sec" style="margin-top:10px;">${esc(item.title||'Rule')}</div>
+          <div class="nb" style="font-style:normal;font-size:11px;line-height:1.8;">${esc(item.content||'').replace(/\n/g,'<br>')}</div>\n`;
   });
 
-  // Armor description
-  let armorDesc = 'none';
-  let acNote = '';
-  equips.forEach(e=>{
-    if(e.ac){
-      if(e.ac === 13){ armorDesc = 'leather'; acNote = ' (leather) (primitive)'; }
-      if(e.ac === 15){ armorDesc = 'scrap mail'; acNote = ' (scrap mail) (primitive)'; }
-    }
-  });
-
-  let sheet = `
+  const sheet = `
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Cabin+Condensed:wght@400;700&display=swap');
 :root {
@@ -1492,8 +606,7 @@ function exportHTML(){
 .tab-row{display:flex;border-bottom:2px solid var(--rust);margin-bottom:10px;}
 .tb{font-family:'Cabin Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;border:1px solid transparent;border-bottom:none;background:var(--p);color:var(--ink2);border-radius:1px 1px 0 0;}
 .tb.active{background:var(--p2);color:var(--rust);border-color:var(--ink2);border-bottom:2px solid var(--p2);margin-bottom:-2px;}
-.tp{display:none;}
-.tp.active{display:block;}
+.tp{display:none;}.tp.active{display:block;}
 .sec{font-family:'Rye',serif;font-size:12px;color:var(--rust);letter-spacing:2px;border-bottom:2px solid var(--rust);padding-bottom:2px;margin:10px 0 6px;}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
@@ -1532,17 +645,15 @@ function exportHTML(){
 .rtbl{width:100%;border-collapse:collapse;font-size:10px;}
 .rtbl th{font-family:'Cabin Condensed',sans-serif;font-size:8px;letter-spacing:1px;text-transform:uppercase;color:var(--rust);text-align:left;padding:2px 4px;border-bottom:1px solid var(--rust);}
 .rtbl td{padding:2px 4px;border-bottom:1px dotted var(--faded);color:var(--ink2);}
-.badge{display:inline-block;font-family:'Cabin Condensed',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:var(--rust);color:var(--p);padding:1px 5px;border-radius:1px;margin-left:3px;vertical-align:middle;}
-.hr{border:none;border-top:1px solid var(--ink2);margin:8px 0;opacity:0.3;}
 </style>
 
 <div class="sheet">
   <div class="hdr">
     <div>
-      <p class="char-name">${esc(C.name) || 'Unnamed Survivor'}</p>
-      <div class="char-sub">${esc(C.playerName?C.playerName+' \u00b7 ':'')}Level 1 Survivor &nbsp;&middot;&nbsp; ${esc(bg.name)}</div>
+      <p class="char-name">${esc(v('f-name'))||'Unnamed Survivor'}</p>
+      <div class="char-sub">${esc(v('f-player')?(v('f-player')+' \u00b7 '):'')}Level ${esc(v('f-level')||'1')} ${esc(v('f-class')||'Survivor')} &nbsp;&middot;&nbsp; ${esc(v('f-background')||'Unknown')}</div>
     </div>
-    <div class="sys-tag"><strong>${esc(C.playerName||'')}</strong>${esc(C.campaignName||'Campaign')} &nbsp;&middot;&nbsp; Ashes Without Number</div>
+    <div class="sys-tag"><strong>${esc(v('f-player')||'')}</strong>${esc(v('f-campaign')||'Campaign')} &nbsp;&middot;&nbsp; Ashes Without Number</div>
   </div>
 
   <div class="body">
@@ -1557,45 +668,35 @@ function exportHTML(){
     <div id="tab-core" class="tp active">
       <div class="sec">Attributes</div>
       <div class="three" style="margin-bottom:10px;">
-        ${ATTRS.slice(0,3).map(a=>{
-          let s=getScore(a),m=getMod(a);
-          let extra='';
-          if(C.edges.includes('prodigy')&&C.prodigyAttr===a){m=3;extra=' (Prodigy)';}
-          return `<div class="sbox"><span class="slbl">${ATTR_NAMES[a]}</span><span class="sval">${s}</span><span class="smod">mod ${modStr(m)}${extra}</span></div>`;
-        }).join('\n        ')}
+        ${ATTRS.slice(0,3).map(a=>attrBlock(a)).join('\n        ')}
       </div>
       <div class="three" style="margin-bottom:10px;">
-        ${ATTRS.slice(3).map(a=>{
-          let s=getScore(a),m=getMod(a);
-          let extra='';
-          if(C.edges.includes('prodigy')&&C.prodigyAttr===a){m=3;extra=' (Prodigy)';}
-          return `<div class="sbox"><span class="slbl">${ATTR_NAMES[a]}</span><span class="sval">${s}</span><span class="smod">mod ${modStr(m)}${extra}</span></div>`;
-        }).join('\n        ')}
+        ${ATTRS.slice(3).map(a=>attrBlock(a)).join('\n        ')}
       </div>
 
       <div class="sec">Identity</div>
       <div class="irow">
-        <div class="ic"><span class="lbl">Full Name</span><span class="val">${esc(C.name)||'—'}</span></div>
-        <div class="ic"><span class="lbl">Background</span><span class="val">${esc(bg.name)}</span></div>
+        <div class="ic"><span class="lbl">Full Name</span><span class="val">${esc(v('f-name'))||'\u2014'}</span></div>
+        <div class="ic"><span class="lbl">Background</span><span class="val">${esc(v('f-background'))||'\u2014'}</span></div>
       </div>
       <div class="irow">
-        <div class="ic"><span class="lbl">Class</span><span class="val">Survivor</span></div>
-        <div class="ic"><span class="lbl">Level</span><span class="val">1</span></div>
-        <div class="ic"><span class="lbl">Experience</span><span class="val">0 XP</span></div>
+        <div class="ic"><span class="lbl">Class</span><span class="val">${esc(v('f-class'))||'Survivor'}</span></div>
+        <div class="ic"><span class="lbl">Level</span><span class="val">${esc(v('f-level'))||'1'}</span></div>
+        <div class="ic"><span class="lbl">Experience</span><span class="val">${esc(v('f-xp'))||'0 XP'}</span></div>
       </div>
       <div class="irow">
-        <div class="ic"><span class="lbl">Edges</span><span class="val">${edgeNames.join(', ')}</span></div>
+        <div class="ic"><span class="lbl">Edges</span><span class="val">${esc(v('f-edges-line'))||'\u2014'}</span></div>
       </div>
 
       <div class="sec">Description</div>
-      <div class="nb" style="font-style:normal;">${esc(C.description)||'No description provided.'}</div>
+      <div class="nb" style="font-style:normal;">${esc(v('f-desc'))||'No description provided.'}</div>
 
       <div class="sec">Saving Throws</div>
       <div class="four">
-        <div class="sbox"><span class="slbl">Physical</span><span class="sval">${phys.target-phys.mod}+</span><span class="smod">${phys.mod?ATTR_NAMES[getMod('STR')>=getMod('CON')?'STR':'CON']+modStr(phys.mod):''}</span></div>
-        <div class="sbox"><span class="slbl">Evasion</span><span class="sval">${evas.target-evas.mod}+</span><span class="smod">${evas.mod?'INT/DEX mod':''}</span></div>
-        <div class="sbox"><span class="slbl">Mental</span><span class="sval">${ment.target-ment.mod}+</span><span class="smod">${ment.mod?'WIS/CHA mod':''}</span></div>
-        <div class="sbox"><span class="slbl">Luck</span><span class="sval">${luck.target}+</span><span class="smod">no modifier</span></div>
+        <div class="sbox"><span class="slbl">Physical</span><span class="sval">${esc(v('f-save-phys'))||'15+'}</span><span class="smod">${esc(v('f-save-phys-note'))}</span></div>
+        <div class="sbox"><span class="slbl">Evasion</span><span class="sval">${esc(v('f-save-evas'))||'15+'}</span><span class="smod">${esc(v('f-save-evas-note'))}</span></div>
+        <div class="sbox"><span class="slbl">Mental</span><span class="sval">${esc(v('f-save-ment'))||'15+'}</span><span class="smod">${esc(v('f-save-ment-note'))}</span></div>
+        <div class="sbox"><span class="slbl">Luck</span><span class="sval">${esc(v('f-save-luck'))||'15+'}</span><span class="smod">${esc(v('f-save-luck-note'))||'no modifier'}</span></div>
       </div>
     </div>
 
@@ -1604,29 +705,30 @@ function exportHTML(){
         <div>
           <div class="sec">Combat Stats</div>
           <div class="irow">
-            <div class="ic"><span class="lbl">Attack Bonus</span><span class="val">+${atkBonus} base</span></div>
+            <div class="ic"><span class="lbl">Attack Bonus</span><span class="val">${esc(v('f-atkbonus'))||'+0 base'}</span></div>
+            <div class="ic"><span class="lbl">To-Hit</span><span class="val">${esc(v('f-tohit'))||''}</span></div>
           </div>
           <div class="irow">
-            <div class="ic"><span class="lbl">Armor Class</span><span class="val">${ac}${acNote}</span></div>
-            <div class="ic"><span class="lbl">Base Move</span><span class="val">10m (&times;1)</span></div>
+            <div class="ic"><span class="lbl">Armor Class</span><span class="val">${esc(v('f-ac'))||'10'}</span></div>
+            <div class="ic"><span class="lbl">Base Move</span><span class="val">${esc(v('f-move'))||'10m (\u00d71)'}</span></div>
           </div>
 
           <div class="sec">Melee Attack</div>
-          ${meleeBlock}
+          ${meleeHTML}
 
           <div class="sec">Ranged Attack</div>
-          ${rangedBlock}
+          ${rangedHTML}
 
           <div class="sec">Foci</div>
-          ${fociBlocks || '<div class="fb"><span class="fn">None</span></div>'}
+          ${fociHTML}
         </div>
 
         <div>
           <div class="sec">HP &amp; Tracks</div>
           <div class="irow">
             <div class="ic"><span class="lbl">HP</span><span class="val">${hp}</span></div>
-            <div class="ic"><span class="lbl">Hit Dice</span><span class="val">${hitDie} / level</span></div>
-            <div class="ic"><span class="lbl">Trauma Target</span><span class="val">${traumaTarget}</span></div>
+            <div class="ic"><span class="lbl">Hit Dice</span><span class="val">${esc(v('f-hitdice'))||'1d6 / level'}</span></div>
+            <div class="ic"><span class="lbl">Trauma Target</span><span class="val">${esc(v('f-trauma'))||'6'}</span></div>
           </div>
 
           <div class="trow" style="margin-top:6px;">
@@ -1645,7 +747,7 @@ function exportHTML(){
           <div style="font-size:9px;color:var(--dust);font-family:'Cabin Condensed',sans-serif;letter-spacing:1px;margin-top:1px;padding-left:78px;">at 4: trauma check &middot; at 10: break</div>
 
           <div class="sec" style="margin-top:10px;">Edges Detail</div>
-          ${edgeDetailBlocks}
+          ${edgeDetailHTML}
 
           <div class="sec" style="margin-top:10px;">Encumbrance</div>
           <div class="trow">
@@ -1677,7 +779,7 @@ function exportHTML(){
 
       <div class="sec" style="margin-top:12px;">Skill Origins</div>
       <div class="nb" style="font-style:normal;font-size:11px;line-height:1.8;">
-        ${originLines}
+        ${esc(v('f-origins')).replace(/\n/g,'<br>')||'No origins recorded.'}
       </div>
     </div>
 
@@ -1685,7 +787,7 @@ function exportHTML(){
       <div class="two">
         <div>
           <div class="sec">Weapons</div>
-          ${weaponGearBlocks || '<div class="fb"><span class="fn">None</span></div>'}
+          ${weaponGearHTML}
 
           <div class="sec">Worn &amp; Carried</div>
           ${gearRows}
@@ -1693,32 +795,28 @@ function exportHTML(){
         <div>
           <div class="sec">Currency</div>
           <div class="three" style="margin-bottom:8px;">
-            <div class="sbox"><span class="slbl">Jingle</span><span class="sval" style="font-size:16px;">&mdash;</span></div>
-            <div class="sbox"><span class="slbl">Scrip</span><span class="sval" style="font-size:16px;">&mdash;</span></div>
-            <div class="sbox"><span class="slbl">Marks</span><span class="sval" style="font-size:16px;">&mdash;</span></div>
+            <div class="sbox"><span class="slbl">Jingle</span><span class="sval" style="font-size:16px;">${esc(v('f-cur1'))||'\u2014'}</span></div>
+            <div class="sbox"><span class="slbl">Scrip</span><span class="sval" style="font-size:16px;">${esc(v('f-cur2'))||'\u2014'}</span></div>
+            <div class="sbox"><span class="slbl">Marks</span><span class="sval" style="font-size:16px;">${esc(v('f-cur3'))||'\u2014'}</span></div>
           </div>
-          <div class="ic"><span class="lbl">TL2 Scrap Units</span><span class="val">&mdash;</span></div>
+          <div class="ic"><span class="lbl">Other Currency</span><span class="val">${esc(v('f-cur-other'))||'\u2014'}</span></div>
 
           <div class="sec" style="margin-top:10px;">Wounds &amp; Trauma</div>
           <table class="wtbl">
             <tr><th>Source</th><th>Effect</th><th>Healed</th></tr>
-            <tr><td style="height:20px;"> </td><td> </td><td> </td></tr>
-            <tr><td style="height:20px;"> </td><td> </td><td> </td></tr>
-            <tr><td style="height:20px;"> </td><td> </td><td> </td></tr>
+            ${woundRows}
           </table>
 
           <div class="sec" style="margin-top:10px;">Rad Mutations</div>
           <div class="irow">
-            <div class="ic"><span class="lbl">Rad Points</span><span class="val">0</span></div>
+            <div class="ic"><span class="lbl">Rad Points</span><span class="val">${esc(v('f-radpoints'))||'0'}</span></div>
           </div>
-          <div class="nb">No mutations.</div>
+          ${mutationHTML}
 
           <div class="sec" style="margin-top:10px;">Stress Log</div>
           <table class="wtbl">
             <tr><th>Trigger</th><th>Type</th><th>Pts</th></tr>
-            <tr><td style="height:20px;"> </td><td> </td><td> </td></tr>
-            <tr><td style="height:20px;"> </td><td> </td><td> </td></tr>
-            <tr><td style="height:20px;"> </td><td> </td><td> </td></tr>
+            ${stressRows}
           </table>
         </div>
       </div>
@@ -1727,61 +825,14 @@ function exportHTML(){
     <div id="tab-rules" class="tp">
       <div class="two">
         <div>
-          <div class="sec">Range Bands</div>
-          <table class="rtbl">
-            <tr><th>Band</th><th>Distance</th><th>Moves</th></tr>
-            <tr><td>Close</td><td>0&ndash;3 m</td><td>&mdash;</td></tr>
-            <tr><td>Short</td><td>4&ndash;10 m</td><td>1</td></tr>
-            <tr><td>Medium</td><td>11&ndash;30 m</td><td>2</td></tr>
-            <tr><td>Long</td><td>31&ndash;100 m</td><td>5</td></tr>
-            <tr><td>Very Long</td><td>101&ndash;300 m</td><td>15</td></tr>
-            <tr><td>Extreme</td><td>301&ndash;1000 m</td><td>45</td></tr>
-            <tr><td>Maximum</td><td>1001&ndash;3000 m</td><td>135</td></tr>
-          </table>
-          <div style="font-size:9px;color:var(--dust);margin-top:3px;font-family:'Cabin Condensed',sans-serif;letter-spacing:1px;line-height:1.6;">
-            MOV FACTOR = BASE MOVE &divide; 10<br>
-            REQ MOVES &divide; MOV FACTOR, ROUND NEAREST
-          </div>
-
-          <div class="sec" style="margin-top:10px;">Optional Rules Active</div>
-          <div class="nb" style="font-style:normal;font-size:11px;line-height:1.8;">
-            <strong style="color:var(--rust);">Stress</strong> (A56) &mdash; Hardened 1-3, Unstable 4-7, Traumatized 8-10. At 4: Trauma Check. At 10: Break.<br>
-            <strong style="color:var(--rust);">Traumatic Hits</strong> (A45) &mdash; roll on table when reduced to 0 HP.<br>
-            <strong style="color:var(--rust);">First Aid</strong> (A52) &mdash; stabilize dying with Heal/Fix check.<br>
-            <strong style="color:var(--rust);">Rad Mutation</strong> (A55) &mdash; accumulate Rad Points, roll at threshold.
-          </div>
+          ${rulesHTML || '<div class="sec">Rules Notes</div><div class="nb">No rules notes added.</div>'}
         </div>
         <div>
-          <div class="sec">Advancement</div>
-          <table class="rtbl">
-            <tr><th>Level</th><th>Fast XP</th><th>Slow XP</th></tr>
-            <tr><td>1</td><td>0</td><td>0</td></tr>
-            <tr><td>2</td><td>3</td><td>6</td></tr>
-            <tr><td>3</td><td>6</td><td>15</td></tr>
-            <tr><td>4</td><td>12</td><td>24</td></tr>
-            <tr><td>5</td><td>18</td><td>36</td></tr>
-          </table>
-          <div style="font-size:9px;color:var(--dust);margin-top:3px;font-family:'Cabin Condensed',sans-serif;letter-spacing:1px;line-height:1.6;">
-            3 XP per successful group goal<br>
-            3 SKILL POINTS per level &middot; FOCI at 2,5,7,10<br>
-            THIRD EDGE at level 5
-          </div>
-
-          <div class="sec" style="margin-top:10px;">Skill Costs</div>
-          <table class="rtbl">
-            <tr><th>Level</th><th>Cost</th><th>Min Char Level</th></tr>
-            <tr><td>0</td><td>1 pt</td><td>1</td></tr>
-            <tr><td>1</td><td>2 pts</td><td>1</td></tr>
-            <tr><td>2</td><td>3 pts</td><td>3</td></tr>
-            <tr><td>3</td><td>4 pts</td><td>6</td></tr>
-            <tr><td>4</td><td>5 pts</td><td>9</td></tr>
-          </table>
-
-          <div class="sec" style="margin-top:10px;">Premise</div>
-          <div class="nb">${esc(C.premise)||'No premise set.'}</div>
+          <div class="sec">Premise</div>
+          <div class="nb">${esc(v('f-premise'))||'No premise set.'}</div>
 
           <div class="sec" style="margin-top:10px;">Notes</div>
-          <div class="nb">${esc(C.notes)||''}</div>
+          <div class="nb">${esc(v('f-notes'))||''}</div>
           <div style="border:1px dashed var(--faded);min-height:60px;background:var(--p2);border-radius:1px;padding:4px;"></div>
         </div>
       </div>
@@ -1821,13 +872,11 @@ makeTrack('enc-s',${encS},'');
 makeTrack('strain',${maxStrain},'');
 <\/script>`;
 
-  // Download
-  let blob = new Blob([sheet], {type:'text/html'});
-  let url = URL.createObjectURL(blob);
-  let a = document.createElement('a');
-  let filename = (C.name || 'character').toLowerCase().replace(/[^a-z0-9]+/g,'_') + '_character_sheet.html';
+  const blob = new Blob([sheet], {type:'text/html'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
   a.href = url;
-  a.download = filename;
+  a.download = ((v('f-name'))||'character').toLowerCase().replace(/[^a-z0-9]+/g,'_') + '_character_sheet.html';
   a.click();
   URL.revokeObjectURL(url);
 }
@@ -1835,8 +884,8 @@ makeTrack('strain',${maxStrain},'');
 // ═══════════════════════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════════════════════
-
-render();
+buildAttrs();
+buildSkills();
 </script>
 </body>
 </html>
