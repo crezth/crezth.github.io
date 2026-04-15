@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>呪われた夢 — Cursed Dreams</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0a0e;
+    --fg: #d8d0c8;
+    --fg-dim: #7a7269;
+    --accent: #c4a882;
+    --accent-dim: #6b5d4a;
+    --section-line: #2a2228;
+    --en-col: #b8b0a6;
+    --jp-col: #ddd5cb;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--accent-dim);
+    margin: 32px auto 0;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  h1 span {
+    display: block;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--section-line);
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .col-en {
+    color: var(--en-col);
+    font-size: 1.05rem;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .col-jp {
+    color: var(--jp-col);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  .col-en p, .col-jp p {
+    margin-bottom: 0;
+  }
+
+  .line {
+    display: block;
+    min-height: 1.75em;
+  }
+
+  .line.empty {
+    min-height: 1em;
+  }
+
+  .section.instrumental {
+    text-align: center;
+    padding: 24px 0;
+  }
+
+  .section.instrumental .section-label {
+    border-bottom: none;
+    color: var(--fg-dim);
+    font-style: italic;
+    letter-spacing: 0.5em;
+  }
+
+  .section.fade .col-en,
+  .section.fade .col-jp {
+    opacity: 1;
+  }
+
+  .section.fade .col-en .line:nth-child(n+9),
+  .section.fade .col-jp .line:nth-child(n+9) {
+    opacity: 0.7;
+  }
+
+  .section.fade .col-en .line:nth-child(n+11),
+  .section.fade .col-jp .line:nth-child(n+11) {
+    opacity: 0.5;
+  }
+
+  .section.fade .col-en .line:nth-child(n+13),
+  .section.fade .col-jp .line:nth-child(n+13) {
+    opacity: 0.35;
+  }
+
+  .section.fade .col-en .line:nth-child(n+15),
+  .section.fade .col-jp .line:nth-child(n+15) {
+    opacity: 0.2;
+  }
+
+  @media (max-width: 640px) {
+    .columns {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    h1 { font-size: 1.8rem; }
+    h1 span { font-size: 1.3rem; }
+    .page { padding: 48px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>
+    <span>呪われた夢</span>
+    beautiful but cursed dreams
+  </h1>
+  <div class="subtitle">© 2026 Crezth / Yevheniya Machnovsky / miquella.scott</div>
+  <div class="subtitle">All rights reserved</div>
+</header>
+
+<!-- INTRO -->
+<div class="section">
+  <div class="section-label">Intro</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">so you say you're under a curse?</span>
+      <span class="line">well, so what? so's the whole damn world</span>
+      <span class="line">no matter how much we want to believe what we do is right,</span>
+      <span class="line">all of our dreams are cursed somehow</span>
+      <span class="line">beautiful but cursed dreams.</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">呪われてるって？</span>
+      <span class="line">だから何？　この世界も同じ</span>
+      <span class="line">正しいと信じたくても</span>
+      <span class="line">夢はどれも呪われてる</span>
+      <span class="line">美しく――呪われた夢</span>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE 1 -->
+<div class="section">
+  <div class="section-label">Verse 1</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">i always knew that i could shine</span>
+      <span class="line">like the pearl of gary the sweet divine</span>
+      <span class="line">i wanted it for myself</span>
+      <span class="line">long before i could admit it to myself</span>
+      <span class="line">i never needed the warm sunlight</span>
+      <span class="line">and i'll trade it for a harsh, pale light</span>
+      <span class="line">'cuz as i see you all i think about</span>
+      <span class="line">is the dreams you have learned to live without</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">輝けると　ずっと知ってた</span>
+      <span class="line">甘美なる神の真珠のように</span>
+      <span class="line">それを欲しがっていた</span>
+      <span class="line">自分に認めるずっと前から</span>
+      <span class="line">温もりの陽射しなんて要らない</span>
+      <span class="line">冷たく蒼い光と替えよう</span>
+      <span class="line">だってあなたを見ると浮かぶのは</span>
+      <span class="line">あなたが捨てることを覚えた夢</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS -->
+<div class="section">
+  <div class="section-label">Pre-Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">that cannot hold you like i do</span>
+      <span class="line">will not hold you like i do</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">あんなものじゃ抱けない　私のようには</span>
+      <span class="line">抱きはしない　私のようには</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS -->
+<div class="section">
+  <div class="section-label">Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">behold me, love me</span>
+      <span class="line">worship me, keep me</span>
+      <span class="line">for i love you like you do</span>
+      <span class="line">i love you like i do</span>
+      <span class="line">behold me, love me</span>
+      <span class="line">worship me, keep me</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">見つめて、愛して</span>
+      <span class="line">崇めて、離さないで</span>
+      <span class="line">あなたのように愛してる</span>
+      <span class="line">私だけが愛してる</span>
+      <span class="line">見つめて、愛して</span>
+      <span class="line">崇めて、離さないで</span>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE 2 -->
+<div class="section">
+  <div class="section-label">Verse 2</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">the furtive little mouse is what i am</span>
+      <span class="line">with the big hopes and the grandest plans</span>
+      <span class="line">left behind before i was taken</span>
+      <span class="line">by a world that's so mistaken</span>
+      <span class="line">what little i knew, i still knew yet</span>
+      <span class="line">and it will be still my safest bet</span>
+      <span class="line">all the curses and the desperations</span>
+      <span class="line">all the cheap whiskey and mean persuasions</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">怯えた小さなネズミ　それが私</span>
+      <span class="line">大きな望みと壮大な企み</span>
+      <span class="line">置き去りにされた</span>
+      <span class="line">狂った世界に連れ去られる前に</span>
+      <span class="line">わずかな知恵でも　まだ胸にある</span>
+      <span class="line">それが一番確かな賭け</span>
+      <span class="line">呪いも　絶望も</span>
+      <span class="line">安い酒も　卑しい囁きも</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS -->
+<div class="section">
+  <div class="section-label">Pre-Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">that cannot hold you like i do</span>
+      <span class="line">will not hold you like i do</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">あんなものじゃ抱けない　私のようには</span>
+      <span class="line">抱きはしない　私のようには</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS -->
+<div class="section">
+  <div class="section-label">Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">behold me, love me</span>
+      <span class="line">worship me, keep me</span>
+      <span class="line">for i love you like you do</span>
+      <span class="line">i love you like i do</span>
+      <span class="line">behold me, love me</span>
+      <span class="line">worship me, keep me</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">見つめて、愛して</span>
+      <span class="line">崇めて、離さないで</span>
+      <span class="line">あなたのように愛してる</span>
+      <span class="line">私だけが愛してる</span>
+      <span class="line">見つめて、愛して</span>
+      <span class="line">崇めて、離さないで</span>
+    </div>
+  </div>
+</div>
+
+<!-- INSTRUMENTAL -->
+<div class="section instrumental">
+  <div class="section-label">Instrumental</div>
+</div>
+
+<!-- VERSE 3 -->
+<div class="section">
+  <div class="section-label">Verse 3</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">i know you hate it when i shine</span>
+      <span class="line">but i'll peel back your hatred with my love divine</span>
+      <span class="line">your darkest sanctums will be dark with light</span>
+      <span class="line">your sad suffering will perish bright</span>
+      <span class="line">burning at the stake by my kindled charm</span>
+      <span class="line">all your fragile dreams that exposed you to harm</span>
+      <span class="line">let your heart be soothed, forget about</span>
+      <span class="line">every single other thing that you will live without</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">私が輝くと嫌がるでしょう</span>
+      <span class="line">でも聖なる愛で憎しみを剥がしてあげる</span>
+      <span class="line">暗い聖域を光の闇で満たす</span>
+      <span class="line">悲しい苦しみは眩く焼け落ちる</span>
+      <span class="line">灯した魅力の火刑に焼かれて</span>
+      <span class="line">あなたを傷つけた脆い夢たち</span>
+      <span class="line">心を鎮めて、忘れなさい</span>
+      <span class="line">なくても生きていけるもの　全部</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS TRIUMPHANT -->
+<div class="section">
+  <div class="section-label">Pre-Chorus — Triumphant</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">cannot hold you like i do</span>
+      <span class="line">shall never hold you like i do</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">あんなものじゃ抱けない　私のようには</span>
+      <span class="line">決して抱けはしない　私のようには</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS -->
+<div class="section">
+  <div class="section-label">Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">behold me, love me</span>
+      <span class="line">worship me, keep me</span>
+      <span class="line">for i love you like you do</span>
+      <span class="line">i love you like i do</span>
+      <span class="line">behold me, love me</span>
+      <span class="line">worship me, keep me</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">見つめて、愛して</span>
+      <span class="line">崇めて、離さないで</span>
+      <span class="line">あなたのように愛してる</span>
+      <span class="line">私だけが愛してる</span>
+      <span class="line">見つめて、愛して</span>
+      <span class="line">崇めて、離さないで</span>
+    </div>
+  </div>
+</div>
+
+<!-- BRIDGE -->
+<div class="section">
+  <div class="section-label">Bridge</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">and i just wanted you to know</span>
+      <span class="line">that what you took from me is yours to keep</span>
+      <span class="line">immortality is just a dream</span>
+      <span class="line">we can never remain what we want to be</span>
+      <span class="line">and if that's the curse of this broken world</span>
+      <span class="line">then to the cursed, all you should know:</span>
+      <span class="line">is for every curse, a cursed blessing</span>
+      <span class="line">and you'll learn to love my cruel undressing</span>
+      <span class="line">for although you think you've gained my level</span>
+      <span class="line">i'll embrace you still, you wicked devil</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ただ知ってほしかった</span>
+      <span class="line">私から奪ったものは　あなたのもの</span>
+      <span class="line">永遠なんてただの夢</span>
+      <span class="line">なりたい姿のままではいられない</span>
+      <span class="line">それがこの壊れた世界の呪いなら</span>
+      <span class="line">呪われし者たちよ　聞きなさい</span>
+      <span class="line">すべての呪いに　呪われた祝福がある</span>
+      <span class="line">私の残酷な素肌を愛するようになる</span>
+      <span class="line">同じ高みに立ったと思っても</span>
+      <span class="line">それでも抱きしめる　邪悪な悪魔よ</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-OUTRO -->
+<div class="section">
+  <div class="section-label">Pre-Outro — Small</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">and for the devil...</span>
+      <span class="line">a daughter</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">そして悪魔には…</span>
+      <span class="line">娘がひとり</span>
+    </div>
+  </div>
+</div>
+
+<!-- OUTRO -->
+<div class="section fade">
+  <div class="section-label">Outro — Fading, Resonant</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">behold me, love me</span>
+      <span class="line">worship me, keep me</span>
+      <span class="line">for you love me like you do</span>
+      <span class="line">and i love me like i do</span>
+      <span class="line">behold me, love me</span>
+      <span class="line">worship me, keep me</span>
+      <span class="line">for you love me like you do</span>
+      <span class="line">and i love me like i do</span>
+      <span class="line">behold me, love me</span>
+      <span class="line">worship me, keep me</span>
+      <span class="line">behold me, love me</span>
+      <span class="line">worship me, keep me</span>
+      <span class="line">behold me, love me</span>
+      <span class="line">worship me, keep me</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">見つめて、愛して</span>
+      <span class="line">崇めて、離さないで</span>
+      <span class="line">あなたが愛してくれるように</span>
+      <span class="line">私も私を愛してる</span>
+      <span class="line">見つめて、愛して</span>
+      <span class="line">崇めて、離さないで</span>
+      <span class="line">あなたが愛してくれるように</span>
+      <span class="line">私も私を愛してる</span>
+      <span class="line">見つめて、愛して</span>
+      <span class="line">崇めて、離さないで</span>
+      <span class="line">見つめて、愛して</span>
+      <span class="line">崇めて、離さないで</span>
+      <span class="line">見つめて、愛して</span>
+      <span class="line">崇めて、離さないで</span>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
