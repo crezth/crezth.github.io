@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ゲパンツァリン — Gepanzerin! - lyrics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #151e28;
+    --fg: #d0d6dc;
+    --fg-dim: #6a7888;
+    --accent: #a0b8cc;
+    --accent-dim: #4a6478;
+    --section-line: #283848;
+    --en-col: #b8c4d0;
+    --jp-col: #dce4ea;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--accent-dim);
+    margin: 32px auto 0;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  h1 span {
+    display: block;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--section-line);
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .col-en {
+    color: var(--en-col);
+    font-size: 1.05rem;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .col-jp {
+    color: var(--jp-col);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  .col-en p, .col-jp p {
+    margin-bottom: 0;
+  }
+
+  .line {
+    display: block;
+    min-height: 1.75em;
+  }
+
+  .line.empty {
+    min-height: 1em;
+  }
+
+  .section.instrumental {
+    text-align: center;
+    padding: 24px 0;
+  }
+
+  .section.instrumental .section-label {
+    border-bottom: none;
+    color: var(--fg-dim);
+    font-style: italic;
+    letter-spacing: 0.5em;
+  }
+
+  .section.fade .col-en,
+  .section.fade .col-jp {
+    opacity: 1;
+  }
+
+  .section.fade .col-en .line:nth-child(n+3),
+  .section.fade .col-jp .line:nth-child(n+3) {
+    opacity: 0.6;
+  }
+
+  .section.fade .col-en .line:nth-child(n+4),
+  .section.fade .col-jp .line:nth-child(n+4) {
+    opacity: 0.35;
+  }
+
+  .section.fade .col-en .line:nth-child(n+5),
+  .section.fade .col-jp .line:nth-child(n+5) {
+    opacity: 0.2;
+  }
+
+  @media (max-width: 640px) {
+    .columns {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    h1 { font-size: 1.8rem; }
+    h1 span { font-size: 1.3rem; }
+    .page { padding: 48px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>
+    <span>鋼の戦士ゲパンツァリン</span>
+    Steel Warrior Gepanzerin
+  </h1>
+  <div class="subtitle">© 2026 Crezth / Yevheniya Machnovsky / miquella.scott</div>
+  <div class="subtitle">All rights reserved</div>
+</header>
+
+<!-- VERSE 1 -->
+<div class="section">
+  <div class="section-label">Verse 1</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">In the dark of night, a call rings out</span>
+      <span class="line">Young patriot, take up your sword</span>
+      <span class="line">Hold the dream of your homeland close to your heart</span>
+      <span class="line">The thoughts of your countrymen drive you forward</span>
+      <span class="line">Your resolve — never let it go</span>
+      <span class="line">Sever the chains of this age of chaos</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">闇の夜に　呼び声が響く</span>
+      <span class="line">若き志士よ　剣を取れ</span>
+      <span class="line">祖国の夢を　その胸に抱け</span>
+      <span class="line">同胞の想いが　お前を駆り立てる</span>
+      <span class="line">志　決して手放すな</span>
+      <span class="line">乱世の鎖　断ち切れ</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS 1 -->
+<div class="section">
+  <div class="section-label">Pre-Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Do not fear — set your heart ablaze</span>
+      <span class="line">Courage will shatter all hesitation</span>
+      <span class="line">Swear upon the blood of your ancestors</span>
+      <span class="line">The righteous path of heaven — now, awaken!</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">恐れるな　心を燃やせ</span>
+      <span class="line">勇気が　迷いを打ち砕く</span>
+      <span class="line">先祖の血潮に誓い</span>
+      <span class="line">天の正道　今　覚醒せよ</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS 1 -->
+<div class="section">
+  <div class="section-label">Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Steel warrior, charge!</span>
+      <span class="line">Gepantsarin! Attack with pride!</span>
+      <span class="line">We will not yield in this age of chaos</span>
+      <span class="line">Gepantsarin! Unite the nation — carve a new path forward!</span>
+      <span class="line">The dream of the future rests entirely in your hands</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">鋼の戦士よ　突撃！</span>
+      <span class="line">ゲパンツァリン！誇り高く攻めろ！</span>
+      <span class="line">この乱世に　屈しはしない</span>
+      <span class="line">ゲパンツァリン！国を一つに　新たな道を拓け</span>
+      <span class="line">未来の夢は　すべてお前の手に</span>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE 2 -->
+<div class="section">
+  <div class="section-label">Verse 2</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Even as you cloak yourself in ancient dignity</span>
+      <span class="line">Do not forget your mission, young patriot</span>
+      <span class="line">It is also the hope of the people</span>
+      <span class="line">Can you truly answer that call?</span>
+      <span class="line">Can you heal a wounded heart?</span>
+      <span class="line">Can you mend the bonds that have been torn apart?</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">古の威厳を纏いながらも</span>
+      <span class="line">忘れるな　若き志士よ　その使命を</span>
+      <span class="line">それはまた　民の希望</span>
+      <span class="line">その呼び声に　真に応えられるか</span>
+      <span class="line">傷ついた心を　癒せるのか</span>
+      <span class="line">引き裂かれた絆を　繋ぎ直せるか</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS 2 -->
+<div class="section">
+  <div class="section-label">Pre-Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Even if you are met with resistance</span>
+      <span class="line">The nation must not fear you</span>
+      <span class="line">Unite the people's courage with your own</span>
+      <span class="line">And march forth with unwavering conviction!</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">たとえ抗われようとも</span>
+      <span class="line">国はお前を　恐れてはならぬ</span>
+      <span class="line">民の勇気と　お前の勇気を一つにし</span>
+      <span class="line">揺るぎなき信念で　征け！</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS 2 -->
+<div class="section">
+  <div class="section-label">Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Steel warrior, charge!</span>
+      <span class="line">Gepantsarin! Attack with pride!</span>
+      <span class="line">We will not yield in this age of chaos</span>
+      <span class="line">Gepantsarin! Unite the nation — carve a new path forward!</span>
+      <span class="line">The dream of the future rests entirely in your hands</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">鋼の戦士よ　突撃！</span>
+      <span class="line">ゲパンツァリン！誇り高く攻めろ！</span>
+      <span class="line">この乱世に　屈しはしない</span>
+      <span class="line">ゲパンツァリン！国を一つに　新たな道を拓け</span>
+      <span class="line">未来の夢は　すべてお前の手に</span>
+    </div>
+  </div>
+</div>
+
+<!-- BRIDGE -->
+<div class="section">
+  <div class="section-label">Bridge</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Never abandon an open heart</span>
+      <span class="line">If we stand together, we can overcome any wall</span>
+      <span class="line">The future belongs to all of us</span>
+      <span class="line">We will find a way to live — without fail!</span>
+      <span class="line">All who are driven by a dream —</span>
+      <span class="line">Be there for the people!</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">開かれた心を　決して捨てるな</span>
+      <span class="line">共に立てば　どんな壁も越えられる</span>
+      <span class="line">未来は　俺たち皆のもの</span>
+      <span class="line">生きる道を　必ず見出せ！</span>
+      <span class="line">夢に突き動かされる　すべての者よ——</span>
+      <span class="line">民のために在れ！</span>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CHORUS -->
+<div class="section">
+  <div class="section-label">Final Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Steel warrior, charge!</span>
+      <span class="line">Gepantsarin! Unleash your fury!</span>
+      <span class="line">With steel and flame and the power of justice</span>
+      <span class="line">Raise the sword of the greater cause!</span>
+      <span class="line">Gepantsarin! Attack with pride!</span>
+      <span class="line">The dream of the future rests entirely in your hands</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">鋼の戦士よ　突撃！</span>
+      <span class="line">ゲパンツァリン！怒りを解き放て！</span>
+      <span class="line">鋼と炎と　正義の力で</span>
+      <span class="line">大義の剣を　掲げろ！</span>
+      <span class="line">ゲパンツァリン！誇り高く攻めろ！</span>
+      <span class="line">未来の夢は　すべてお前の手に</span>
+    </div>
+  </div>
+</div>
+
+<!-- OUTRO -->
+<div class="section fade">
+  <div class="section-label">Outro</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Gepantsarin! Be there for the people!</span>
+      <span class="line empty"></span>
+      <span class="line">Gepantsarin! Gepantsarin! Gepantsarin!</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ゲパンツァリン！民のために在れ！</span>
+      <span class="line empty"></span>
+      <span class="line">ゲパンツァリン！ゲパンツァリン！ゲパンツァリン！</span>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

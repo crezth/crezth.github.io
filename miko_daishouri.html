@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>巫女大勝利 — Miko Daishouri - lyrics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #2c0e14;
+    --fg: #e8dcd8;
+    --fg-dim: #9a7a72;
+    --accent: #e8a878;
+    --accent-dim: #8c4a3a;
+    --section-line: #4a2028;
+    --en-col: #d4c0b8;
+    --jp-col: #f0e0d8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--accent-dim);
+    margin: 32px auto 0;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  h1 span {
+    display: block;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--section-line);
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .col-en {
+    color: var(--en-col);
+    font-size: 1.05rem;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .col-jp {
+    color: var(--jp-col);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  .col-en p, .col-jp p {
+    margin-bottom: 0;
+  }
+
+  .line {
+    display: block;
+    min-height: 1.75em;
+  }
+
+  .line.empty {
+    min-height: 1em;
+  }
+
+  .section.instrumental {
+    text-align: center;
+    padding: 24px 0;
+  }
+
+  .section.instrumental .section-label {
+    border-bottom: none;
+    color: var(--fg-dim);
+    font-style: italic;
+    letter-spacing: 0.5em;
+  }
+
+  .section.fade .col-en,
+  .section.fade .col-jp {
+    opacity: 1;
+  }
+
+  .section.fade .col-en .line:nth-child(n+3),
+  .section.fade .col-jp .line:nth-child(n+3) {
+    opacity: 0.6;
+  }
+
+  .section.fade .col-en .line:nth-child(n+4),
+  .section.fade .col-jp .line:nth-child(n+4) {
+    opacity: 0.35;
+  }
+
+  .section.fade .col-en .line:nth-child(n+5),
+  .section.fade .col-jp .line:nth-child(n+5) {
+    opacity: 0.2;
+  }
+
+  @media (max-width: 640px) {
+    .columns {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    h1 { font-size: 1.8rem; }
+    h1 span { font-size: 1.3rem; }
+    .page { padding: 48px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>
+    <span>巫女大勝利!</span>
+    Miko Daishouri!
+  </h1>
+  <div class="subtitle">© 2026 Crezth / Yevheniya Machnovsky / miquella.scott</div>
+  <div class="subtitle">All rights reserved</div>
+</header>
+
+<!-- INTRO -->
+<div class="section">
+  <div class="section-label">Intro</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">La la la… La la la la…</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ラ・ラ・ラ… ラ・ラ・ラ・ラ…</span>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE 1 -->
+<div class="section">
+  <div class="section-label">Verse 1</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Beyond the torii gate, neon lights flicker</span>
+      <span class="line">Before the city falls asleep, I'm being called</span>
+      <span class="line">The midnight wind sweeps through my hair</span>
+      <span class="line">I've made my resolve — no more hesitation</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">鳥居の先　ネオンが揺れる</span>
+      <span class="line">街が眠る前に　呼ばれてる</span>
+      <span class="line">真夜中の風が　髪をさらう</span>
+      <span class="line">覚悟を決めた　もう迷わない</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS -->
+<div class="section">
+  <div class="section-label">Pre-Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">The sound of bells echoes deep within my chest</span>
+      <span class="line">Sacred fire ignites in the steel shrine</span>
+      <span class="line">Inside the cockpit, I pour in my prayer</span>
+      <span class="line">Now — rise up!</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">鈴の音が響く　胸の奥まで</span>
+      <span class="line">神火が灯る　鋼の社へ</span>
+      <span class="line">コックピットの中　祈りを込めて</span>
+      <span class="line">さあ、立ち上がれ</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS 1 -->
+<div class="section">
+  <div class="section-label">Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Miko Great Victory! Pierce the night sky</span>
+      <span class="line">On wings of crimson and silver</span>
+      <span class="line">We won't lose to Despair</span>
+      <span class="line">With a prayer like lightning</span>
+      <span class="line">Miko Great Victory! The tide is swelling</span>
+      <span class="line">Line up the divine armor and advance</span>
+      <span class="line">A single teardrop transforms into a spark</span>
+      <span class="line">Become the light that illuminates the dark</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">巫女大勝利！　夜空を貫け</span>
+      <span class="line">紅と銀の翼で</span>
+      <span class="line">ディスペアなんかに　負けはしない</span>
+      <span class="line">稲妻のような祈りで</span>
+      <span class="line">巫女大勝利！　潮が満ちてゆく</span>
+      <span class="line">神鎧　並べて進め</span>
+      <span class="line">涙のひとつぶが　火花に変わる</span>
+      <span class="line">闇を照らす光になれ</span>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE 2 -->
+<div class="section">
+  <div class="section-label">Verse 2</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Sacred ropes embrace the steel</span>
+      <span class="line">An ancient oath is reborn today</span>
+      <span class="line">Even if Despair's shadow tears the sky apart</span>
+      <span class="line">Our eyes will never look away</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">注連縄が鋼を抱きしめる</span>
+      <span class="line">古い誓いが　今よみがえる</span>
+      <span class="line">ディスペアの影が　空を裂いても</span>
+      <span class="line">私たちの瞳は　逸らさない</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS 2 -->
+<div class="section">
+  <div class="section-label">Pre-Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Talismans flash — system activation</span>
+      <span class="line">Even if my hands tremble, my heart won't waver</span>
+      <span class="line">Gods within me, lend me your power</span>
+      <span class="line">The countdown begins</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">御札が閃く　システム起動</span>
+      <span class="line">手は震えても　心は揺るがない</span>
+      <span class="line">内なる神々よ　力を貸して</span>
+      <span class="line">カウントダウン　始まる</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS 2 -->
+<div class="section">
+  <div class="section-label">Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Miko Great Victory! Pierce the night sky</span>
+      <span class="line">On wings of crimson and silver</span>
+      <span class="line">We won't lose to Despair</span>
+      <span class="line">With a prayer like lightning</span>
+      <span class="line">Miko Great Victory! The tide is swelling</span>
+      <span class="line">Line up the divine armor and advance</span>
+      <span class="line">A single teardrop transforms into a spark</span>
+      <span class="line">Become the light that illuminates the dark</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">巫女大勝利！　夜空を貫け</span>
+      <span class="line">紅と銀の翼で</span>
+      <span class="line">ディスペアなんかに　負けはしない</span>
+      <span class="line">稲妻のような祈りで</span>
+      <span class="line">巫女大勝利！　潮が満ちてゆく</span>
+      <span class="line">神鎧　並べて進め</span>
+      <span class="line">涙のひとつぶが　火花に変わる</span>
+      <span class="line">闇を照らす光になれ</span>
+    </div>
+  </div>
+</div>
+
+<!-- BRIDGE -->
+<div class="section">
+  <div class="section-label">Bridge — Whispered</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Even if the world forgets how to pray…</span>
+      <span class="line">We remember. We are here.</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">世界が祈りを忘れても…</span>
+      <span class="line">私たちは覚えてる。ここにいる。</span>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CHORUS -->
+<div class="section">
+  <div class="section-label">Final Chorus — Key Change</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Miko Great Victory! Once more — blaze up!</span>
+      <span class="line">All miko, take flight!</span>
+      <span class="line">From the ashes, from the crumbling city</span>
+      <span class="line">To answer the voice of the heavens</span>
+      <span class="line">Great Victory — Great Victory — Tonight, victory is in our hands!</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">巫女大勝利！　もう一度　燃え上がれ！</span>
+      <span class="line">すべての巫女よ　翔び立て</span>
+      <span class="line">灰の中から　崩れた街から</span>
+      <span class="line">天の声に応えるために</span>
+      <span class="line">大勝利 — 大勝利 — 勝利は今夜　この手に！</span>
+    </div>
+  </div>
+</div>
+
+<!-- OUTRO -->
+<div class="section fade">
+  <div class="section-label">Outro — Fade Out</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">La la la… La la la la…</span>
+      <span class="line empty"></span>
+      <span class="line">Miko Great Victory…</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ラ・ラ・ラ… ラ・ラ・ラ・ラ…</span>
+      <span class="line empty"></span>
+      <span class="line">巫女大勝利…</span>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
