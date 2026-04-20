@@ -2,7 +2,8 @@
 
 > **Sources:** Core pp. 41, 65–79
 
-## What Is LSUV? *(Core pp. 65–66)*
+## What Is LSUV?
+*Core pp. 65–66*
 
 The combat system of 10kSwords. Named for its three qualities:
 
@@ -10,11 +11,13 @@ The combat system of 10kSwords. Named for its three qualities:
 - **Steel** — Skull-on-pavement violence. Gritty silat of The Raid meets high-flying kung fu of Xianxia. Attacks are flurries; interrupts and counters are expected.
 - **Ultraviolence** — Models the thunderbolt violence of kung fu warriors, xianxia cultivators, and silat immortals. Violence is the ultimate answer to the Oppressor.
 
-## When To Use LSUV *(Core p. 67)*
+## When To Use LSUV
+*Core p. 67*
 
 Only when violence is necessary for the fiction unfolding. Most violence can be resolved with Checks. LSUV is the structured system for when blood and steel chaos needs to unfurl.
 
-## The Tick *(Core p. 70)*
+## The Tick
+*Core p. 70*
 
 Time breaks into hyperviolent ticks — **3 seconds each**.
 
@@ -22,7 +25,8 @@ Time breaks into hyperviolent ticks — **3 seconds each**.
 
 The first to move is whoever has the highest intent to kill. They take the first **Action**.
 
-## Actions *(Core p. 70)*
+## Actions
+*Core p. 70*
 
 When you take an Action, you can do **anything**. No action lists. Examples:
 - Climb, grab, take hold, throw a rope, chug a potion, flip over a table
@@ -37,7 +41,8 @@ When you take an Action, you can do **anything**. No action lists. Examples:
 ### After An Action
 You can keep going and take your next Action if you still have some. You can be interrupted at any point. If you choose not to take an Action or have none left, someone from the enemy side may take one.
 
-## Interrupt *(Core p. 71)*
+## Interrupt
+*Core p. 71*
 
 During someone's Action, any being with Actions left can **Interrupt** — doing something immediately. This costs one of their own Actions.
 
@@ -51,13 +56,15 @@ Uses:
 - Apply a magick barrier as someone is hit
 - **Major drawback:** You lose that Action afterwards
 
-## The Wheel Turns *(Core p. 70)*
+## The Wheel Turns
+*Core p. 70*
 
 After all Actions of all combatants are taken, the tick ends and a new tick begins. Everyone refreshes their Actions.
 
 **If a World Being took their Action last in the previous tick, the next tick begins with a Wanderer.**
 
-## Attacks *(Core p. 71)*
+## Attacks
+*Core p. 71*
 
 **Attack Check = 2d6 + Accuracy (Weapon Attribute + Adjustments) vs target's Parry or Dodge**
 
@@ -68,7 +75,8 @@ After all Actions of all combatants are taken, the tick ends and a new tick begi
 - **Critical Hit (double 6s):** Auto-hit, go up two damage tiers, often enter Samadhi
 - **Feint:** On hit, instead of damage, lower target's Defense against next Attack by 2
 
-## Attack Adjustments *(Core p. 79)*
+## Attack Adjustments
+*Core p. 79*
 
 | Situation | Modifier |
 |---|---|
@@ -82,7 +90,8 @@ After all Actions of all combatants are taken, the tick ends and a new tick begi
 | High Ground (+1hx elevation) | +1 |
 | Dual Attack (both weapons at once) | -5 (unless trained) |
 
-## Health & Armor *(Core pp. 72)*
+## Health & Armor
+*Core pp. 72*
 
 **Health = 12 + higher of Strength or Psyche + CL**
 
@@ -91,7 +100,8 @@ After all Actions of all combatants are taken, the tick ends and a new tick begi
 
 **Armor** reduces damage suffered 1-for-1. Cannot bring an attack below 0 damage (minimum 1 on hit).
 
-## Damage *(Core p. 72)*
+## Damage
+*Core p. 72*
 
 Minimum 1 damage on any hit. Damage cleaves at Health, 1-for-1.
 
@@ -104,7 +114,8 @@ Increases Damage Tier by 1.
 ### Resist X
 Reduces damage of type X by the resist value, even against armor-ignoring types.
 
-## Environment *(Core p. 76)*
+## Environment
+*Core p. 76*
 
 The battlefield has three aspects: **objects**, **terrain**, and **elevations**.
 
@@ -147,7 +158,8 @@ Straight line from your hex to target. Cover/Blocking terrain gives defense bonu
 - **Large:** 3hx wide, 5hx tall
 - **Huge:** 5hx wide, 7hx tall
 
-## Death In Combat *(Core p. 74)*
+## Death In Combat
+*Core p. 74*
 
 **Falling to -X Health kills you** (X = Bloody value).
 
@@ -157,7 +169,8 @@ When you die:
 - Can inherit same Cultivations/Skills or respec (no more than previous Wanderer had)
 - **The People are Immortal** — but don't abuse the Community's resources
 
-## Intercessor Combat Tips *(Core p. 79)*
+## Intercessor Combat Tips
+*Core p. 79*
 
 - **Flatten Choice** for World Beings — don't model them as tactical geniuses. Let them take 3 simple actions that Wanderers can cut into.
 - Establish what each side **Wants**. Fight until one side gets it or there's nothing to fight for.

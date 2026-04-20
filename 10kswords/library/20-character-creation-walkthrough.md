@@ -14,7 +14,8 @@ You are not creating a hero. You are finding a **Wanderer** — someone already 
 
 ---
 
-## Step 1 — Name, Culture, Truth, and Alignment *(Core p. 32; Comp pp. 3–37)*
+## Step 1 — Name, Culture, Truth, and Alignment
+*Core p. 32; Comp pp. 3–37*
 
 ### Name
 Make up a name using common syllables of the setting. You can roll on the Names table (Compendium p.38) by rolling 2d6 twice to get syllables, then combining 1-4 syllables together. Modify freely — add consonants, change vowels.
@@ -48,7 +49,8 @@ Your political tendency. Dynamic — it can change through play.
 
 ---
 
-## Step 2 — Attributes and Traits *(Core pp. 32, 34–35; Comp pp. 48–56)*
+## Step 2 — Attributes and Traits
+*Core pp. 32, 34–35; Comp pp. 48–56*
 
 ### Distribute Attributes
 You have six scores to assign: **3, 3, 2, 2, 1, 1**. Place them among the six Attributes. None can go above +6.
@@ -81,7 +83,8 @@ Pick or roll (d66) from the [Traits](19-traits.md) list. Traits provide small bo
 
 ---
 
-## Step 3 — Cultivation Dialectic and Esoteric Arts *(Core p. 32; Comp pp. 57–65)*
+## Step 3 — Cultivation Dialectic and Esoteric Arts
+*Core p. 32; Comp pp. 57–65*
 
 ### Choose a Cultivation Dialectic
 Your path of spiritual growth. This determines how you cultivate, what Attainments you gain at each level, and which Attribute gets boosted during Samadhi. Choose one of five:
@@ -116,7 +119,8 @@ This is purely narrative but becomes important during Tribulations and when usin
 
 ---
 
-## Step 4 — Starting Sundry *(Core p. 32; Comp pp. 40–49)*
+## Step 4 — Starting Sundry
+*Core p. 32; Comp pp. 40–49*
 
 ### Roll Once on the Item List (d66)
 See the Items section in [Weapons & Equipment](16-weapons-and-equipment.md). This gives you one random item to start with.
@@ -141,7 +145,8 @@ Pick **1 Chest Attire** and **1 Leg Attire** from the attire lists. Each gives a
 
 ---
 
-## Step 5 — Calculate Starting Stats *(Core p. 33)*
+## Step 5 — Calculate Starting Stats
+*Core p. 33*
 
 Fill in your character sheet with these derived values:
 
@@ -170,7 +175,8 @@ A Wanderer with Str 3, Skill 2, Mind 2, Wits 3, Mag 1, Psyche 1:
 
 ---
 
-## Step 6 — Final Details *(Core pp. 62, 74)*
+## Step 6 — Final Details
+*Core pp. 62, 74*
 
 ### Write Your Backstory (briefly)
 You don't need a novel. A sentence or two:
@@ -189,7 +195,8 @@ At some point in play (possibly before the game starts, possibly during), your W
 
 ---
 
-## Optional: Cultivation Level 3 Start *(Core p. 33)*
+## Optional: Cultivation Level 3 Start
+*Core p. 33*
 
 For more established characters, your Intercessor may allow a CL 3 start:
 1. Create a Wanderer normally (steps 1-5 above)

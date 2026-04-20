@@ -6,7 +6,8 @@ Start with 1 Trait. Traits are dynamic — they change, modify, and are removed 
 
 *(Comp p. 48)*
 
-## Trait List *(Comp pp. 50–55)*
+## Trait List
+*Comp pp. 50–55*
 
 | Roll | Trait | Effect |
 |---|---|---|
@@ -47,7 +48,8 @@ Start with 1 Trait. Traits are dynamic — they change, modify, and are removed 
 | 65 | **Thundercloud Zeal** | +1 to protecting or acting under mandate of your Truth. Intense dedication. |
 | 66 | **Beautiful** | +1 to influence using beauty. Perfected face and form. |
 
-## Dynamic Trait Creation *(Comp p. 56)*
+## Dynamic Trait Creation
+*Comp p. 56*
 
 Traits can emerge from play. Guidelines:
 - Must come from fiction (not from nothing)

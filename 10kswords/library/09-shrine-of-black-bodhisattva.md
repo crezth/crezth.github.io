@@ -7,13 +7,15 @@
 **Location:** Grand Charnel Grounds, far side of Tutelary Deity Island, facing where the Sun rises so the dead stay dead  
 **Nearby:** Selorong (the 109th Hell, Center of the World), Kerangansular Lake, Sachep Range, Kibo Range, Kij Dakmala
 
-## Setup *(Shrine pp. 4–5)*
+## Setup
+*Shrine pp. 4–5*
 
 The Wanderers (novice, from the Martial Underworld) have been killed, defeated, drugged, sold off, or kidnapped. They wake in a "clinic" on raised hospital beds. **They have clothes and weapons on them, but items are gone.**
 
 Can be inserted into any point of an ongoing campaign.
 
-## The Truth (Intercessor Only) *(Shrine p. 4)*
+## The Truth (Intercessor Only)
+*Shrine p. 4*
 
 - The "Shrine" was originally a Shrine to the Black Bodhisattva, defaced and converted into a Chapel
 - Kept by **Fray Xozanji** (pronounced: tso-zan-hee), a **Mad Death Mendicant** Yenjanist who follows the **Moon Immortal Mentra**
@@ -21,7 +23,8 @@ Can be inserted into any point of an ongoing campaign.
 - The Charnel Grounds are overrun by ghosts, wandering half-corpse experiments, summoned demon guards, and **Pseudognostics**
 - Xozanji believes drinking enough human elixirs will grant him Immortality/Enlightenment
 
-## Dungeon Interaction Rules *(Shrine p. 5)*
+## Dungeon Interaction Rules
+*Shrine p. 5*
 
 - **Every 5 minutes** in the dungeon, the Intercessor may Telegraph something
 - **Search types:**
@@ -31,14 +34,16 @@ Can be inserted into any point of an ongoing campaign.
 
 ## Room-by-Room
 
-### Room 1: The Crime of Mere Life *(Shrine p. 8)*
+### Room 1: The Crime of Mere Life
+*Shrine p. 8*
 - Wake up on hospital beds in a corpse-clinic
 - A dying man on a hospital bed explodes into a **Wandering Dead**
 - **Everyone gains 1 Clarity**
 - Items: 2× Mercury Medicine (50mag, heals 2 Health)
 - Enemies: **2 Wandering Dead [CL 1]** — Health 15, Deathform trait (Poisoning on hit, rises in 30 min if not exorcized)
 
-### Room 2: Even Death May Die (Sanctuary) *(Shrine pp. 9–10)*
+### Room 2: Even Death May Die (Sanctuary)
+*Shrine pp. 9–10*
 - Quiet, tranquil. Corpses Stilled by the Black Bodhisattva's mantra. **1 Clarity.**
 - **Senzen** — a little girl with her lower half replaced by dog-like necrotized flesh. Orphan experimented on by Xozanji. Wants the **Panacea** to heal her body.
 - Secret Item: **Kalis Naga** (Holy Ritual Artifact Sword, 400mag). Inscription: "To my love, Risa. The soul within expunges inhumanity."
@@ -52,17 +57,20 @@ Can be inserted into any point of an ongoing campaign.
 - Trait: Beast-Man (shred targets ignoring Armor, immune to Psychic, +1 natural Armor, +1 Str, -1 Mind)
 - If defeated and Xozanji is beaten, she's consumed by her Beast half
 
-### Room 3: Wretched Gnosis *(Shrine p. 11)*
+### Room 3: Wretched Gnosis
+*Shrine p. 11*
 - Rows of humans in Lotus Position with craniums exploded into cosmic fire — pinprick stars in hollow cosmic voids for eyesockets. **1 Clarity.**
 - **Pseudognostics** — long-limbed, heads burst open like flashlights. Don't fight but chase and sear Enlightenment into you (heavy psychic damage, stun, +2 Clarity)
 - Items: 20mag, d6 Potion "Adarna" (heal 3 Health), Flare Mantra Manuscript, A Lune Key
 
-### Room 4: An Ode to Erudition *(Shrine pp. 12–13)*
+### Room 4: An Ode to Erudition
+*Shrine pp. 12–13*
 - Xozanji's study. Giant **Twinlord Giant Demon**, an **Armor Ghost**, and a **Sage of Corpses**. **3 Clarity.**
 - Items: Shard of divine-grade mag, d6 Healing Potions, manuscripts for **Ghost Hand Seal**, **Devastating Red Hand**, and **Gentle Lion Reversal**
 - Secret: **Metorangya Monkstaff** (Ritual Holy Artifact Bludgeon, +1 damage vs Pseudognostics and Mad Death Mendicants, 100mag) — hidden behind a Black Bodhisattva statue
 
-### Room 5: Altar Blasphemed *(Shrine pp. 14–15)*
+### Room 5: Altar Blasphemed
+*Shrine pp. 14–15*
 - A **Shrine to the Witch Immortal Mentra** in Seven-Armed Moondancing Form
 - A **Capital Knight [Superior CL 2]** prays before it. Neutral disposition, hollowed warrior. Will fight when Wanderers enter.
 - Items: 5 blocks of 200mag each, d6+1 Healing Potions. **1 Clarity.**
@@ -73,12 +81,14 @@ Can be inserted into any point of an ongoing campaign.
 - Technicks: Coin Toss (light bashing + teleport swap), Gild Slash (spend mag to raise damage tier)
 - **HaeCo Foldblade General Lore:** The Haestann Company works with RNC to create an Anuttara Ultima Bomb, restore the Lotus Throne for Capital, and form "democratic alliances" for wars
 
-### Room 6: O Grave, Where Is They Sting? (Boss Room) *(Shrine pp. 16–17)*
+### Room 6: O Grave, Where Is They Sting? (Boss Room)
+*Shrine pp. 16–17*
 - Giant statue of Black Bodhisattva, veiled/defaced to look like Saint Nitras
 - 6 pillars in a circle, 5hx platform in middle, lotus lights floating
 - **Fray Xozanji** is here, uttering blessings
 
-## Fray Xozanji [CL 2, Strongest — Communion Monarchist Materialist] *(Shrine pp. 16–17)*
+## Fray Xozanji [CL 2, Strongest — Communion Monarchist Materialist]
+*Shrine pp. 16–17*
 
 - **Health 72**, Sidhi 3, Clarity 6, Parry 9, Dodge 12, Resolve 11
 - Str 1, Skill 2, Mind 5, Wits 2, Mag 1, Psyche 5
@@ -93,7 +103,8 @@ Can be inserted into any point of an ongoing campaign.
   - +Lunar Hollow Sutra Magick: Holy Moon Scythe (summons Holy Reach Artifact Cleaver)
   - **Everyone gains 1 Clarity. Xozanji regains all Sidhi.**
 
-## Key Lore from the Module *(Shrine pp. 4, 8–17)*
+## Key Lore from the Module
+*Shrine pp. 4, 8–17*
 
 - **Mad Death Mendicants:** Yenjanist followers of Mentra who torture and divine the thoughts of people as they dance the limits between life and death
 - **Pseudognostics:** Fellows to Mad Death Mendicants. Long-limbed beings with burst-open heads showing cosmic fire

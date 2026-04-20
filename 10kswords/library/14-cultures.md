@@ -6,7 +6,8 @@
 
 **Default appearance:** 155cm tall, loincloth + waistcloth, headcloth, ruddy/swarthy/gold/umber/ochre-skinned. Hair/eye color influenced by geography: lighter near sunrise/sunset, redder to north, azure to south, pure black from center. *(Comp p. 3)*
 
-## Culture List (d66) *(Comp pp. 3–20)*
+## Culture List (d66)
+*Comp pp. 3–20*
 
 | Roll | Culture | Region | Key Identity |
 |---|---|---|---|

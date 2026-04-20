@@ -2,7 +2,8 @@
 
 > **Sources:** Comp pp. 22–37
 
-## Truths *(Comp pp. 22–34)*
+## Truths
+*Comp pp. 22–34*
 
 The battlefield of the mind. Paradigms for viewing reality — not just religion but how we perceive reality itself. Called "Truths" instead of "religions" to place ancient faiths on equal footing with modern theory. Roll d66.
 
@@ -62,7 +63,8 @@ The battlefield of the mind. Paradigms for viewing reality — not just religion
 
 ---
 
-## Alignments *(Comp pp. 36–37)*
+## Alignments
+*Comp pp. 36–37*
 
 Roll 2d6. Dynamic — changes with allegiance, attachment, conviction.
 
