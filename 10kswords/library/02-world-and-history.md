@@ -35,39 +35,30 @@ The final island continent in a flooded world. Built upon the corpse of the Lotu
 Current year: **11,664** of the Lotus Calendar (243rd Cycle). Parallel to our 20th century but industry is driven by magick and war.
 
 ### 1 — Peregrination Era (0–2000)
-*Core p. 16*
 Hunting-gathering, primitive communism. Deities and Astral Bureaucracy interfaced directly. First Revolution: Agricultural.
 
 ### 2 — Burgeoning Era (2000–8000)
-*Core p. 16*
 Agricultural Revolution. Chiefdoms, warbands, kingdoms. Ended with The Ultimate Cleave — apocalyptic war of the Utter Islands against the Heavens, led by the Imperial King In Red. Time of Heroes.
 
 ### 3 — Esoterica Era (9000s–10,000)
-*Core p. 17*
 Ritual Revolution. Mystics and Wizards ascend. Iron-fist rule of mago-philosophers. Ended when warrior-kings overthrew wizard-priests.
 
 ### 4 — Ancient Era (10,000–10,500)
-*Core p. 17*
 Warrior Revolution. Sublation of magical into priestly/knightly classes. Black Meteor Cataclysm shattered the Utter Islands further.
 
 ### 5 — Classical Era (10,500–11,300)
-*Core p. 17*
 Aristocratic Revolution. Rise of classical cultures. Old Razru Empires, Lotus States, Shen civilization. Ended with victory over Devil King Roghan.
 
 ### 6 — Rebirth Era (11,300–11,500)
-*Core p. 18*
 Industrial Revolution. Smith-Kings and Merchant Princes. Invention of the **Devil Engine**. Textile factories, weapon factories, machine tools.
 
 ### 7 — Modern Era (11,500–11,600)
-*Core p. 18*
 Bourgeois Revolution. World Colonialism and Capitalism. Merchant princes seized means of production. Even deities subsumed into the labor force. Ended with the First World Revolution led by **Kafeng Masangwa** and the Knights.
 
 ### 8 — Revolution Era (11,600–11,640)
-*Core p. 18*
 Proletarian Revolution (attempted). Factory proletariat rose but was beaten into "Peace" by the International Bourgeoisie. **Second World Revolution failed.** Capitalism won the second turn of the Wheel of Violence.
 
 ### 9 — Post-Calamity Era (11,640–11,664...)
-*Core p. 19*
 The End of the World. International bourgeoisie (Central Yavinian Guild of Ressen-Nalenji) penetrates the world. **The Five Triumphant Immortals** enacted the **Five-Armed Demiurge Array** — sealing Cultivation from the Masses. Communism and Revolution now seen as banditry. The **Underworld / Realms Belligerent** rises from old martial traditions.
 
 ## The Five Triumphant Immortals

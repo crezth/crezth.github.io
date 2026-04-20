@@ -50,7 +50,6 @@ Your political tendency. Dynamic — it can change through play.
 ---
 
 ## Step 2 — Attributes and Traits
-*Core pp. 32, 34–35; Comp pp. 48–56*
 
 ### Distribute Attributes
 You have six scores to assign: **3, 3, 2, 2, 1, 1**. Place them among the six Attributes. None can go above +6.
@@ -84,7 +83,6 @@ Pick or roll (d66) from the [Traits](19-traits.md) list. Traits provide small bo
 ---
 
 ## Step 3 — Cultivation Dialectic and Esoteric Arts
-*Core p. 32; Comp pp. 57–65*
 
 ### Choose a Cultivation Dialectic
 Your path of spiritual growth. This determines how you cultivate, what Attainments you gain at each level, and which Attribute gets boosted during Samadhi. Choose one of five:
@@ -120,7 +118,6 @@ This is purely narrative but becomes important during Tribulations and when usin
 ---
 
 ## Step 4 — Starting Sundry
-*Core p. 32; Comp pp. 40–49*
 
 ### Roll Once on the Item List (d66)
 See the Items section in [Weapons & Equipment](16-weapons-and-equipment.md). This gives you one random item to start with.

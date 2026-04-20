@@ -8,7 +8,6 @@
 Only uses d6s. Need 3-6 per player.
 
 ## Checks
-*Core p. 13*
 
 When an action is risky or the outcome is in doubt, make a **Check**:
 
@@ -24,7 +23,6 @@ When an action is risky or the outcome is in doubt, make a **Check**:
   - Rarely, the World is cruel and bad things happen
 
 ### Demand Tiers
-*Core p. 13*
 | Difficulty | Demand |
 |---|---|
 | Default | 10 |
@@ -37,7 +35,6 @@ When an action is risky or the outcome is in doubt, make a **Check**:
 Once declared, Demand rarely changes.
 
 ### Adjustments [Adj]
-*Core p. 13*
 Modifiers added to the Check after rolling:
 - Helpful tools, good position, assistance: **+1/+2**
 - Lack of time, bad position, injury: **-1/-2**
@@ -51,7 +48,6 @@ Modifiers added to the Check after rolling:
 - At half Health or lower = **Bloody** (triggers certain abilities/effects)
 
 ## Attacks
-*Core pp. 41, 71*
 
 **2d6 + Weapon Attribute** vs target's **Parry** or **Dodge**
 
@@ -59,7 +55,6 @@ Modifiers added to the Check after rolling:
 - On fail: you whiff
 
 ## Damage Tiers
-*Core pp. 41, 72*
 | Tier | Damage |
 |---|---|
 | Minor | 1 |
@@ -73,7 +68,6 @@ Modifiers added to the Check after rolling:
 | Devil | 14 |
 
 ## Damage Types
-*Core p. 72*
 | Type | Effect |
 |---|---|
 | Cutting | Slashing and slicing |

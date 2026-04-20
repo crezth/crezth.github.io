@@ -26,25 +26,21 @@ You must survive, wander, thrive, fight, attain enlightenment, commit revolution
 *Core p. 32*
 
 ### Step 1 — Name, Culture, Truth, and Alignment
-*Core p. 32*
 - **Name:** Common syllables from the setting
 - **Culture:** Homeland or chosen culture (roll or pick from World Chapter)
 - **Truth:** Your paradigm, what you believe is real
 - **Alignment:** Your political tendency
 
 ### Step 2 — Attributes and Traits
-*Core p. 32*
 Starting Attributes: **3, 3, 2, 2, 1, 1** distributed among the six Attributes.
 Plus **1 Trait**.
 
 ### Step 3 — Cultivation Dialectic and Arts
-*Core p. 32*
 - Choose one of five **Cultivation Dialectics**: Revolution, Internal Elixir, Luminous Mind, Communion
 - Start with **1 Esoteric Art** (a Magick or Technick)
 - Define your Cultivation Womb's appearance (symbol + color)
 
 ### Step 4 — Starting Sundry
-*Core p. 32*
 - Roll once on the **Item List**
 - Choose up to **2 weapons** (total ≤ 300mag)
 - Choose **1 Chest Attire** and **1 Leg Attire**

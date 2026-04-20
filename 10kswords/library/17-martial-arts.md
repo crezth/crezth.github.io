@@ -12,7 +12,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 *Comp pp. 68–72*
 
 ### Vajra Boxing
-*Comp pp. 68–70*
 *Punching, parrying, deflecting, counters, locking, low kicks, multiple strikes.*
 
 1. **Vajra Guard** — Minor Strain. Auto-parry next melee attack with perfect adamant timing.
@@ -24,7 +23,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 - **VE: Ten Thousand Enlightened Hands** — Ungodly Ultima damage to all hostiles in 100hx radius.
 
 ### Diamond Body
-*Comp pp. 70–72*
 *Elbows, knees, feet, hands as hardpoints. Grappling with iron limbs.*
 
 1. **Vajra Strike** — Minor Strain on-hit. Attack gains Blazing, Frost, or Fulgur (choose 1).
@@ -39,7 +37,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 *Comp pp. 72–76*
 
 ### Adamantine Sword
-*Comp pp. 72–74*
 *The peerless, ultimate cut. Created by sword-saints for the Revolution.*
 
 1. **Adamantine Lightning Strikes** — Minor Strain. Two immediate Attacks.
@@ -51,7 +48,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 - **VE: Ego-Cutting Sword God** — 5 flying swords orbit you (60hx range, +2 Accuracy, Strengthened), ride a sword to fly.
 
 ### Sword Dialectic
-*Comp pp. 74–76*
 *The balanced sword art taught to the masses during the First World Revolution.*
 
 1. **Negation Cut** — Minor Strain. After hitting same target twice, leave a Negation. Detonate within 1 min to repeat last damage.
@@ -66,7 +62,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 *Comp pp. 77–78*
 
 ### Gloamblossom Saber
-*Comp pp. 77–78*
 *Assassination art of the Violet Lotus Sect. Shadow, stealth, teleportation.*
 
 1. **Death Lotus Enfolding** — Minor Strain. Stealth: 3-in-6 miss chance, teleport 2hx on miss. Attacking from stealth = surprise.
@@ -81,7 +76,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 *Comp pp. 78–81*
 
 ### Shadow Shrike Knife
-*Comp pp. 78–81*
 *Followers of the Unconquerable Charnel Maiden. Death mastery, ghost-combat.*
 
 1. **Lotus Fire Flickering Shadow** — Minor Strain. +1 Dodge, +1 Dagger Attacks, teleport 1hx on dodge for 1 min.
@@ -96,7 +90,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 *Comp pp. 81–84*
 
 ### Devil Tiger Fury
-*Comp pp. 81–84*
 *Perfect cleaving, giant weapon mastery, fury channeling.*
 
 1. **Grinning Asura Attitude** — Minor Strain. 100hx burst Agitation: all equal/lower CL targets must target you or suffer -6.
@@ -111,7 +104,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 *Comp pp. 84–89*
 
 ### Black Vajra Pestle
-*Comp pp. 84–87*
 *Blacksmith/crafter art. Hammer and pestle. Revolutionary creation.*
 
 1. **Hate-Shattering Bliss Mace** — Minor Strain + 2 Actions. Unblockable attack that destroys target's weapon (or frays Artifacts).
@@ -123,7 +115,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 - **VE: Means of Production Nirmanakaya** — Grow 4 magitech arms (Chakra Rod + Vajra). +4 Skill/Wits/Mind. Repair/destroy armor in 6hx radius.
 
 ### Sapphire Star Dialectics
-*Comp pp. 88–89*
 *Healing martial art. Compassion Sidhi. Parasol-focused.*
 
 1. **Scything Pure Wind** — Minor Strain. 10hx curve heals ¼ max Health.
@@ -138,7 +129,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 *Comp pp. 89–91*
 
 ### Heavenward Javelin
-*Comp pp. 89–91*
 *Gravity manipulation, aerial combat, lightning-fast lancing.*
 
 1. **Starspear Dragon Strike** — Minor Strain. Burst 6hx forward, Attack on collision (extra damage = leftover movement).
@@ -153,7 +143,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 *Comp pp. 91–93*
 
 ### Cutting Dragonfly Wings
-*Comp pp. 91–93*
 *Monk archery. Precision, meditation, void-arrow techniques.*
 
 1. **Single Point Precision Meditation** — Minor Strain. +2 next bow attack, crit on 10+.
@@ -168,7 +157,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 *Comp pp. 93–95*
 
 ### Six-Winged Devil Gun
-*Comp pp. 93–95*
 *CQC + area bombardment. Shoot-strike-reload system.*
 
 1. **Sizzling Release Ignition** — (Always-on) Immediately reload after shooting.
@@ -183,7 +171,6 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 *Comp pp. 95–97*
 
 ### Tongue-Sword Angel Flayer
-*Comp pp. 95–97*
 *Trickster/con artist art. Manipulation, teleportation, theft.*
 
 1. **Luster Malefic Lash** — Minor Strain. +1 range, slide target 3hx.

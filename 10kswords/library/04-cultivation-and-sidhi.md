@@ -19,7 +19,6 @@ The quintessence-energy of the **Akasha** — data. A wave-form that carries inf
 Sidhi is always in flux. Intense emotions and passions can cause it to flare calamitously. Those entering **Samadhi** — the deep trance state — can control their own sidhi and their environment's.
 
 ## Sidhi Limitations
-*Core p. 61*
 
 - Cannot be harnessed without Arts (Technicks/Magicks) — must be learned
 - Cannot be expressed in "pure form" — always filtered through technique
@@ -82,7 +81,6 @@ Measured in Magnetite (0-12). Rising requires cycling Magnetite into your Cultiv
 Two main paths: **capitalist exploitation** or **communal cultivation**.
 
 ## Sidhi Requirements Per Level
-*Core p. 56*
 
 | Level | Magnetite Required |
 |---|---|
@@ -108,7 +106,6 @@ When you rise in level, lose the mag required, then gain:
 - An Attainment from your Cultivation Dialectic, appropriate to your Realm
 
 ## Limit Break
-*Core p. 57*
 
 To advance to the next Cultivation Stage (e.g., CL 2 → CL 3), you must:
 1. **Seclude** yourself for X months of meditation/training, OR
@@ -136,7 +133,6 @@ At the end, undergo a **Tribulation** — a meditative trance/vision quest where
 - **Vajra Essence** (11-12): Strength of the Vajra. Fights the highest of Heaven. The final step before Omniscience.
 
 ## Cultivation Realms
-*Core p. 60*
 
 - **Realm 1 (Desire):** Mortal + Lightning Enterer. Still bound by desire.
 - **Realm 2 (Form):** Demifiend + Heavenly Soul. Shed desire.
