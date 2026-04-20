@@ -1,6 +1,8 @@
 # Glossary of Key Terms
 
-## Metaphysical / Cosmological
+> **Sources:** Core pp. 4–5; Comp throughout
+
+## Metaphysical / Cosmological *(Core pp. 4–5)*
 
 **Akasha** — The inframaterial, underlying, non-local field of active information and eternal memory. A field of Information from which observable reality arises. Ultimately void.
 
@@ -16,7 +18,7 @@
 
 **Trichiliocosm** — The full cosmos / universe.
 
-## Cultivation
+## Cultivation *(Core pp. 4–5, 56–62)*
 
 **Cultivation** — Refining one's Cultivation Womb to grow in material and inframaterial strength, leading toward Enlightenment. Requires devouring items with strong Sidhi indexes.
 
@@ -36,7 +38,7 @@
 
 **Tribulation** — A vision quest/trance at the end of a Limit Break where you fight your Cultivation Womb manifest. Defeating it lets you consume and absorb its power.
 
-## Beings & Entities
+## Beings & Entities *(Core pp. 4–5, 93–95)*
 
 **Deity** — A human subspecies from primordial tribes that established kingdoms in orbital heavens. Two forgotten tribes: Chthonic (subterranean) and Astral (heavens). Born with access to Cultivation Methods.
 
@@ -48,7 +50,7 @@
 
 **Wandering Dead** — Common Post-Calamity monster. Corpses reanimated by lingering hateful ghosts. Deathform trait.
 
-## Material / Economic
+## Material / Economic *(Core pp. 20–23, 48–52)*
 
 **Magnetite** — The calcified form of Sidhi. Spirit Stones. Universal currency in Post-Calamity. 1mag ≈ 1 USD. Grades: Low (1), High (100), Divine (1,000), Supreme (10,000).
 
@@ -60,7 +62,7 @@
 
 **Black Nectar** — The Petroleum Lord of Akashic Capital. The Oil God. The ultimate revenant of every dead being.
 
-## Esoteric Arts
+## Esoteric Arts *(Core pp. 5, 58; Comp pp. 66–122)*
 
 **Esoteric Arts** — Secret techniques for wielding Sidhi to produce paranormal effects. Comes from Mystic Arts or Martial Arts.
 
@@ -72,7 +74,7 @@
 
 **Divine Empowerment: Lightness** — Universal Art. Minor Strain. Weight manipulation, wall-jumping, floating movement, reduced fall damage.
 
-## World / Political
+## World / Political *(Core pp. 8, 14–15, 19)*
 
 **Five Triumphant Immortals** — The five who ended communism and rule the new heavens: Mentra, Galdasigwa, Saint Ashtasi, Lord Atthur, Reyayu Kodaku.
 
@@ -92,7 +94,7 @@
 
 **109th Hell: Selorong, Center of the World** — One of the four surviving powers.
 
-## Game Terminology
+## Game Terminology *(Core pp. 12–13)*
 
 **Intercessor** — The GM equivalent. A spiritworker and shaman who speaks to The World.
 

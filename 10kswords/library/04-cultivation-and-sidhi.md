@@ -1,12 +1,14 @@
 # Cultivation & Sidhi
 
-## What Is Sidhi?
+> **Sources:** Core pp. 4–5, 30, 54–62
+
+## What Is Sidhi? *(Core pp. 5, 58)*
 
 **Sidhi** (/sid·hi/) — Old Selorongian for Strength or Intensity. Equivalent to Qi, Inner Power, Soul, Tummo, Batin. A fundamental aspect of the universe alongside Matter and Energy.
 
 Sidhi is free-flowing, air-like, wave-like data that informs the movements of matter and energy. It arranges them into shapes that become perceivable physical objects. When condensed, it manifests as mandala fragments coalescing into **Magnetite shards**.
 
-## Where Does Sidhi Come From?
+## Where Does Sidhi Come From? *(Core p. 61)*
 
 The quintessence-energy of the **Akasha** — data. A wave-form that carries information guiding Matter and Energy. Sometimes clumps into deposits (crystals, golds, meteorites) = Magnetite.
 
@@ -14,14 +16,14 @@ The quintessence-energy of the **Akasha** — data. A wave-form that carries inf
 
 Sidhi is always in flux. Intense emotions and passions can cause it to flare calamitously. Those entering **Samadhi** — the deep trance state — can control their own sidhi and their environment's.
 
-## Sidhi Limitations
+## Sidhi Limitations *(Core p. 61)*
 
 - Cannot be harnessed without Arts (Technicks/Magicks) — must be learned
 - Cannot be expressed in "pure form" — always filtered through technique
 - Using too much causes **Strain** — if you exceed your Sidhi Reserves, the Technique pulls from your life-force, causing real bodily harm
 - Some Arts require **Samadhi states**, emotional states, or elaborate rituals
 
-## Strain
+## Strain *(Core p. 59)*
 
 Fills up your Sidhi track. Cleared on Rest.
 
@@ -34,11 +36,11 @@ Fills up your Sidhi track. Cleared on Rest.
 
 **When Sidhi Strength is full**, additional Strain deals **3 Ultima damage per Strain** instead (e.g., Heavy Strain = 12 psychic damage).
 
-## Sidhi Strength
+## Sidhi Strength *(Core p. 58)*
 
 = **3 × current Realm**. The threshold of Strain before it starts eating your life force.
 
-## Samadhi
+## Samadhi *(Core pp. 61–62)*
 
 A state of unbreakable meditative absorption. Action and consciousness merge, revealing the supreme and immanent nonduality of Reality. A prerequisite for touching the Inconceivable.
 
@@ -50,19 +52,19 @@ A state of unbreakable meditative absorption. Action and consciousness merge, re
 
 Other names: "Flow State," "In The Zone."
 
-## What Is Cultivation?
+## What Is Cultivation? *(Core pp. 4, 56)*
 
 The act of refining one's **Cultivation Womb** — growing in material and inframaterial strength and clarity, leading toward Enlightenment. A more refined Womb = greater Sidhi manipulation = closer proximity to the Akashic Field.
 
 Requires devouring items with strong Sidhi indexes: **Magnetite Shards**, **Spiritual Treasures**, and **Great Cinnabar Elixirs**.
 
-## Cultivation Womb
+## Cultivation Womb *(Core p. 57)*
 
 The core of your Sidhi. An organ within the body (often pineal gland to liver) that connects to the Akasha and allows Sidhi flow. As cultivated, it takes the shape of your Cultivation Dialectic and can project onto reality (fought in Tribulations).
 
 **Defeating your Cultivation Womb** during a Tribulation lets you **consume** it, absorbing its power to make it innate. The next Stage begins with a stronger Womb.
 
-## Cultivation Level (CL)
+## Cultivation Level (CL) *(Core p. 56)*
 
 Measured in Magnetite (0-12). Rising requires cycling Magnetite into your Cultivation Womb via the **Sidhi Absorption Technique**.
 
@@ -70,7 +72,7 @@ Measured in Magnetite (0-12). Rising requires cycling Magnetite into your Cultiv
 
 Two main paths: **capitalist exploitation** or **communal cultivation**.
 
-## Sidhi Requirements Per Level
+## Sidhi Requirements Per Level *(Core p. 56)*
 
 | Level | Magnetite Required |
 |---|---|
@@ -87,14 +89,14 @@ Two main paths: **capitalist exploitation** or **communal cultivation**.
 | 11 | 1,600,000,000,000 |
 | 12 | 9,999,999,999,999+ |
 
-## Level Up Benefits
+## Level Up Benefits *(Core p. 57)*
 
 When you rise in level, lose the mag required, then gain:
 - +1 to two different Attributes
 - A Trait that makes sense for your experiences
 - An Attainment from your Cultivation Dialectic, appropriate to your Realm
 
-## Limit Break
+## Limit Break *(Core p. 57)*
 
 To advance to the next Cultivation Stage (e.g., CL 2 → CL 3), you must:
 1. **Seclude** yourself for X months of meditation/training, OR
@@ -102,7 +104,7 @@ To advance to the next Cultivation Stage (e.g., CL 2 → CL 3), you must:
 
 At the end, undergo a **Tribulation** — a meditative trance/vision quest where you fight your Cultivation Womb manifest.
 
-## Sidhi Stages (6 Stages, 3 Realms)
+## Sidhi Stages (6 Stages, 3 Realms) *(Core p. 60)*
 
 | Stage | CL Range | Name | Realm |
 |---|---|---|---|
@@ -120,13 +122,13 @@ At the end, undergo a **Tribulation** — a meditative trance/vision quest where
 - **Nascent Immortal** (9-10): Candidate for Immortality. Can fight Gods. Only ~10 exist due to the Array.
 - **Vajra Essence** (11-12): Strength of the Vajra. Fights the highest of Heaven. The final step before Omniscience.
 
-## Cultivation Realms
+## Cultivation Realms *(Core p. 60)*
 
 - **Realm 1 (Desire):** Mortal + Lightning Enterer. Still bound by desire.
 - **Realm 2 (Form):** Demifiend + Heavenly Soul. Shed desire.
 - **Realm 3 (Formless):** Nascent Immortal + Vajra Essence. Shed physical form, materialize as needed.
 
-## The Five Cultivation Dialectics
+## The Five Cultivation Dialectics *(Core p. 32; Comp pp. 57–65)*
 
 The path and system of one's Cultivation. Determines shape, directory, and sources.
 
@@ -136,7 +138,7 @@ The path and system of one's Cultivation. Determines shape, directory, and sourc
 4. **Communion** — Gaining Cultivation from Spiritual Treasures via worshipped deities
 5. *(Fifth unnamed in core book — may be detailed in Compendium)*
 
-## Unlocking Cultivation: The Antinomian Rite
+## Unlocking Cultivation: The Antinomian Rite *(Core p. 62)*
 
 Since the Five Triumphant Immortals enacted the **Five-Armed Demiurge Array**, Cultivation has been stripped from the Masses. To become a Cultivator, one must undergo the **Antinomian Rite** — an act so rupturous, transgressive, and subversive that your body is momentarily ripped out of the Array's effect, igniting the Cultivation Womb.
 
@@ -148,7 +150,7 @@ The Rite is different for every Cultivator. Examples include:
 - Cannibalizing a ghost's flesh
 - Killing someone you love
 
-## Divine Empowerment Arts
+## Divine Empowerment Arts *(Core p. 58)*
 
 Two universal Arts taught to all modern Cultivators:
 

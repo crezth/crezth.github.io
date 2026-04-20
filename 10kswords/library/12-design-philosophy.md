@@ -1,10 +1,12 @@
 # Design Philosophy & Design Notes
 
-## On Immersion
+> **Sources:** Core pp. 88–91
+
+## On Immersion *(Core p. 88)*
 
 Use the table as you will. The game reaches out to you — meet it. In Lacan's terms, it is the symbolic order for the *real* of your Play. The game wields **negative mechanics** — things it doesn't spell out *must play out* in the fiction, in the immersion.
 
-## On Communism
+## On Communism *(Core p. 88)*
 
 The game is built from Filipino Masses-oriented Marxist-Leninist-Maoist thought. But MLM here is focused on **materialism** — anti-ideology, focused on the wisdom of the masses.
 
@@ -16,11 +18,11 @@ The game is built from Filipino Masses-oriented Marxist-Leninist-Maoist thought.
 - **The skills are for helping each other. LSUV is for fights between decently sized groups. Organized groups.**
 - It subsumes religion, not dismisses it. All Religion is Social Fantasy to explain something Real.
 
-## On Emptiness
+## On Emptiness *(Core p. 89)*
 
 Violence is nothing but another name for *Sunyata*, Void. The ultimate negation — relentless unceasing violence against everything that exists, has existed, or will ever exist.
 
-## On Ultraviolence (Walter Benjamin Framework)
+## On Ultraviolence (Walter Benjamin Framework) *(Core pp. 89–91)*
 
 There are **Violences** and there are **Ultraviolences**.
 
@@ -39,7 +41,7 @@ The normal understanding. Crude brutalizations, but also: CEO hiring private arm
 - It is the complete and utter abolishment, the Negation that creates a new Subject
 - Only in annihilation can the Wheel be broken
 
-## Key Design Principles Summarized
+## Key Design Principles Summarized *(Core pp. 10, 88–91)*
 
 1. **Story arises from play** — you are not writing a story
 2. **No fractions** — always round down

@@ -1,6 +1,8 @@
 # Social Play & Clarity
 
-## Social Play
+> **Sources:** Core pp. 42–47
+
+## Social Play *(Core p. 42)*
 
 Most social situations are resolved through fiction and proper interaction. The core of Social Play is two mechanics: **Leverage** and **Disposition**.
 
@@ -16,7 +18,7 @@ Every Being in the world has a **Culture**, **Truth**, and **Alignment** — app
 
 **Without proper Leverage, persuasion suffers -6 Adjustment.**
 
-## Leverage
+## Leverage *(Core pp. 42–43)*
 
 Something that gives you a way to influence someone more easily. Can be:
 - A secret, a want, a vice, a love, a shame, a need
@@ -38,7 +40,7 @@ Something that gives you a way to influence someone more easily. Can be:
 ### Written Influence
 Influencing through messages or writing works the same way, but ensure the target can read.
 
-## Disposition
+## Disposition *(Core p. 44)*
 
 Every World Being has a starting **Disposition** — their tendency and reaction to interacting with you.
 
@@ -64,7 +66,7 @@ Rolling to improve Disposition uses the same mechanics as persuasion. It can be 
 
 ---
 
-## Clarity
+## Clarity *(Core p. 46)*
 
 **The accruing of knowledge and understanding about the world.** A torch lit upon the darkness of ignorance. Clarity measures two things:
 1. One's **Direct Realization of Reality**
@@ -72,7 +74,7 @@ Rolling to improve Disposition uses the same mechanics as persuasion. It can be 
 
 **Maximum Clarity: 12**
 
-## Clarity Stages (CS)
+## Clarity Stages (CS) *(Core p. 46)*
 
 | CS | Clarity | Effect |
 |---|---|---|
@@ -83,7 +85,7 @@ Rolling to improve Disposition uses the same mechanics as persuasion. It can be 
 | ✦✦✦✦✦ | 11+ | Attunement to the strange and arcane enhanced. See past illusions of deities, immortals, and devils. |
 | ✦✦✦✦✦✦ | 12 | At CL 12: **Extinguish Your Fire** — attain First Stage Enlightenment, become an **Enlightened One**. Remove yourself from the World. If filled with Compassion, become a **Gleaming Saint** (rebirth vessel, starts at CL 3). |
 
-## Spending Clarity
+## Spending Clarity *(Core p. 47)*
 
 You spend Clarity to know The World — facts, lore, and truths.
 
@@ -93,14 +95,14 @@ You spend Clarity to know The World — facts, lore, and truths.
 | 2 | **Specialized Lore** | Deep/specialized knowledge, esoteric connections |
 | 3 | **Occult Lore** | The most occult of lores, hidden connections between Awakening and Violence |
 
-## Lores
+## Lores *(Core p. 47)*
 
 Lores learned from spending Clarity can be written on your Character Sheet. They can be:
 - Tapped at any time for relevant actions
 - Used as Leverage in Social Play and Social Violence
 - Grant a bonus equal to the Clarity spent to buy them
 
-## Earning Clarity
+## Earning Clarity *(Core p. 47)*
 
 Gain 1 Clarity when you:
 - Learn something new

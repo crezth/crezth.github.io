@@ -1,5 +1,7 @@
 # Mystic Arts (Magicks)
 
+> **Sources:** Comp pp. 96–123
+
 Magicks are deep arcane abilities. You can only ready a number of Magicks equal to your **Memory**. Change them on Rest. Can learn in any order (unlike Technicks). All need **Mudras** (gestures) and **Mantras** (incantations) — both components required.
 
 **Rituals:** Any Magick can be performed as a Ritual (no Strain, but 3 nights per Strain that would have been suffered).
@@ -8,13 +10,15 @@ Magicks are deep arcane abilities. You can only ready a number of Magicks equal 
 
 **Esoteric Exaltation:** The ultimate Magick of each school. Requires knowing all other Magicks first.
 
+*(Comp pp. 96–99)*
+
 ## Mudra Reference
 
 Crane, Dragon, Ego-Cutting, Heat, Intent, Lotus, Man, Noose, Earth, Heaven, Spear, Shield, Stillness, Sword, Thunderbolt, Violence, Wave, Wisdom, Wheel
 
 ---
 
-## Akashic Sorcery
+## Akashic Sorcery *(Comp pp. 100–103)*
 *Manipulation of the Information Field. Psychic powers, telekinesis, density control, curses.*
 
 | Magick | Strain | Effect |
@@ -28,7 +32,7 @@ Crane, Dragon, Ego-Cutting, Heat, Intent, Lotus, Man, Noose, Earth, Heaven, Spea
 | **Stillness and Fury** | Samadhi, Heavy | Psyche vs Resolve. Cessation (pacified, no violence) or Wrath (must attack, Brutal). 30 min. |
 | **EE: Primordial Dark Malediction** | Samadhi, Overwhelming, 2 Actions | Curse via sympathetic link: Enfeeblement (Str -3), Misfortune (reroll take worse), Mindmist (Mind -3), or Ravishing (obsession). Lasts Psyche days (or minutes vs equal/higher CL). |
 
-## Stygian Eschaton Sorcery (Black Sorcery / Varam)
+## Stygian Eschaton Sorcery (Black Sorcery / Varam) *(Comp pp. 102–107)*
 *Destruction magick. Annihilative force. Created by the Scarlet Cadre (anarcho-communist collective).*
 
 | Magick | Strain | Effect |
@@ -43,7 +47,7 @@ Crane, Dragon, Ego-Cutting, Heat, Intent, Lotus, Man, Noose, Earth, Heaven, Spea
 | **All-Consuming Want: True Samadhi Earth** | Samadhi, Heavy, 2 Actions | Mini black hole. Mind vs Resolve in burst 3hx within 20hx. Divine Ultima + Stun. 50hx radius pull 1hx. |
 | **EE: God Oblivion** | Samadhi, Overwhelming, 2 Actions | 30hx×5hx line. Mind vs Resolve: **9999 Ultima damage**. Killed targets erased from existence. **Pings Heavenly Law Knights' Ultima Detection Array.** |
 
-## Celestial Restoration Art (White Sorcery / Alma)
+## Celestial Restoration Art (White Sorcery / Alma) *(Comp pp. 106–110)*
 *Healing magick. Compassion Sidhi. Breath, meditation, mudra healing.*
 
 | Magick | Strain | Effect |
@@ -57,7 +61,7 @@ Crane, Dragon, Ego-Cutting, Heat, Intent, Lotus, Man, Noose, Earth, Heaven, Spea
 | **Open Heaven's Aperture** | Samadhi, Heavy | Target within 10hx: +2 Mind, +2 Psyche, Twice-Strengthened Magick Attacks, +2d6 healing for 1 min. |
 | **EE: Dharani of Ing Kung** | Samadhi, Overwhelming ×2 | **Resurrect** dead/KO'd target within 6hx to Bloody value. Target's next attack gains Fulgur. Caster loses a finger/limb. |
 
-## Heavenly Cycles Art (Astrology)
+## Heavenly Cycles Art (Astrology) *(Comp pp. 109–113)*
 *Star magick. Time, space, gravity, probability manipulation.*
 
 | Magick | Strain | Effect |
@@ -71,7 +75,7 @@ Crane, Dragon, Ego-Cutting, Heat, Intent, Lotus, Man, Noose, Earth, Heaven, Spea
 | **Tear Space Formula** | Heavy | Rip two portals (within 5 min of each other) anywhere visible. Teleportation between them. |
 | **EE: Primeval Cosmos Rewinding** | Overwhelming, 2 Actions | Revert target within 10hx to status from 10 min ago. Overwhelming ×2 for 20hx area. |
 
-## Chthonic Geomancy Art (Earth/Nature Magick)
+## Chthonic Geomancy Art (Earth/Nature Magick) *(Comp pp. 112–116)*
 *Dragon Veins, earth manipulation, weather, elements.*
 
 | Magick | Strain | Effect |
@@ -87,7 +91,7 @@ Crane, Dragon, Ego-Cutting, Heat, Intent, Lotus, Man, Noose, Earth, Heaven, Spea
 | **Goddess Molding Soil Formula** | Samadhi, Moderate, 2 Actions | Shape earth like putty. Create weapons, armor (5 Armor), or constructs. |
 | **EE: Wind Self-Chariot** | Samadhi, Heavy | Flight + doubled Mobility for 1 hour. |
 
-## Spirit Lashing Dark Science (Exorcism)
+## Spirit Lashing Dark Science (Exorcism) *(Comp pp. 115–119)*
 *Binding, negotiating, abjuring spirits. Dark Science — revolutionary mystics.*
 
 | Magick | Strain | Effect |
@@ -101,7 +105,7 @@ Crane, Dragon, Ego-Cutting, Heat, Intent, Lotus, Man, Noose, Earth, Heaven, Spea
 | **Angel Leading Rope** | Samadhi, Moderate | Command Sealed target to do one action. Spirits of lower CL: bound in servitude until sunrise. |
 | **EE: Devil Shrine Release** | Samadhi, Overwhelming | **Devil Shrine Metamorphosis:** +2 to two Attributes, Twice-Strengthened Empty Hand with Reach, 4 Armor Demon Carapace, Fire/Frost/Volt/Magick Resist 2, waive all non-Samadhi Strain. 20 min. Also: permanent floating demon limb (100hx range). |
 
-## Sword of Truth Art (Mystic Dialectics)
+## Sword of Truth Art (Mystic Dialectics) *(Comp pp. 118–123)*
 *Dialectical magick. Logic, rhetoric, leverage-finding, enlightenment through reason.*
 
 | Magick | Strain | Effect |

@@ -1,6 +1,8 @@
 # Laws of Hingsajagra — Time, Distance, Travel, Objects
 
-## Time
+> **Sources:** Core pp. 38–40
+
+## Time *(Core p. 38)*
 
 | Unit | Duration |
 |---|---|
@@ -14,7 +16,7 @@
 | Session | 2+ hours of play (outside the world) |
 | Campaign | Multiple sessions together |
 
-## Distance
+## Distance *(Core p. 38)*
 
 A **hex** is around 1 meter, wide and tall. The cosmic mandala measurement. Mystics, wizards, geomancers, and metascientists measure the world in hexes.
 
@@ -25,7 +27,7 @@ A **hex** is around 1 meter, wide and tall. The cosmic mandala measurement. Myst
 | Burst X | Emanates from origin point, up to X hexes far. |
 | Curve X | Like a Line but curves instead of going straight. |
 
-## Food
+## Food *(Core p. 39)*
 
 A good meal: 1 carbohydrate + 1 protein + 1 vegetable + 1 side.
 
@@ -34,7 +36,7 @@ A good meal: 1 carbohydrate + 1 protein + 1 vegetable + 1 side.
 - **Vegetables:** Water spinach, celery, cabbages, string beans, bitter gourd, daikon radish, eggplant, moringa, okra
 - **Sides:** Anchovies, vinegar, spiced vinegar, soy sauce, chilis, atchara, raw fish in vinegar, rice cake
 
-## Travel
+## Travel *(Core p. 39)*
 
 - **Base speed:** 30km per phase (8 hours)
 - **On mount/speeder/boat:** Reduce by 2 hours
@@ -42,7 +44,7 @@ A good meal: 1 carbohydrate + 1 protein + 1 vegetable + 1 side.
 - **Treacherous terrain** (forests, deserts, icy lotus areas): Double time
 - **Random encounter:** Every 30km, 3-in-6 chance of event/oddity/place of interest
 
-## Objects & Durability
+## Objects & Durability *(Core p. 40)*
 
 Objects have **Durability (DR)** instead of Health. Defenses of 4. Falling to 0 DR = Destroyed.
 
@@ -54,7 +56,7 @@ Objects have **Durability (DR)** instead of Health. Defenses of 4. Falling to 0 
 | Large objects (pillars, statues) | 20+2d6 DR | 2-3hx wide, tall |
 | Extra large (giant pillars, God machines) | 48+4d6 DR | 5hx+ wide, tall |
 
-## Carry
+## Carry *(Core p. 39)*
 
 - Start with **8 Carry Slots**
 - Most things = 1 Carry slot

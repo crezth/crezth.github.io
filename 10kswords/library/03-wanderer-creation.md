@@ -1,12 +1,14 @@
 # Wanderer Creation & Character System
 
-## Who Is A Wanderer?
+> **Sources:** Core pp. 12, 26–35
+
+## Who Is A Wanderer? *(Core p. 12)*
 
 A Wanderer is someone surviving the Wheel. **You're no hero** — at least, not yet. You're a farmer who lost everything, a factory worker without a job, a swordmaker who can't make swords, an orphan Staggered by occult martial arts sects. Laborer. Commoner. Worker. Wretched of the Earth.
 
 You must survive, wander, thrive, fight, attain enlightenment, commit revolution.
 
-## Wanderer Principles
+## Wanderer Principles *(Core pp. 28–29)*
 
 1. **Do It To Do It** — Describe actions in fiction, don't reach for dice. Be creative with technicks, items, notes, lores.
 2. **Heaven Wheels Without You** — You're not gods. The world moves without you.
@@ -18,29 +20,29 @@ You must survive, wander, thrive, fight, attain enlightenment, commit revolution
 8. **Work Together Or Die Apart** — Fighting alone gets you killed. Collective action.
 9. **Fuck Up, You Damned Radical** — Every Wanderer is a radical. Don't be afraid to fail.
 
-## Wanderer Discovery (Character Creation)
+## Wanderer Discovery (Character Creation) *(Core p. 32)*
 
-### Step 1 — Name, Culture, Truth, and Alignment
+### Step 1 — Name, Culture, Truth, and Alignment *(Core p. 32)*
 - **Name:** Common syllables from the setting
 - **Culture:** Homeland or chosen culture (roll or pick from World Chapter)
 - **Truth:** Your paradigm, what you believe is real
 - **Alignment:** Your political tendency
 
-### Step 2 — Attributes and Traits
+### Step 2 — Attributes and Traits *(Core p. 32)*
 Starting Attributes: **3, 3, 2, 2, 1, 1** distributed among the six Attributes.
 Plus **1 Trait**.
 
-### Step 3 — Cultivation Dialectic and Arts
+### Step 3 — Cultivation Dialectic and Arts *(Core p. 32)*
 - Choose one of five **Cultivation Dialectics**: Revolution, Internal Elixir, Luminous Mind, Communion
 - Start with **1 Esoteric Art** (a Magick or Technick)
 - Define your Cultivation Womb's appearance (symbol + color)
 
-### Step 4 — Starting Sundry
+### Step 4 — Starting Sundry *(Core p. 32)*
 - Roll once on the **Item List**
 - Choose up to **2 weapons** (total ≤ 300mag)
 - Choose **1 Chest Attire** and **1 Leg Attire**
 
-## Starting Characteristics
+## Starting Characteristics *(Core p. 33)*
 
 | Stat | Formula |
 |---|---|
@@ -53,7 +55,7 @@ Plus **1 Trait**.
 | Magnetite | 3d6 mag |
 | Memory | 6 |
 
-## The Six Attributes
+## The Six Attributes *(Core pp. 34–35)*
 
 All start at 3, 3, 2, 2, 1, 1. Max cap: +6 each.
 
@@ -81,7 +83,7 @@ Roll to inspire, persuade, or connect heart-to-heart. Fire-voice that makes men 
 *Magick, Wisdom, Communion*
 Roll to feel the unseen, regulate emotions, contend with inframaterial forces, or exude inner will.
 
-## Secondary Stats
+## Secondary Stats *(Core pp. 31, 33)*
 
 ### Defenses
 - **Parry** = 6 + higher of Strength or Skill (melee only)
@@ -101,10 +103,10 @@ Amount of things you can carry. Always starts at 8. Bags add more:
 - Backpack: +4
 - Max 2 bags; more = Encumbered
 
-## Optional: Cultivation Level 3 Start
+## Optional: Cultivation Level 3 Start *(Core p. 33)*
 For more established characters: Discover normally, then level up 3 times and learn 6 Esoteric Arts.
 
-## Death & Reincarnation
+## Death & Reincarnation *(Core p. 74)*
 
 - Falling to **-X Health** (where X = your Bloody value) kills you
 - When you die, you can discover a new Wanderer from a community where you performed a **Great Work**

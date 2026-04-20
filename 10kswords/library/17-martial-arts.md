@@ -1,12 +1,16 @@
 # Esoteric Martial Arts (Technicks)
 
+> **Sources:** Comp pp. 66–97
+
 Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Technicks** that wield Sidhi. Must be learned from a master or manuscript — cannot learn from nothing. Each Technick requires knowing the previous one in sequence. Each Technick is weapon-specific.
 
 **Violent Enlightenment** — The ultimate Technick of each Art. Requires Overwhelming Strain + Samadhi + knowing all other Technicks first.
 
-## Empty Hand Arts
+*(Comp pp. 66–68)*
 
-### Vajra Boxing
+## Empty Hand Arts *(Comp pp. 68–72)*
+
+### Vajra Boxing *(Comp pp. 68–70)*
 *Punching, parrying, deflecting, counters, locking, low kicks, multiple strikes.*
 
 1. **Vajra Guard** — Minor Strain. Auto-parry next melee attack with perfect adamant timing.
@@ -17,7 +21,7 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Destroyer Trident Combination** — Samadhi + Heavy Strain + 2 Actions. Four Burning Attacks with movement between, ending with Divine Fire vajra crash.
 - **VE: Ten Thousand Enlightened Hands** — Ungodly Ultima damage to all hostiles in 100hx radius.
 
-### Diamond Body
+### Diamond Body *(Comp pp. 70–72)*
 *Elbows, knees, feet, hands as hardpoints. Grappling with iron limbs.*
 
 1. **Vajra Strike** — Minor Strain on-hit. Attack gains Blazing, Frost, or Fulgur (choose 1).
@@ -28,9 +32,9 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Heaven-Shattering Adamant Strike** — Samadhi + Heavy Strain. On-hit: Extreme Bashing + push Str×5 hexes.
 - **VE: Devour The Face Of God** — Immune to all non-Psychic damage for 1 Incense.
 
-## Sword Arts
+## Sword Arts *(Comp pp. 72–76)*
 
-### Adamantine Sword
+### Adamantine Sword *(Comp pp. 72–74)*
 *The peerless, ultimate cut. Created by sword-saints for the Revolution.*
 
 1. **Adamantine Lightning Strikes** — Minor Strain. Two immediate Attacks.
@@ -41,7 +45,7 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Steel Flower Breaks Heaven** — Samadhi + Heavy Strain. Dash 3×Mobility hx ignoring terrain, Attack all passed through with Strengthened Damage.
 - **VE: Ego-Cutting Sword God** — 5 flying swords orbit you (60hx range, +2 Accuracy, Strengthened), ride a sword to fly.
 
-### Sword Dialectic
+### Sword Dialectic *(Comp pp. 74–76)*
 *The balanced sword art taught to the masses during the First World Revolution.*
 
 1. **Negation Cut** — Minor Strain. After hitting same target twice, leave a Negation. Detonate within 1 min to repeat last damage.
@@ -52,9 +56,9 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Abolish the Present State of Things** — Samadhi + Heavy Strain. On being hit: halve damage, split into two afterimages, choose which shatters.
 - **VE: Relentless Critique of All That Exists** — Split into three combatants for 5 min. Shattered copies deal 2d6 psychic burst.
 
-## Saber Arts
+## Saber Arts *(Comp pp. 77–78)*
 
-### Gloamblossom Saber
+### Gloamblossom Saber *(Comp pp. 77–78)*
 *Assassination art of the Violet Lotus Sect. Shadow, stealth, teleportation.*
 
 1. **Death Lotus Enfolding** — Minor Strain. Stealth: 3-in-6 miss chance, teleport 2hx on miss. Attacking from stealth = surprise.
@@ -65,9 +69,9 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Seven Shadow Striking Sutra** — Samadhi + Moderate Strain. +2 combo Attack, teleport 1hx after each Attack.
 - **VE: Gloamblossom Assassination** — Disappear into Deep Gloam Lotus. Next Action: instantly kill any Bloody target within 60hx (or divine frost damage if their CL is higher).
 
-## Dagger Arts
+## Dagger Arts *(Comp pp. 78–81)*
 
-### Shadow Shrike Knife
+### Shadow Shrike Knife *(Comp pp. 78–81)*
 *Followers of the Unconquerable Charnel Maiden. Death mastery, ghost-combat.*
 
 1. **Lotus Fire Flickering Shadow** — Minor Strain. +1 Dodge, +1 Dagger Attacks, teleport 1hx on dodge for 1 min.
@@ -78,9 +82,9 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Charnel Self-Cutting** — Minor Strain. Create shadow copies (1+Realm max). Redirect attacks to shadows, use shadows as action origin points.
 - **VE: The Maiden's Atomic Blade** — Thrice-Strengthened Ultima damage ×6 (uninterruptible, unblockable). If target dies: erased from Akasha.
 
-## Cleaver Arts
+## Cleaver Arts *(Comp pp. 81–84)*
 
-### Devil Tiger Fury
+### Devil Tiger Fury *(Comp pp. 81–84)*
 *Perfect cleaving, giant weapon mastery, fury channeling.*
 
 1. **Grinning Asura Attitude** — Minor Strain. 100hx burst Agitation: all equal/lower CL targets must target you or suffer -6.
@@ -91,9 +95,9 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Spiteful Disembowelment of Seraphim** — Samadhi + Moderate Strain. Launch target 10hx up, pursue airborne, target Stunned in sky, take first Action next tick uninterrupted.
 - **VE: Decapitate The Godhead** — Summon 1000 meteor blades. Ungodly Ultima damage in 50hx burst (safe zone: 2hx behind you). Destroys everything.
 
-## Bludgeon Arts
+## Bludgeon Arts *(Comp pp. 84–89)*
 
-### Black Vajra Pestle
+### Black Vajra Pestle *(Comp pp. 84–87)*
 *Blacksmith/crafter art. Hammer and pestle. Revolutionary creation.*
 
 1. **Hate-Shattering Bliss Mace** — Minor Strain + 2 Actions. Unblockable attack that destroys target's weapon (or frays Artifacts).
@@ -104,7 +108,7 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Vajra** — Samadhi + Heavy Strain. Summon vajra weapon. Unblockable, Divine Ultima damage. Implodes after attack.
 - **VE: Means of Production Nirmanakaya** — Grow 4 magitech arms (Chakra Rod + Vajra). +4 Skill/Wits/Mind. Repair/destroy armor in 6hx radius.
 
-### Sapphire Star Dialectics
+### Sapphire Star Dialectics *(Comp pp. 88–89)*
 *Healing martial art. Compassion Sidhi. Parasol-focused.*
 
 1. **Scything Pure Wind** — Minor Strain. 10hx curve heals ¼ max Health.
@@ -115,9 +119,9 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Elixir Halo** — Samadhi. Healing shard orbits you or ally. Heals 2 Health after any damage taken.
 - **VE: Sapphire Mandala Blossom** — Heal all chosen in 50hx of all damage, +1 all Attributes for 1 min. For 1 min: free Reverse Compassion Beam (massive psychic ultima) or Pure Compassion Beam (6d6 heal) each tick.
 
-## Polearm Arts
+## Polearm Arts *(Comp pp. 89–91)*
 
-### Heavenward Javelin
+### Heavenward Javelin *(Comp pp. 89–91)*
 *Gravity manipulation, aerial combat, lightning-fast lancing.*
 
 1. **Starspear Dragon Strike** — Minor Strain. Burst 6hx forward, Attack on collision (extra damage = leftover movement).
@@ -128,9 +132,9 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Sidereal Spear Susurrus** — Samadhi + Heavy Strain + 2 Actions. Throw: 10hx line, unblockable, Twice-Strengthened Volt damage.
 - **VE: Heaven-Earth Empyrean Ascension** — Fly for 20 min, +2 Skill/Wits.
 
-## Bow Arts
+## Bow Arts *(Comp pp. 91–93)*
 
-### Cutting Dragonfly Wings
+### Cutting Dragonfly Wings *(Comp pp. 91–93)*
 *Monk archery. Precision, meditation, void-arrow techniques.*
 
 1. **Single Point Precision Meditation** — Minor Strain. +2 next bow attack, crit on 10+.
@@ -141,9 +145,9 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Sky Pillar Luminant Nail** — Samadhi + Heavy Strain. Store 3+Realm arrows in heaven vault. Summon to strike any visible target for [Skill] piercing each.
 - **VE: Dragonfly Falls Like Kapok** — Charge 1 Action. Unblockable undodgeable Ungodly Ultima damage. Targets anyone ever seen/touched. Can split into 5 (-1 tier per split).
 
-## Gun Arts
+## Gun Arts *(Comp pp. 93–95)*
 
-### Six-Winged Devil Gun
+### Six-Winged Devil Gun *(Comp pp. 93–95)*
 *CQC + area bombardment. Shoot-strike-reload system.*
 
 1. **Sizzling Release Ignition** — (Always-on) Immediately reload after shooting.
@@ -154,9 +158,9 @@ Martial Arts are used to end Violence. Esoteric Martial Arts grant special **Tec
 6. **Mudra of Wadil, the Gun Star God** — Samadhi + Heavy Strain. Shoot one bullet that multiplies into 2hx burst shrapnel (fire damage).
 - **VE: Hell Ripped Through With Exit Wounds** — Summon Bullet Hell (108 hells) in 100hx. Any movement = minor fire damage. Lasts 1 min.
 
-## Whip Arts
+## Whip Arts *(Comp pp. 95–97)*
 
-### Tongue-Sword Angel Flayer
+### Tongue-Sword Angel Flayer *(Comp pp. 95–97)*
 *Trickster/con artist art. Manipulation, teleportation, theft.*
 
 1. **Luster Malefic Lash** — Minor Strain. +1 range, slide target 3hx.

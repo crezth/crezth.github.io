@@ -1,10 +1,12 @@
 # Weapons, Equipment & Items
 
-## Weapon Basics
+> **Sources:** Comp pp. 40–49
+
+## Weapon Basics *(Comp p. 42)*
 
 All beings have 2 Weapon Slots. Empty hand counts as a weapon. Weapons have a **pattern** (base type) and **properties** (modifiers).
 
-## The 12 Weapon Patterns
+## The 12 Weapon Patterns *(Comp p. 42)*
 
 | Pattern | Accuracy | Damage | Range | Notes |
 |---|---|---|---|---|
@@ -21,7 +23,7 @@ All beings have 2 Weapon Slots. Empty hand counts as a weapon. Weapons have a **
 | Launcher | Skill | Light [Dart/Item] | 25 | Can throw items |
 | Gun | Wits | Heavy [Bullet] | 100 | Reload as Action after firing |
 
-## Key Weapon Properties
+## Key Weapon Properties *(Comp pp. 43–44)*
 
 - **Arcane** — Channels magick. Accuracy Mind/Psyche. Ultima Damage. Range Psyche+Mind hx.
 - **Artifact** — Ancient relic. +[Realm] Attack Check, +[Realm] Damage Tier.
@@ -42,7 +44,7 @@ All beings have 2 Weapon Slots. Empty hand counts as a weapon. Weapons have a **
 - **Worn** — Part of clothing, cannot be disarmed
 - **Blazing/Frost/Fulgur** — Deals fire/ice/volt damage
 
-## Weapon Upgrading
+## Weapon Upgrading *(Comp p. 46)*
 
 | Form | Requirement | Bonus |
 |---|---|---|
@@ -55,7 +57,7 @@ All beings have 2 Weapon Slots. Empty hand counts as a weapon. Weapons have a **
 - Fragment: 500mag
 - Core: 5,000mag
 
-## Weapon Modification
+## Weapon Modification *(Comp p. 47)*
 
 Pay 750mag for a blacksmith to add a new property:
 - Refined: up to 2 properties (1 week each)
@@ -64,7 +66,7 @@ Pay 750mag for a blacksmith to add a new property:
 
 Self-modification possible with crafting Trait — requires Skill Checks.
 
-## Ammo Types
+## Ammo Types *(Comp p. 43)*
 
 | Type | Damage | Used By |
 |---|---|---|
@@ -75,7 +77,7 @@ Self-modification possible with crafting Trait — requires Skill Checks.
 | Fireshot | Fire | Gun (2mag) |
 | Roundshot | Piercing, -1 target armor | Gun (150mag) |
 
-## Notable Weapons (d36 list, selected highlights)
+## Notable Weapons (d36 list, selected highlights) *(Comp pp. 44–45)*
 
 - **Ritual Keris** — Wavy dagger, Ritual. 300mag.
 - **Sundang** — Multipurpose chopping sword. 30mag.
@@ -86,7 +88,7 @@ Self-modification possible with crafting Trait — requires Skill Checks.
 - **Sundang-ng-Karuna-Upaya** — Smokeless red fire saber (Compassionate Pedagogy). Spiritual Treasure. 100,000mag.
 - **Sundang-ng-Prajna** — Smokeless black fire saber (Perfect Wisdom). Spiritual Treasure. 100,000mag.
 
-## Attire Slots
+## Attire Slots *(Comp pp. 48–49)*
 
 Four slots: **Head**, **Chest**, **Arms**, **Legs**. Each provides stat bonuses/penalties. Armor comes from attire.
 
@@ -96,7 +98,7 @@ Four slots: **Head**, **Chest**, **Arms**, **Legs**. Each provides stat bonuses/
 - **Plated Gauntlets** — 1 Armor, can't do Magicks, -1 Skill. 2,500mag.
 - **Plated Legs** — 1 Armor, -1 Skill. 3,500mag.
 
-## Key Items (selected)
+## Key Items (selected) *(Comp pp. 40–41)*
 
 | Item | Effect | Cost |
 |---|---|---|

@@ -1,6 +1,8 @@
 # The Intercessor — GM Guide
 
-## Who Is The Intercessor?
+> **Sources:** Core pp. 12, 80–98
+
+## Who Is The Intercessor? *(Core p. 12)*
 
 The spiritworker and shaman who speaks to **The World**. She is cruel. Her other name is Suffering. The **World-Spirit** is the room with everyone in it.
 
@@ -8,7 +10,7 @@ The Intercessor is **not** a storyteller or novelist. There is no story to be to
 
 Three arms: **Principles**, **Telegraphs**, and **Consequences**.
 
-## Intercessor's Principles
+## Intercessor's Principles *(Core pp. 83–84)*
 
 1. **Make The World Real** — Channel a brutal, gritty world filled with violent hope. Think offscreen. The game is about the World, not the Wanderers.
 2. **Trust The Wanderer** — Create situations with no obvious outcome. Don't create encounters. Let the Wanderer play.
@@ -17,7 +19,7 @@ Three arms: **Principles**, **Telegraphs**, and **Consequences**.
 5. **Be A Fickle, Humorous Thing** — No ontological Evil. Reward cruelty and kindness with equal absurdity. All proclamations must follow established fiction.
 6. **Be Courageous; Rulings Over Rules** — Rules are guides, not physics. Make contextual rulings aligned with the Communist ethos.
 
-## Intercessor Telegraphs
+## Intercessor Telegraphs *(Core p. 84)*
 
 When Wanderers look to you for what's next:
 
@@ -29,7 +31,7 @@ When Wanderers look to you for what's next:
 - **Reality Seeps** — Let strange, unexplainable magick happen. Omniscience exists outside of causality.
 - **Pressure A Wanderer** — Spotlight one, force them to deal with danger, conflict, or contradiction
 
-## Intercessor Consequences
+## Intercessor Consequences *(Core p. 85)*
 
 When Wanderers fail a Check or ignore a Telegraph:
 
@@ -39,7 +41,7 @@ When Wanderers fail a Check or ignore a Telegraph:
 - **Make Them Choose** — Between two hard options
 - **Give Them Something They Don't Want** — A trait that makes them worse (but interesting)
 
-## Types of Play
+## Types of Play *(Core p. 86)*
 
 ### Wandering Blades
 The most common. A band of sellswords or hired magicks traveling the dead world, looking for ways to survive. Violence evolves into Ultraviolence. Can accommodate "save the world" hooks, but don't expect that conceit to stick.
@@ -47,7 +49,7 @@ The most common. A band of sellswords or hired magicks traveling the dead world,
 ### Sandboxes / West Marches
 Same as Wandering Blades but with a **Hub/Homebase** to return to. Safer cultivation path — cultivate yourself AND your community. Supports large community play.
 
-## World Beings (NPCs/Monsters)
+## World Beings (NPCs/Monsters) *(Core pp. 93–95)*
 
 Characters the Intercessor influences, possesses, and controls. Expressions of the World.
 
@@ -76,7 +78,7 @@ Pre-built templates. CL 0 fighters with Attribute adjustments baked in:
 5. **Restorer** — Str 1, Skill 2, Mind 1, Wits 3, Mag 1, Psyche 4. Sundang + Healing.
 6. **Speaker** — Str 1, Skill 1, Mind 1, Wits 3, Mag 4, Psyche 2. Terakul (Gun).
 
-## Key Intercessor Advice
+## Key Intercessor Advice *(Core pp. 82–83, 98)*
 
 - **It is not your job to create a story** — reveal the world, let the Wanderers play, the story emerges
 - **Treat World Beings like real people** — Everyone has the capacity for Omniscience. Everyone is a Buddha.
