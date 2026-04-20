@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10,000 Swords Against Heaven — Library</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  :root {
+    --bg-deep: #0d0d0d;
+    --bg-surface: #161616;
+    --bg-sidebar: #111111;
+    --bg-hover: #1e1a1a;
+    --bg-active: #2a1a1a;
+    --red-accent: #c0392b;
+    --red-dim: #8b2020;
+    --red-glow: #e74c3c;
+    --text-primary: #d4cfc9;
+    --text-secondary: #8a8480;
+    --text-heading: #e8e2da;
+    --border-color: #2a2222;
+    --font-body: 'Segoe UI', 'Noto Sans', system-ui, sans-serif;
+    --font-heading: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    --sidebar-width: 300px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Layout */
+  .app {
+    display: flex;
+    height: 100vh;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: thin;
+    scrollbar-color: var(--red-dim) var(--bg-sidebar);
+  }
+
+  .sidebar-header {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background: var(--bg-sidebar);
+    z-index: 2;
+  }
+
+  .sidebar-header h1 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--red-glow);
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+  }
+
+  .sidebar-header .subtitle {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 0.25rem;
+  }
+
+  .nav-section {
+    padding: 0.5rem 0 0.25rem 0;
+  }
+
+  .nav-section-title {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--red-accent);
+    padding: 0.5rem 1rem 0.25rem 1rem;
+    user-select: none;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0.35rem 1rem 0.35rem 1.4rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    border-left: 3px solid transparent;
+  }
+
+  .nav-link:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+
+  .nav-link.active {
+    background: var(--bg-active);
+    color: var(--text-heading);
+    border-left-color: var(--red-accent);
+  }
+
+  /* Main content */
+  .main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem 3rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--red-dim) var(--bg-deep);
+  }
+
+  .content {
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  .welcome {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--text-secondary);
+  }
+
+  .welcome h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--red-glow);
+    margin-bottom: 0.5rem;
+  }
+
+  .loading {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+  }
+
+  /* Markdown rendered content */
+  .content h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--red-glow);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--text-heading);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+  }
+
+  .content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--red-accent);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .content h4, .content h5, .content h6 {
+    font-family: var(--font-heading);
+    color: var(--text-heading);
+    margin-top: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .content p {
+    margin-bottom: 0.8rem;
+  }
+
+  .content ul, .content ol {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+  }
+
+  .content li {
+    margin-bottom: 0.25rem;
+  }
+
+  .content strong {
+    color: var(--text-heading);
+  }
+
+  .content em {
+    color: var(--red-accent);
+    font-style: italic;
+  }
+
+  .content blockquote {
+    border-left: 3px solid var(--red-dim);
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .content code {
+    background: var(--bg-surface);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: var(--red-glow);
+  }
+
+  .content pre {
+    background: var(--bg-surface);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid var(--border-color);
+  }
+
+  .content pre code {
+    background: none;
+    padding: 0;
+    color: var(--text-primary);
+  }
+
+  .content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+
+  .content th, .content td {
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+
+  .content th {
+    background: var(--bg-surface);
+    color: var(--red-accent);
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  .content tr:nth-child(even) {
+    background: rgba(22, 22, 22, 0.5);
+  }
+
+  .content a {
+    color: var(--red-glow);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--red-dim);
+  }
+
+  .content a:hover {
+    color: #fff;
+    border-bottom-color: var(--red-glow);
+  }
+
+  .content hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 1.5rem 0;
+  }
+
+  .content img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+
+  /* Mobile hamburger */
+  .hamburger {
+    display: none;
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--red-glow);
+    font-size: 1.4rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 9;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .hamburger { display: block; }
+
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      z-index: 10;
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    .overlay.open {
+      display: block;
+    }
+
+    .main {
+      padding: 3.5rem 1rem 2rem 1rem;
+    }
+  }
+
+  /* Scrollbar for webkit */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--bg-deep); }
+  ::-webkit-scrollbar-thumb { background: var(--red-dim); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--red-accent); }
+</style>
+</head>
+<body>
+
+<button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<div class="app">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h1>10,000 Swords<br>Against Heaven</h1>
+      <div class="subtitle">Library Reference</div>
+    </div>
+    <div id="nav-sections"></div>
+  </nav>
+
+  <main class="main">
+    <div class="content" id="content">
+      <div class="welcome">
+        <h2>10,000 Swords Against Heaven</h2>
+        <p>Select a chapter from the sidebar to begin reading.</p>
+        <p style="font-size:0.85rem; margin-top:1rem;">v1.7 + Compendium + Shrine Module</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+const sections = [
+  {
+    title: "Core System",
+    items: [
+      { file: "00-overview.md", label: "00 \u2014 System Overview" },
+      { file: "01-core-mechanics.md", label: "01 \u2014 Core Mechanics" },
+      { file: "03-wanderer-creation.md", label: "03 \u2014 Wanderer Creation" },
+      { file: "05-combat-lsuv.md", label: "05 \u2014 Combat (LSUV)" },
+    ]
+  },
+  {
+    title: "World & Setting",
+    items: [
+      { file: "02-world-and-history.md", label: "02 \u2014 World & History" },
+      { file: "07-economy-and-magnetite.md", label: "07 \u2014 Economy & Magnetite" },
+      { file: "11-world-laws-and-travel.md", label: "11 \u2014 World Laws & Travel" },
+      { file: "14-cultures.md", label: "14 \u2014 Cultures" },
+      { file: "15-truths-and-alignments.md", label: "15 \u2014 Truths & Alignments" },
+    ]
+  },
+  {
+    title: "Character Building",
+    items: [
+      { file: "19-traits.md", label: "19 \u2014 Traits" },
+      { file: "16-weapons-and-equipment.md", label: "16 \u2014 Weapons & Equipment" },
+    ]
+  },
+  {
+    title: "Cultivation & Metaphysics",
+    items: [
+      { file: "04-cultivation-and-sidhi.md", label: "04 \u2014 Cultivation & Sidhi" },
+    ]
+  },
+  {
+    title: "Esoteric Arts",
+    items: [
+      { file: "17-martial-arts.md", label: "17 \u2014 Martial Arts (Technicks)" },
+      { file: "18-mystic-arts.md", label: "18 \u2014 Mystic Arts (Magicks)" },
+    ]
+  },
+  {
+    title: "Social & Knowledge",
+    items: [
+      { file: "06-social-play-and-clarity.md", label: "06 \u2014 Social Play & Clarity" },
+    ]
+  },
+  {
+    title: "Running The Game",
+    items: [
+      { file: "08-intercessor-guide.md", label: "08 \u2014 Intercessor Guide" },
+      { file: "12-design-philosophy.md", label: "12 \u2014 Design Philosophy" },
+    ]
+  },
+  {
+    title: "Reference",
+    items: [
+      { file: "10-glossary.md", label: "10 \u2014 Glossary" },
+    ]
+  },
+  {
+    title: "Adventures",
+    items: [
+      { file: "09-shrine-of-black-bodhisattva.md", label: "09 \u2014 Shrine of Black Bodhisattva" },
+    ]
+  },
+];
+
+// Build sidebar navigation
+const navContainer = document.getElementById('nav-sections');
+sections.forEach(section => {
+  const div = document.createElement('div');
+  div.className = 'nav-section';
+  div.innerHTML = `<div class="nav-section-title">${section.title}</div>`;
+  section.items.forEach(item => {
+    const a = document.createElement('a');
+    a.className = 'nav-link';
+    a.textContent = item.label;
+    a.href = '#' + item.file;
+    a.dataset.file = item.file;
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      loadFile(item.file);
+    });
+    div.appendChild(a);
+  });
+  navContainer.appendChild(div);
+});
+
+const contentEl = document.getElementById('content');
+let activeLink = null;
+
+async function loadFile(filename) {
+  // Update active link
+  if (activeLink) activeLink.classList.remove('active');
+  const link = document.querySelector(`.nav-link[data-file="${filename}"]`);
+  if (link) { link.classList.add('active'); activeLink = link; }
+
+  // Update hash
+  window.location.hash = filename;
+
+  // Close sidebar on mobile
+  if (window.innerWidth <= 768) {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('overlay').classList.remove('open');
+  }
+
+  contentEl.innerHTML = '<div class="loading">Loading...</div>';
+
+  try {
+    const resp = await fetch(filename);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const md = await resp.text();
+    contentEl.innerHTML = marked.parse(md);
+    // Intercept internal .md links so they load in-page
+    contentEl.querySelectorAll('a[href$=".md"]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (href && !href.startsWith('http')) {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          loadFile(href);
+        });
+      }
+    });
+    contentEl.scrollTop = 0;
+    document.querySelector('.main').scrollTop = 0;
+  } catch (err) {
+    contentEl.innerHTML = `<div class="loading" style="color:var(--red-glow);">Failed to load <strong>${filename}</strong><br><small>${err.message}</small></div>`;
+  }
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+
+// Load from hash on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.slice(1);
+  if (hash && hash.endsWith('.md')) {
+    loadFile(hash);
+  }
+});
+
+// Handle back/forward
+window.addEventListener('hashchange', () => {
+  const hash = window.location.hash.slice(1);
+  if (hash && hash.endsWith('.md')) {
+    loadFile(hash);
+  }
+});
+</script>
+</body>
+</html>
