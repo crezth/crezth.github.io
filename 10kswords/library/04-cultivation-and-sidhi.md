@@ -138,16 +138,21 @@ At the end, undergo a **Tribulation** — a meditative trance/vision quest where
 - **Realm 2 (Form):** Demifiend + Heavenly Soul. Shed desire.
 - **Realm 3 (Formless):** Nascent Immortal + Vajra Essence. Shed physical form, materialize as needed.
 
-## The Five Cultivation Dialectics
-*Core p. 32; Comp pp. 57–65*
+## The Cultivation Dialectics
+*Core p. 32; Comp pp. 59–67*
 
-The path and system of one's Cultivation. Determines shape, directory, and sources.
+The path and system of one's Cultivation. Determines shape, directory, sources, Samadhi bonuses, and Attainments earned at each level. See [Dialectics — Detailed](04b-dialectics-detail.md) for full per-Dialectic Cultivation methods, Limit Break Rites, Samadhi triggers, Perversions, and Attainment lists.
 
-1. **Revolution** — Pooling resources with fellow Cultivators, working with the Masses
-2. **Internal Elixir** — Solo alchemical refinement within the body
-3. **Luminous Mind** — Mental/psychic cultivation through meditation and mind-training
-4. **Communion** — Gaining Cultivation from Spiritual Treasures via worshipped deities
-5. *(Unnamed — Core p. 32 asserts there are five Cultivation Dialectics but names only the four above; the Compendium details the same four. The fifth is deliberately withheld.)*
+Dialectics split into **Right Hand** (system-compliant, used by Cultivators working within the Heavenly Bourgeoisie order) and **Left Hand** (outlawed, underground, far more numerous). The four Dialectics Core p. 32 names are **the four most common Left Hand Dialectics**. This resolves the "five listed as four" apparent contradiction — the implicit fifth is the Right Hand category itself.
+
+### The Four Left Hand Dialectics
+1. **Revolution** — The Dialectic of Mystic Materialism. Pooling with fellow Cultivators and the Masses. Struggle Cultivation: 100mag per enemy fought in Liquid Steel Ultraviolence.
+2. **Internal Elixir** — The Dialectic of the Self-Cauldron. Solo alchemical refinement. Double magnetite from elixirs.
+3. **Luminous Mind** — The Dialectic of the Non-Self. Meditation, deity visualization, mantra chanting. 500mag per month from ritual Samadhi.
+4. **Communion** — The Dialectic of Gods and Kings. Pacts and vows with Spirits and Deities. 100mag per day from shrine offerings.
+
+### Right Hand Dialectics
+System-sanctioned paths used by Cultivators who work *within* the World Order. Referenced in Comp p. 59 but not enumerated — reserved for advanced or GM-facing material.
 
 ## Unlocking Cultivation: The Antinomian Rite
 *Core p. 62*

@@ -85,16 +85,16 @@ Pick or roll (d66) from the [Traits](19-traits.md) list. Traits provide small bo
 ## Step 3 — Cultivation Dialectic and Esoteric Arts
 
 ### Choose a Cultivation Dialectic
-Your path of spiritual growth. This determines how you cultivate, what Attainments you gain at each level, and which Attribute gets boosted during Samadhi. Choose one of five:
+Your path of spiritual growth. This determines how you cultivate, what Attainments you gain at each level, and which Attribute gets boosted during Samadhi. Choose one of the four **Left Hand Dialectics** — paths outlawed by the Heavenly Bourgeoisie that Wanderers walk as outsiders. See [Dialectics — Detailed](04b-dialectics-detail.md) for full rules.
 
-| Dialectic | Focus | Cultivation Source |
-|---|---|---|
-| **Revolution** | Collective cultivation, working with the Masses | Pooling resources with fellow Cultivators and communities |
-| **Internal Elixir** | Solo alchemical self-refinement | Inner body cultivation, consuming elixirs |
-| **Luminous Mind** | Mental/psychic cultivation | Meditation, mind-training, psychic development |
-| **Communion** | Divine devotion and spiritual treasures | Worship of deities, gaining power from Spiritual Treasures |
+| Dialectic | Focus | Cultivation Source | Samadhi Boost |
+|---|---|---|---|
+| **Revolution** | Mystic Materialism, collective | 100mag per enemy in Liquid Steel Ultraviolence | +1 Strength, allies in 5hx get Resist 1 |
+| **Internal Elixir** | Self-Cauldron, solo perfection | Double mag from drinking elixirs | +1 Psyche, Strain reduced one tier |
+| **Luminous Mind** | Non-Self, meditation | 500mag/month from ritual Samadhi | +1 Mind, +2 all Defenses |
+| **Communion** | Gods and Kings, reverence | 100mag/day from shrine offerings | +1 Magnetism, attacks gain Holy, emit light |
 
-*(The fifth Dialectic exists but is detailed in advanced play.)*
+*(A fifth category — **Right Hand Dialectics**, system-compliant paths — exists but isn't enumerated in the current rules. Wanderers don't walk it.)*
 
 ### Choose 1 Starting Esoteric Art
 This is either a **Magick** or a **Technick**. It's your first supernatural ability.
