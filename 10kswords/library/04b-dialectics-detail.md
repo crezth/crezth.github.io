@@ -1,8 +1,8 @@
-# Cultivation Dialectics — Detailed
+# Cultivation Dialectics
 
 > **Sources:** Comp pp. 59–67
 
-The Compendium's full treatment of each Dialectic: its philosophy, Cultivation method, Limit Break Rite, Samadhi trigger, Perversions, and Attainment list. This detail was buried on stylized pages that pdftotext couldn't read, so earlier library drafts noted only the names.
+The Compendium's full treatment of each Dialectic: its philosophy, Cultivation method, Limit Break Rite, Samadhi trigger, Perversions, and Attainment list.
 
 ---
 
