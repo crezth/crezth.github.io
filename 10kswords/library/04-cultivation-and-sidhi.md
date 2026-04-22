@@ -147,7 +147,7 @@ The path and system of one's Cultivation. Determines shape, directory, and sourc
 2. **Internal Elixir** — Solo alchemical refinement within the body
 3. **Luminous Mind** — Mental/psychic cultivation through meditation and mind-training
 4. **Communion** — Gaining Cultivation from Spiritual Treasures via worshipped deities
-5. *(Fifth unnamed in core book — may be detailed in Compendium)*
+5. *(Unnamed — Core p. 32 asserts there are five Cultivation Dialectics but names only the four above; the Compendium details the same four. The fifth is deliberately withheld.)*
 
 ## Unlocking Cultivation: The Antinomian Rite
 *Core p. 62*
