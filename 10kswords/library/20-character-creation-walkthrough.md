@@ -94,7 +94,6 @@ Your path of spiritual growth. This determines how you cultivate, what Attainmen
 | **Luminous Mind** | Non-Self, meditation | 500mag/month from ritual Samadhi | +1 Mind, +2 all Defenses |
 | **Communion** | Gods and Kings, reverence | 100mag/day from shrine offerings | +1 Magnetism, attacks gain Holy, emit light |
 
-*(A fifth category — **Right Hand Dialectics**, system-compliant paths — exists but isn't enumerated in the current rules. Wanderers don't walk it.)*
 
 ### Choose 1 Starting Esoteric Art
 This is either a **Magick** or a **Technick**. It's your first supernatural ability.

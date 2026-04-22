@@ -16,7 +16,7 @@ Dialectics split into two camps:
 - **Right Hand Dialectics** — systems used by Cultivators who work *within* the Heavenly Bourgeoisie's World Order. These are system-compliant, respectable, socially sanctioned. There is no need to enumerate these for the likes of you, Wanderer.
 - **Left Hand Dialectics** — unknown or forbidden by the Bourgeoisie. Far more numerous than Right Hand paths. They survive because eradicating them would cost more than tolerating them. The path of the Wanderer.
 
-Wanderers are by definition outsiders to the bourgeoisie system of Right Hand Dialectics, and so always follow the path of one of the Left Hand Dialectics of Revolution, Internal Elixir, Luminous Mind, and Communion
+Wanderers are by definition outsiders to the bourgeoisie system of Right Hand Dialectics, and so always follow the path of one of the four most common Left Hand Dialectics: Revolution, Internal Elixir, Luminous Mind, and Communion
 
 ---
 

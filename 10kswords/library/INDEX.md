@@ -21,7 +21,7 @@ Comprehensive reference system for the 10kSwords TTRPG (v1.7 + Compendium + Shri
 
 ## Cultivation & Metaphysics
 - [04 — Cultivation & Sidhi](04-cultivation-and-sidhi.md) — Sidhi, Strain, Samadhi, Cultivation Womb, 6 Stages/3 Realms, Limit Break, Antinomian Rite
-- [04b — Dialectics Detail](04b-dialectics-detail.md) — Full per-Dialectic detail: Right/Left Hand split, Cultivation methods, Limit Break Rites, Samadhi triggers, Perversions, Attainment lists
+- [Dialectics & Attainment](04b-dialectics-detail.md) — Full per-Dialectic detail: Right/Left Hand split, Cultivation methods, Limit Break Rites, Samadhi triggers, Perversions, Attainment lists
 
 ## Esoteric Arts
 - [17 — Martial Arts (Technicks)](17-martial-arts.md) — All 12 Esoteric Martial Arts: Vajra Boxing, Diamond Body, Adamantine Sword, Sword Dialectic, Gloamblossom Saber, Shadow Shrike Knife, Devil Tiger Fury, Black Vajra Pestle, Sapphire Star Dialectics, Heavenward Javelin, Cutting Dragonfly Wings, Six-Winged Devil Gun, Tongue-Sword Angel Flayer

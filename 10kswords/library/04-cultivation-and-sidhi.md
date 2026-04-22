@@ -141,9 +141,9 @@ At the end, undergo a **Tribulation** — a meditative trance/vision quest where
 ## The Cultivation Dialectics
 *Core p. 32; Comp pp. 59–67*
 
-The path and system of one's Cultivation. Determines shape, directory, sources, Samadhi bonuses, and Attainments earned at each level. See [Dialectics — Detailed](04b-dialectics-detail.md) for full per-Dialectic Cultivation methods, Limit Break Rites, Samadhi triggers, Perversions, and Attainment lists.
+The path and system of one's Cultivation. Determines shape, directory, sources, Samadhi bonuses, and Attainments earned at each level. See [Dialectics & Attainment](04b-dialectics-detail.md) for full per-Dialectic Cultivation methods, Limit Break Rites, Samadhi triggers, Perversions, and Attainment lists.
 
-Dialectics split into **Right Hand** (system-compliant, used by Cultivators working within the Heavenly Bourgeoisie order) and **Left Hand** (outlawed, underground, far more numerous). The four Dialectics Core p. 32 names are **the four most common Left Hand Dialectics**. This resolves the "five listed as four" apparent contradiction — the implicit fifth is the Right Hand category itself.
+Dialectics split into **Right Hand** (system-compliant, used by Cultivators working within the Heavenly Bourgeoisie order) and **Left Hand** (outlawed, underground, far more numerous). Wanderers walk the Left Hand. The four Dialectics named below are the four most common Left Hand paths.
 
 ### The Four Left Hand Dialectics
 1. **Revolution** — The Dialectic of Mystic Materialism. Pooling with fellow Cultivators and the Masses. Struggle Cultivation: 100mag per enemy fought in Liquid Steel Ultraviolence.
@@ -152,7 +152,7 @@ Dialectics split into **Right Hand** (system-compliant, used by Cultivators work
 4. **Communion** — The Dialectic of Gods and Kings. Pacts and vows with Spirits and Deities. 100mag per day from shrine offerings.
 
 ### Right Hand Dialectics
-System-sanctioned paths used by Cultivators who work *within* the World Order. Referenced in Comp p. 59 but not enumerated — reserved for advanced or GM-facing material.
+System-sanctioned paths used by Cultivators who work *within* the World Order. Not the way of the Wanderer.
 
 ## Unlocking Cultivation: The Antinomian Rite
 *Core p. 62*
