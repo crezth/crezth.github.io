@@ -16,7 +16,7 @@ Dialectics split into two camps:
 - **Right Hand Dialectics** — systems used by Cultivators who work *within* the Heavenly Bourgeoisie's World Order. These are system-compliant, respectable, socially sanctioned. The Compendium does not enumerate them here.
 - **Left Hand Dialectics** — unknown or forbidden by the Bourgeoisie. Far more numerous than Right Hand paths. They survive because eradicating them would cost more than tolerating them. The **four most common Left Hand Dialectics** are the ones named in Core p. 32.
 
-**This resolves the "fifth Dialectic" question.** Core p. 32 says *"The Five Cultivation Dialectics are: Revolution, Internal Elixir, Luminous Mind, and Communion"* — listing only four despite saying five. The apparent fifth is **Right Hand Dialectics as a category**, not a single named system. Left Hand gets the spotlight because Wanderers are by definition outsiders.
+Core p. 32 says *"The Five Cultivation Dialectics are: Revolution, Internal Elixir, Luminous Mind, and Communion"*. The apparent fifth is **Right Hand Dialectics as a category**, not a single named system. Wanderers are by definition outsiders to the bourgeoisie system of Right Hand Dialectics.
 
 ---
 
@@ -200,8 +200,8 @@ Spend a week in the domain of the divinity most powerful to you. Protect what li
 
 ---
 
-## Source Caveats
+## Caveats
 
 - The Compendium's Revolution Attainments list duplicates **Rushing Ragasa** (once with the definition, once without). The list above merges this — treating it as a single Attainment.
 - Pages 63, 65, and 67 all use a templated Perversions header that mis-labels later Dialectics as "Internal Elixir Perversions." The *kind descriptor* (Uncanny Perfection / Radiant Mirror / Anima Stigmata) and the actual roll table make the correct Dialectic obvious — this is a layout copy-paste oversight.
-- Right Hand Dialectics are referenced but not detailed anywhere I can find in the Compendium. If they're named, it's elsewhere — or reserved for advanced/GM-facing material.
+- Right Hand Dialectics are referenced but not detailed anywhere I can find in the Compendium. Supposedly they are reserved for advanced/GM-facing material.
