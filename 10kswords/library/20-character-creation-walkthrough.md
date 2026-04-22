@@ -85,7 +85,7 @@ Pick or roll (d66) from the [Traits](19-traits.md) list. Traits provide small bo
 ## Step 3 — Cultivation Dialectic and Esoteric Arts
 
 ### Choose a Cultivation Dialectic
-Your path of spiritual growth. This determines how you cultivate, what Attainments you gain at each level, and which Attribute gets boosted during Samadhi. Choose one of the four **Left Hand Dialectics** — paths outlawed by the Heavenly Bourgeoisie that Wanderers walk as outsiders. See [Dialectics — Detailed](04b-dialectics-detail.md) for full rules.
+Your path of spiritual growth. This determines how you cultivate, what Attainments you gain at each level, and which Attribute gets boosted during Samadhi. Choose one of the four **Left Hand Dialectics** — paths outlawed by the Heavenly Bourgeoisie that Wanderers walk as outsiders. See [Dialectics & Attainment](04b-dialectics-detail.md) for full rules.
 
 | Dialectic | Focus | Cultivation Source | Samadhi Boost |
 |---|---|---|---|
