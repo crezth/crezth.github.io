@@ -74,26 +74,61 @@ Self-modification possible with crafting Trait — requires Skill Checks.
 ## Ammo Types
 *Comp p. 43*
 
-| Type | Damage | Used By |
-|---|---|---|
-| Darts | Piercing | Launcher |
-| Arrows | Piercing | Bow |
-| Bolts | Piercing | Crossbow |
-| Bullets | Piercing | Gun |
-| Fireshot | Fire | Gun (2mag) |
-| Roundshot | Piercing, -1 target armor | Gun (150mag) |
+| Type | Damage | Used By | Cost |
+|---|---|---|---|
+| Darts | Piercing | Launcher | ~1mag |
+| Arrows | Piercing | Bow | ~1mag |
+| Bolts | Piercing | Crossbow | ~1mag |
+| Bullets | Piercing | Gun | ~1mag |
+| Fireshot | Fire | Gun | 2mag |
+| Roundshot | Piercing, -1 target armor | Gun | 150mag |
 
-## Notable Weapons (d36 list, selected highlights)
+Ranged weapons ship with 2d6 basic ammo at purchase.
+
+## Weapon List (d36)
 *Comp pp. 44–45*
 
-- **Ritual Keris** — Wavy dagger, Ritual. 300mag.
-- **Sundang** — Multipurpose chopping sword. 30mag.
-- **Crescent Moon Spade** — Polearm, Holy. Mendicant monks bury dead. 300mag.
-- **Barong** — Leaf-shaped saber, Brutal, Ferocious. 100mag.
-- **Vajra** — Giant ritual staff of dead god bones. Colossal, Artifact, Fulgur, Holy. 800mag.
-- **Lotus Blade** — White jade kalis by Metom. Artifact, Ferocious, Holy. Only 6 exist. 1,000mag.
-- **Sundang-ng-Karuna-Upaya** — Smokeless red fire saber (Compassionate Pedagogy). Spiritual Treasure. 100,000mag.
-- **Sundang-ng-Prajna** — Smokeless black fire saber (Perfect Wisdom). Spiritual Treasure. 100,000mag.
+Roll d66 (two d6s read as a two-digit number). Starting Wanderers can pick up to 2 weapons totalling ≤300mag.
+
+| d66 | Weapon | Pattern & Properties | Cost |
+|---|---|---|---|
+| 11 | **Ritual Keris** | Dagger, Ritual | 300mag |
+| 12 | **Sundang** | Saber | 30mag |
+| 13 | **Kiem** | Sword | 45mag |
+| 14 | **Longstick** | Bludgeon, Reach | 2mag |
+| 15 | **Claymore** | Greatsword, Reach | 50mag |
+| 16 | **Foldblade** | Sword, Concealable | 30mag |
+| 21 | **Rectangle Shield** | Bludgeon, Shield | 30mag |
+| 22 | **Sickle** | Cleaver | 3mag |
+| 23 | **Crescent Moon Spade** | Polearm, Holy | 300mag |
+| 24 | **Tekpi** | Dagger, Piercing, Disarming | 60mag |
+| 25 | **Ji** | Polearm, Disarming | 40mag |
+| 26 | **Stingray Tail** | Whip, Holy, Disarming | 25mag |
+| 31 | **Scimitar** | Saber, Brutal | 25mag |
+| 32 | **Katana** | Saber | 25mag |
+| 33 | **Battlestave** | Arcane, Focus, Ritual | 300mag |
+| 34 | **Mace** | Bludgeon, Brutal | 20mag |
+| 35 | **Battleaxe (jipan)** | Cleaver, Brutal | 24mag |
+| 36 | **Hatchet** | Bludgeon, Thrown Strength | 18mag |
+| 41 | **Rattan Stick** | Bludgeon (uses Skill) | 8mag |
+| 42 | **Scythe** | Cleaver, Reach, Doublehand | 20mag |
+| 43 | **Rope Dart** | Whip, Reach, Piercing | 40mag |
+| 44 | **Meteor Hammer** | Whip, Brutal | 30mag |
+| 45 | **Longclaws** | Empty Hand, Cutting, Worn | 21mag |
+| 46 | **Push Dagger** | Dagger, Piercing, Light, Concealable | 15mag |
+| 51 | **Barong** | Saber, Brutal, Ferocious | 100mag |
+| 52 | **Haestann Company Pistol** | Gun | 100mag |
+| 53 | **Haestann Company Longgun** | Gun, Doublehand | 200mag |
+| 54 | **Buckler** | Shield, Concealable | 50mag |
+| 55 | **Puterijasa Starstave** | Bludgeon, Arcane, Doublehand, Focus | 300mag |
+| 56 | **Kartikesa Gunspear** | Polearm, Ferocious; 1 charge: free push | 350mag |
+| 61 | **Puterijasa Blastwand** | Bludgeon, Burning, Arcane | — |
+| 62 | **Puterijasa Fulgurmace** | Bludgeon, Blast 3hx, Arcane, Fulgur | 450mag |
+| 63 | **Vajra** | Bludgeon, Colossal, Artifact, Fulgur, Holy | 800mag |
+| 64 | **Lotus Blade** | Sword, Artifact, Ferocious, Holy (only 6 exist) | 1,000mag |
+| 65 | **Sundang-ng-Karuna-Upaya** | Sword, Artifact, Enchanted, Ferocious, Reach; red fire, Spiritual Treasure | 100,000mag |
+| 66 | **Sundang-ng-Prajna** | Sword, Artifact, Enchanted, Ferocious, Reach; black fire, Spiritual Treasure | 100,000mag |
+
 
 ## Attire Slots
 *Comp pp. 48–49*
