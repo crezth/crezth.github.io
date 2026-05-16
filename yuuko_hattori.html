@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Yuuko Hattori — Character Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cinzel:wght@500;700&family=Caveat:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #ede2c8;
+    --paper-shadow: #d9cba9;
+    --ink: #221b13;
+    --ink-faint: #4a3d2a;
+    --ink-ghost: #8a7a5e;
+    --rule: #6b5a3f;
+    --stamp: #8b2623;
+    --hand: #2a3556;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #2a2520;
+    font-family: 'Special Elite', 'Courier New', monospace;
+    color: var(--ink);
+  }
+
+  body {
+    padding: 24px 12px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sheet {
+    width: 100%;
+    max-width: 880px;
+    background: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 12% 8%, rgba(120, 95, 60, 0.18) 0%, transparent 35%),
+      radial-gradient(ellipse at 90% 92%, rgba(120, 95, 60, 0.22) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 50%, rgba(255, 250, 230, 0.4) 0%, transparent 70%);
+    padding: 48px 56px 56px;
+    position: relative;
+    box-shadow:
+      0 2px 8px rgba(0,0,0,0.6),
+      0 20px 60px rgba(0,0,0,0.8),
+      inset 0 0 80px rgba(120, 95, 60, 0.25);
+    overflow: hidden;
+  }
+
+  /* Paper grain via SVG noise */
+  .sheet::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.2  0 0 0 0 0.15  0 0 0 0 0.1  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .sheet > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Header */
+  .header {
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 1px;
+    background: var(--rule);
+    opacity: 0.5;
+  }
+
+  .filename {
+    font-family: 'Special Elite', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .name-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+  }
+
+  .name-block .romaji {
+    font-family: 'Cinzel', serif;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .name-block .kanji {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  .name-block .alias {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--hand);
+    margin-top: 4px;
+  }
+
+  .moxie-block {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .moxie-label {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+
+  .moxie-pips {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+
+  .pip {
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .pip.filled::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+
+  /* Description */
+  .description {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 28px;
+    padding: 0 4px;
+  }
+
+  /* Two-column layout */
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    margin-bottom: 28px;
+  }
+
+  .section {
+    margin-bottom: 24px;
+  }
+
+  .section-header {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .section-header .meta {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--ink-ghost);
+  }
+
+  /* Trademarks */
+  .trademark {
+    margin-bottom: 14px;
+  }
+
+  .trademark-name {
+    font-family: 'Special Elite', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .trademark-type {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--ink-ghost);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .edges {
+    font-family: 'Special Elite', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-left: 18px;
+    line-height: 1.6;
+  }
+
+  .edges .edge::before {
+    content: '— ';
+    color: var(--ink-ghost);
+  }
+
+  /* Grit / Injuries */
+  .grit-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .grit-label {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--ink-faint);
+  }
+
+  .injury-slots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .slot {
+    width: 26px;
+    height: 26px;
+    border: 1.5px solid var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Special Elite', monospace;
+    font-size: 14px;
+    color: var(--ink-faint);
+  }
+
+  .injury-key {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    color: var(--ink-ghost);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* Conditions */
+  .conditions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 16px;
+    font-family: 'Special Elite', monospace;
+    font-size: 13px;
+  }
+
+  .condition {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink-faint);
+  }
+
+  .checkbox {
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid var(--ink);
+    flex-shrink: 0;
+  }
+
+  /* Flaws / Drive / Ties */
+  .entry {
+    font-family: 'Special Elite', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .entry .flavor {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink);
+    display: block;
+    margin-top: 2px;
+    padding-left: 14px;
+  }
+
+  .entry-blank {
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
+    color: var(--hand);
+  }
+
+  /* Full-width sections */
+  .full-section {
+    margin-bottom: 24px;
+  }
+
+  /* Connections */
+  .connections {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+  }
+
+  .connection {
+    border: 1px dashed var(--rule);
+    padding: 12px;
+    background: rgba(255, 250, 230, 0.25);
+  }
+
+  .connection-name {
+    font-family: 'Special Elite', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 2px;
+    color: var(--ink);
+  }
+
+  .connection-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+
+  .connection-favors {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-ghost);
+  }
+
+  /* Funding */
+  .funding-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .funding-level {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .funds-pips {
+    display: flex;
+    gap: 5px;
+  }
+
+  .fund-pip {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--ink);
+    transform: rotate(45deg);
+  }
+
+  .fund-pip.filled {
+    background: var(--ink);
+  }
+
+  /* Belongings */
+  .belongings ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Special Elite', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  .belongings li::before {
+    content: '— ';
+    color: var(--ink-ghost);
+  }
+
+  /* Stamp */
+  .stamp {
+    position: absolute;
+    top: 38px;
+    right: 64px;
+    transform: rotate(-8deg);
+    border: 3px solid var(--stamp);
+    color: var(--stamp);
+    padding: 6px 14px 4px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    opacity: 0.55;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .stamp::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40'><filter id='n2'><feTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.5 -0.3'/></filter><rect width='100%' height='100%' filter='url(%23n2)' opacity='0.6'/></svg>");
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  /* Hanko (red Japanese seal) */
+  .hanko {
+    position: absolute;
+    bottom: 38px;
+    right: 56px;
+    width: 56px;
+    height: 56px;
+    background: var(--stamp);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 700;
+    border-radius: 4px;
+    opacity: 0.7;
+    transform: rotate(4deg);
+    box-shadow:
+      inset 0 0 8px rgba(0,0,0,0.3);
+    z-index: 3;
+  }
+
+  .hanko::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><filter id='n3'><feTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='2'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.2 -0.4'/></filter><rect width='100%' height='100%' filter='url(%23n3)' opacity='0.55'/></svg>");
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 32px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-ghost);
+  }
+
+  .xp-track {
+    display: flex;
+    gap: 4px;
+  }
+
+  .xp-pip {
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--ink-faint);
+  }
+
+  /* Print */
+  @page {
+    size: letter;
+    margin: 0.4in;
+  }
+
+  @media print {
+    html, body {
+      background: white;
+    }
+    body {
+      padding: 0;
+    }
+    .sheet {
+      box-shadow: none;
+      max-width: none;
+      padding: 30px 36px;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .sheet {
+      padding: 32px 24px 36px;
+    }
+    .columns {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .connections {
+      grid-template-columns: 1fr;
+    }
+    .name-block .romaji {
+      font-size: 30px;
+    }
+    .stamp, .hanko {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="stamp">CASE FILE — N.C.C.</div>
+  <div class="hanko">服</div>
+
+  <div class="header">
+    <div class="filename">FILE NO. 047 · NEW CENTURY CITY · 1946</div>
+    <div class="name-row">
+      <div class="name-block">
+        <h1 class="romaji">YUUKO HATTORI</h1>
+        <div class="kanji">勇子 服部</div>
+        <div class="alias">Life passes in the blink of an eye. The wind is rising. We must find a way to live.</div>
+      </div>
+      <div class="moxie-block">
+        <div class="moxie-label">Moxie · 3</div>
+        <div class="moxie-pips">
+          <div class="pip filled"></div>
+          <div class="pip filled"></div>
+          <div class="pip filled"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="description">
+    A slight woman in her late twenties with watchful eyes. Once-cropped black hair growing out unevenly with bangs that cover one eye. Calluses on the trigger finger that she calls kitchen scars. Prefers to let other people speak first. Smiles without her eyes.
+  </div>
+
+  <div class="columns">
+
+    <div class="col-left">
+
+      <div class="section">
+        <div class="section-header">Trademarks</div>
+
+        <div class="trademark">
+          <div class="trademark-type">Past</div>
+          <div class="trademark-name">Veteran <span style="font-weight:400;color:var(--ink-faint);">(Heiji Hattori, 18th Div.)</span></div>
+          <div class="edges">
+            <div class="edge">Shoot</div>
+            <div class="edge">Calm Under Pressure</div>
+          </div>
+        </div>
+
+        <div class="trademark">
+          <div class="trademark-type">Present</div>
+          <div class="trademark-name">Investigator</div>
+          <div class="edges">
+            <div class="edge">Follow Leads</div>
+            <div class="edge">Notice</div>
+          </div>
+        </div>
+
+        <div class="trademark">
+          <div class="trademark-type">Perk</div>
+          <div class="trademark-name">Brave</div>
+          <div class="edges">
+            <div class="edge">Willpower</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">Conditions</div>
+        <div class="conditions">
+          <div class="condition"><div class="checkbox"></div>Angry</div>
+          <div class="condition"><div class="checkbox"></div>Dazed</div>
+          <div class="condition"><div class="checkbox"></div>Tired</div>
+          <div class="condition"><div class="checkbox"></div>Shaken</div>
+          <div class="condition"><div class="checkbox"></div>Drunk</div>
+          <div class="condition"><div class="checkbox"></div>Dishevelled</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-right">
+
+      <div class="section">
+        <div class="section-header">Grit <span class="meta">/ Injuries</span></div>
+        <div class="grit-row">
+          <div class="injury-slots">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+          </div>
+        </div>
+        <div class="injury-key">
+          / light &nbsp;·&nbsp; ✕ moderate &nbsp;·&nbsp; ✱ serious &nbsp;·&nbsp; ■ trauma
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">Flaws</div>
+        <div class="entry">
+          <strong>Night Terrors.</strong>
+          <span class="flavor">Burma at three in the morning. She has learned to wake up quietly.</span>
+        </div>
+        <div class="entry">
+          <strong>Wanted.</strong>
+          <span class="flavor">Perhaps by the Kempeitai, perhaps not. The Imperial authorities do not advertise that one of their dead soldiers was a woman.</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">Drive</div>
+        <div class="entry">
+          Find a way to live by assisting the lives of others.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">Ties</div>
+        <div class="entry entry-blank">
+          I am secretly in love with Christmas Gibson.
+        </div>
+        <div class="entry entry-blank">
+          Rebecca helped find Tanaka's daughter, Haruko, and I am grateful.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="full-section">
+    <div class="section-header">Connections <span class="meta">(New Century Noir)</span></div>
+    <div class="connections">
+      <div class="connection">
+        <div class="connection-name">Mr. Tanaka</div>
+        <div class="connection-tag">— loyal —</div>
+        <div class="connection-favors">Treatment · Date (nisei community)</div>
+      </div>
+      <div class="connection">
+        <div class="connection-name">Jonathan Greenblatt</div>
+        <div class="connection-tag">— trusting —</div>
+        <div class="connection-favors">Deal (prescription) · Treatment</div>
+      </div>
+      <div class="connection">
+        <div class="connection-name">Dennis "Denny" Kovac</div>
+        <div class="connection-tag">— respectful —</div>
+        <div class="connection-favors">Date (legal)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns" style="margin-bottom:0;">
+
+    <div class="col-left">
+
+      <div class="section">
+        <div class="section-header">Funding</div>
+        <div class="funding-row">
+          <div class="funding-level">Insufficient</div>
+          <div class="funds-pips">
+            <div class="fund-pip filled"></div>
+            <div class="fund-pip filled"></div>
+            <div class="fund-pip filled"></div>
+            <div class="fund-pip filled"></div>
+            <div class="fund-pip filled"></div>
+          </div>
+        </div>
+        <div class="injury-key" style="margin-top:8px;">
+          waitress wages. tanaka pays honestly.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-right belongings">
+
+      <div class="section">
+        <div class="section-header">Belongings &amp; Notes</div>
+        <ul>
+          <li>Waitress uniform; one plain teal dress and apron</li>
+          <li>Brown overcoat, secondhand, a size too large</li>
+          <li>Nambu Type 14 pistol — hidden, oiled</li>
+          <li>Switchblade in her stocking</li>
+          <li>Letters tied with kitchen twine</li>
+          <li>Photograph: boy on a porch, wasted leg</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div>Hard City · New Century Noir</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span>XP</span>
+      <div class="xp-track">
+        <div class="xp-pip"></div>
+        <div class="xp-pip"></div>
+        <div class="xp-pip"></div>
+        <div class="xp-pip"></div>
+        <div class="xp-pip"></div>
+        <div class="xp-pip"></div>
+        <div class="xp-pip"></div>
+        <div class="xp-pip"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
