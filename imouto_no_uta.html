@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>妹の歌 — Imouto no Uta - lyrics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1e1a1c;
+    --fg: #dcd4d6;
+    --fg-dim: #8a7a80;
+    --accent: #c4a0a8;
+    --accent-dim: #7a5860;
+    --section-line: #382e32;
+    --en-col: #c8b8be;
+    --jp-col: #e4d8dc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--accent-dim);
+    margin: 32px auto 0;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  h1 span {
+    display: block;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-size: 1rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--section-line);
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .col-en {
+    color: var(--en-col);
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+
+  .col-jp {
+    color: var(--jp-col);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  .col-en p, .col-jp p {
+    margin-bottom: 0;
+  }
+
+  .line {
+    display: block;
+    min-height: 1.75em;
+  }
+
+  .line.empty {
+    min-height: 1em;
+  }
+
+  .section.fade .col-en,
+  .section.fade .col-jp {
+    opacity: 1;
+  }
+
+  .section.fade .col-en .line:nth-child(n+2),
+  .section.fade .col-jp .line:nth-child(n+2) {
+    opacity: 0.5;
+  }
+
+  .section.fade .col-en .line:nth-child(n+3),
+  .section.fade .col-jp .line:nth-child(n+3) {
+    opacity: 0.25;
+  }
+
+  @media (max-width: 640px) {
+    .columns {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    h1 { font-size: 1.8rem; }
+    h1 span { font-size: 1.3rem; }
+    .page { padding: 48px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>
+    <span>妹の歌</span>
+    A Song for Sister
+  </h1>
+  <div class="subtitle">© 2026 Crezth / Yevheniya Machnovsky / miquella.scott</div>
+  <div class="subtitle">All rights reserved</div>
+</header>
+
+<!-- VERSE 1 -->
+<div class="section">
+  <div class="section-label">Verse 1</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">At the breakfast table, you smile</span>
+      <span class="line">Beyond the window, a grey city</span>
+      <span class="line">Wearing a face that knows nothing</span>
+      <span class="line">I pour the tea</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">朝の食卓　君が笑う</span>
+      <span class="line">窓の向こうは　灰色の街</span>
+      <span class="line">何も知らない　顔をして</span>
+      <span class="line">私は紅茶を　注いでいる</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS 1 -->
+<div class="section">
+  <div class="section-label">Pre-Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Hey, do you remember? The old garden</span>
+      <span class="line">Small hands picking flowers</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ねえ、覚えてる？　昔の庭を</span>
+      <span class="line">小さな手が　花を摘んだ</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS 1 -->
+<div class="section">
+  <div class="section-label">Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Ah, my little sister</span>
+      <span class="line">Since the day you couldn't walk anymore</span>
+      <span class="line">I decided I would kill someone</span>
+      <span class="line">Ah, my little sister</span>
+      <span class="line">Keep smiling, without ever knowing</span>
+      <span class="line">Your big sister will come home</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ああ、私の妹よ</span>
+      <span class="line">歩けなくなった日から</span>
+      <span class="line">私は誰かを　殺すと決めた</span>
+      <span class="line">ああ、私の妹よ</span>
+      <span class="line">笑っていてね　知らないままで</span>
+      <span class="line">お姉ちゃんは　帰ってくるから</span>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE 2 -->
+<div class="section">
+  <div class="section-label">Verse 2</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">The wind blew against your cheek</span>
+      <span class="line">Something awakened in those eyes</span>
+      <span class="line">I keep telling lies</span>
+      <span class="line">One more with every morning that comes</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">風が吹いた　君の頬に</span>
+      <span class="line">何かが目覚めた　その瞳に</span>
+      <span class="line">私は嘘を　吐き続ける</span>
+      <span class="line">朝が来るたび　また一つ</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS 2 -->
+<div class="section">
+  <div class="section-label">Pre-Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Hey, do you remember? Mother's song</span>
+      <span class="line">She sang it for us on sleepless nights</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ねえ、覚えてる？　母さんの歌を</span>
+      <span class="line">眠れない夜に　歌ってくれた</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS 2 -->
+<div class="section">
+  <div class="section-label">Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Ah, my little sister</span>
+      <span class="line">Since the day you couldn't walk anymore</span>
+      <span class="line">I decided I would kill someone</span>
+      <span class="line">Ah, my little sister</span>
+      <span class="line">Keep smiling, without ever knowing</span>
+      <span class="line">Your big sister will come home</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ああ、私の妹よ</span>
+      <span class="line">歩けなくなった日から</span>
+      <span class="line">私は誰かを　殺すと決めた</span>
+      <span class="line">ああ、私の妹よ</span>
+      <span class="line">笑っていてね　知らないままで</span>
+      <span class="line">お姉ちゃんは　帰ってくるから</span>
+    </div>
+  </div>
+</div>
+
+<!-- BRIDGE -->
+<div class="section">
+  <div class="section-label">Bridge</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">In your dreams, you were running</span>
+      <span class="line">Barefoot, toward the sky</span>
+      <span class="line">I can't follow you there</span>
+      <span class="line">So I fight here on the ground</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">夢の中で　君は走ってた</span>
+      <span class="line">裸足のまま　空に向かって</span>
+      <span class="line">私はそれを　追いかけられない</span>
+      <span class="line">だから地上で　戦うんだ</span>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CHORUS -->
+<div class="section">
+  <div class="section-label">Final Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Ah, my little sister</span>
+      <span class="line">Let's have tea, just one more time</span>
+      <span class="line">Won't you tell me about tomorrow?</span>
+      <span class="line">Ah, my little sister</span>
+      <span class="line">Keep smiling, without ever knowing</span>
+      <span class="line">Your big sister won't come home</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ああ、私の妹よ</span>
+      <span class="line">お茶を飲もう　もう一度だけ</span>
+      <span class="line">明日の話を　してくれないか</span>
+      <span class="line">ああ、私の妹よ</span>
+      <span class="line">笑っていてね　知らないままで</span>
+      <span class="line">お姉ちゃんは　帰ってこない</span>
+    </div>
+  </div>
+</div>
+
+<!-- OUTRO -->
+<div class="section fade">
+  <div class="section-label">Outro</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">La la la…</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ラララ…</span>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
