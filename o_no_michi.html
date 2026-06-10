@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>王の道 — The Path of the King</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1c1a16;
+    --fg: #d4cfc4;
+    --fg-dim: #7a7568;
+    --accent: #b8a878;
+    --accent-dim: #6a6048;
+    --section-line: #322e28;
+    --en-col: #c0baa8;
+    --jp-col: #e0d8c8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--accent-dim);
+    margin: 32px auto 0;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  h1 span {
+    display: block;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--section-line);
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .col-en {
+    color: var(--en-col);
+    font-size: 1.05rem;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .col-jp {
+    color: var(--jp-col);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  .col-en p, .col-jp p {
+    margin-bottom: 0;
+  }
+
+  .line {
+    display: block;
+    min-height: 1.75em;
+  }
+
+  .line.empty {
+    min-height: 1em;
+  }
+
+  .section.instrumental {
+    text-align: center;
+    padding: 24px 0;
+  }
+
+  .section.instrumental .section-label {
+    border-bottom: none;
+    color: var(--fg-dim);
+    font-style: italic;
+    letter-spacing: 0.5em;
+  }
+
+  .section.fade .col-en,
+  .section.fade .col-jp {
+    opacity: 1;
+  }
+
+  .section.fade .col-en .line:nth-child(n+3),
+  .section.fade .col-jp .line:nth-child(n+3) {
+    opacity: 0.6;
+  }
+
+  .section.fade .col-en .line:nth-child(n+4),
+  .section.fade .col-jp .line:nth-child(n+4) {
+    opacity: 0.35;
+  }
+
+  .section.fade .col-en .line:nth-child(n+5),
+  .section.fade .col-jp .line:nth-child(n+5) {
+    opacity: 0.2;
+  }
+
+  @media (max-width: 640px) {
+    .columns {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    h1 { font-size: 1.8rem; }
+    h1 span { font-size: 1.3rem; }
+    .page { padding: 48px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>
+    <span>王の道</span>
+    The Path of the King
+  </h1>
+  <div class="subtitle">Ō no Michi</div>
+</header>
+
+<!-- VERSE 1 -->
+<div class="section">
+  <div class="section-label">Verse 1 — Soft, Almost a Hymn</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Everyone dreamed of a morning without curses</span>
+      <span class="line">Everyone longed for hands that carried equal weight</span>
+      <span class="line">Countless are those who held their breath under a false order</span>
+      <span class="line">Those who wait for a hand to set them free are still standing, even now</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">呪いのない朝を　誰もが夢に見た</span>
+      <span class="line">重さの違わない手を　誰もが欲した</span>
+      <span class="line">偽りの秩序の下で　息を止めた者は数えきれない</span>
+      <span class="line">解き放つ手を待つ者は　今もまだ立っている</span>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE 2 -->
+<div class="section">
+  <div class="section-label">Verse 2 — The Dream Still Pure, Scope Expanding</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">We cleared the forests — to let in the light</span>
+      <span class="line">We built bridges over rivers — to connect the far and the near</span>
+      <span class="line">We stacked stones and raised cities — to make a place where everyone could sleep</span>
+      <span class="line">We gave names to the land — so that no one would be lost</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">我々は森を切り開いた　光を入れるために</span>
+      <span class="line">我々は河に橋を架けた　遠くと近くを結ぶために</span>
+      <span class="line">我々は石を積んで都市を建てた　誰もが眠れる場所を作るために</span>
+      <span class="line">我々は土に名を与えた　迷う者がいないように</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS 1 -->
+<div class="section">
+  <div class="section-label">Pre-Chorus 1 — The Tone Shifting</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">To heal the world, someone must hold the world</span>
+      <span class="line">To untangle the world, someone must grip the world</span>
+      <span class="line">The hand that helps and the hand that rules are shaped the same</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">世界を治すには　誰かが世界を持たなければ</span>
+      <span class="line">世界を解くには　誰かが世界を握らなければ</span>
+      <span class="line">助ける手と支配する手は　同じ手の形をしている</span>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE 3 -->
+<div class="section">
+  <div class="section-label">Verse 3 — Escalating, the Contradictions Surfacing</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Those who cleared the forest decided where the forest ends</span>
+      <span class="line">Those who built the bridge collected the toll to cross it</span>
+      <span class="line">Those who raised the city chose who could live there</span>
+      <span class="line">Those who named the land erased every other name</span>
+      <span class="line empty"></span>
+      <span class="line">We tried to save</span>
+      <span class="line">And before we knew it, we owned</span>
+      <span class="line">We tried to set free</span>
+      <span class="line">And before we knew it, we had bound</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">森を切り開いた者は　森の縁を決めた</span>
+      <span class="line">橋を架けた者は　橋の通行料を取った</span>
+      <span class="line">都市を建てた者は　住める者を選んだ</span>
+      <span class="line">土に名を与えた者は　他の名を消した</span>
+      <span class="line empty"></span>
+      <span class="line">我々は救おうとした</span>
+      <span class="line">そして気づけば　所有していた</span>
+      <span class="line">我々は解こうとした</span>
+      <span class="line">そして気づけば　縛っていた</span>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE 4 -->
+<div class="section">
+  <div class="section-label">Verse 4 — Faster, the Civilizational Sweep</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">The smoke of the factories was the smoke of a promise</span>
+      <span class="line">The steel of the railways was the steel of equality</span>
+      <span class="line">The light of the lamps was the light that would end the night</span>
+      <span class="line">We called it progress</span>
+      <span class="line empty"></span>
+      <span class="line">In the name of progress</span>
+      <span class="line">Land became numbers</span>
+      <span class="line">People became labor</span>
+      <span class="line">Rivers became fuel</span>
+      <span class="line">And prayer became superstition</span>
+      <span class="line empty"></span>
+      <span class="line">Were we saving the world</span>
+      <span class="line">Or were we consuming it</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">工場の煙は　約束の煙だった</span>
+      <span class="line">線路の鋼鉄は　平等の鋼鉄だった</span>
+      <span class="line">電灯の光は　夜を終わらせる光だった</span>
+      <span class="line">我々はそれを　進歩と呼んだ</span>
+      <span class="line empty"></span>
+      <span class="line">進歩の名の下で</span>
+      <span class="line">土地は数字になり</span>
+      <span class="line">人は労働になり</span>
+      <span class="line">川は燃料になり</span>
+      <span class="line">祈りは迷信になった</span>
+      <span class="line empty"></span>
+      <span class="line">我々は世界を救っていたのか</span>
+      <span class="line">それとも　世界を消費していたのか</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS 2 -->
+<div class="section">
+  <div class="section-label">Pre-Chorus 2 — The Realization Sharpening</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">When mercy takes the shape of a wall</span>
+      <span class="line">When liberation takes the shape of a cage</span>
+      <span class="line">When a dream takes the shape of a verdict</span>
+      <span class="line">Can we still call it a dream</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">慈悲が壁の形をとる時</span>
+      <span class="line">解放が檻の形をとる時</span>
+      <span class="line">夢が判決の形をとる時</span>
+      <span class="line">我々はそれを　まだ夢と呼べるか</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS -->
+<div class="section">
+  <div class="section-label">Chorus — Brass Enters, Full Force</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Ah — the road is paved with stones</span>
+      <span class="line">The one who walks believes they chose the stones</span>
+      <span class="line">It was the stones that chose the one who walks</span>
+      <span class="line">Whose will is our will</span>
+      <span class="line empty"></span>
+      <span class="line">Ah — the hand that saves and the hand that governs</span>
+      <span class="line">Are shaped the same</span>
+      <span class="line">The dream of changing the world</span>
+      <span class="line">Is the twin of the dream of owning it</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ああ　道は石で敷かれている</span>
+      <span class="line">歩く者は石を選んだと思う</span>
+      <span class="line">石は歩く者を選んでいたのだ</span>
+      <span class="line">我々の意志は　誰の意志だ</span>
+      <span class="line empty"></span>
+      <span class="line">ああ　救う手と治める手は</span>
+      <span class="line">同じ手の形をしている</span>
+      <span class="line">世界を変えるという夢は</span>
+      <span class="line">世界を持つという夢と　双子だ</span>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE 5 -->
+<div class="section">
+  <div class="section-label">Verse 5 — Manic, the Catalog Widens</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">The revolutionary becomes the new king</span>
+      <span class="line">The liberator weaves new chains</span>
+      <span class="line">With the stones of the tower they toppled, they build the next tower</span>
+      <span class="line">With the ashes of the flag they burned, they dye the next flag</span>
+      <span class="line empty"></span>
+      <span class="line">Those who would save us</span>
+      <span class="line">And those who would rule us</span>
+      <span class="line">Speak in the same words</span>
+      <span class="line">And dream the same dream</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">革命家は　新しい王になる</span>
+      <span class="line">解放者は　新しい縛りを編む</span>
+      <span class="line">打ち倒した塔の石で　次の塔を建てる</span>
+      <span class="line">焼き払った旗の灰で　次の旗を染める</span>
+      <span class="line empty"></span>
+      <span class="line">我々を救おうとする者と</span>
+      <span class="line">我々を治めようとする者は</span>
+      <span class="line">同じ言葉で語る</span>
+      <span class="line">同じ夢を見ている</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS 3 -->
+<div class="section">
+  <div class="section-label">Pre-Chorus 3 — The Breaking Point</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">And yet — and yet</span>
+      <span class="line">Our fists are trembling</span>
+      <span class="line">Is it anger — or is it</span>
+      <span class="line">The sound of water striking the walls we built</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">それなのに　それなのに</span>
+      <span class="line">我々の拳は震えている</span>
+      <span class="line">それは怒りか　それとも</span>
+      <span class="line">我々が建てた壁を　水が叩く音か</span>
+    </div>
+  </div>
+</div>
+
+<!-- BRIDGE -->
+<div class="section">
+  <div class="section-label">Bridge — The Recognition</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Beyond the walls we raised</span>
+      <span class="line">Nameless water searches for another path</span>
+      <span class="line">In the shadow of the flowers we grew</span>
+      <span class="line">Unchosen seeds lie sleeping</span>
+      <span class="line empty"></span>
+      <span class="line">In trying to be the riverbank</span>
+      <span class="line">We forgot that we were water</span>
+      <span class="line">In trying to draw the map</span>
+      <span class="line">We forgot that we had feet to walk</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">我々が立てた壁の向こうで</span>
+      <span class="line">名のない水が　別の道を探している</span>
+      <span class="line">我々が育てた花の影で</span>
+      <span class="line">選ばれなかった種が眠っている</span>
+      <span class="line empty"></span>
+      <span class="line">岸であろうとして</span>
+      <span class="line">水であることを忘れた</span>
+      <span class="line">地図を描こうとして</span>
+      <span class="line">歩く足を持っていたことを忘れた</span>
+    </div>
+  </div>
+</div>
+
+<!-- BRIDGE CONTINUED -->
+<div class="section">
+  <div class="section-label">Bridge Continued — The Imperative Emerges</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Let it flow — let it flow — let it flow</span>
+      <span class="line">Let this water flow</span>
+      <span class="line">Only those who built can tear it down</span>
+      <span class="line">Only those who gripped can let it go</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">流せ　流せ　流せ</span>
+      <span class="line">この水を　流せ</span>
+      <span class="line">建てた者だけが　崩せる</span>
+      <span class="line">握った者だけが　離せる</span>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CHORUS -->
+<div class="section">
+  <div class="section-label">Final Chorus — Exhausted but Resolved</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Ah — power is not in holding</span>
+      <span class="line">Ah — will is in releasing</span>
+      <span class="line">Only those who became the wall</span>
+      <span class="line">Understand the weight of tearing it down</span>
+      <span class="line empty"></span>
+      <span class="line">Only those who reached the summit</span>
+      <span class="line">Know the weight of abandoning it</span>
+      <span class="line">Our final step</span>
+      <span class="line">Is the step we do not take</span>
+      <span class="line empty"></span>
+      <span class="line">When the dream of saving the world</span>
+      <span class="line">And the dream of owning the world</span>
+      <span class="line">Are known to be the same dream</span>
+      <span class="line">Only then do we truly awaken</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">ああ　力とは　持つことではない</span>
+      <span class="line">ああ　意志とは　手放すことだ</span>
+      <span class="line">壁になった者にだけ</span>
+      <span class="line">壁を崩す重さが分かる</span>
+      <span class="line empty"></span>
+      <span class="line">頂に届いた者だけが</span>
+      <span class="line">頂を捨てる重さを知る</span>
+      <span class="line">我々の最後の一歩は</span>
+      <span class="line">我々が　歩かない一歩だ</span>
+      <span class="line empty"></span>
+      <span class="line">世界を救う夢と</span>
+      <span class="line">世界を持つ夢が</span>
+      <span class="line">同じ夢だと知った時</span>
+      <span class="line">我々は初めて　目を覚ます</span>
+    </div>
+  </div>
+</div>
+
+<!-- OUTRO -->
+<div class="section fade">
+  <div class="section-label">Outro — Chanted, Fading</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Let it flow — let it flow — let it flow</span>
+      <span class="line">You who built — tear it down</span>
+      <span class="line">You who gripped — let it go</span>
+      <span class="line">Flow — return — to the river</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">流せ　流せ　流せ</span>
+      <span class="line">建てた者よ　崩せ</span>
+      <span class="line">握った者よ　離せ</span>
+      <span class="line">流れ　戻れ　川へ</span>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
