@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>灰の轍 — Hai no Wadachi - lyrics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1e1618;
+    --fg: #d4cac8;
+    --fg-dim: #887276;
+    --accent: #b8908c;
+    --accent-dim: #745054;
+    --section-line: #382a2c;
+    --en-col: #c4b4b0;
+    --jp-col: #dcd0cc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--accent-dim);
+    margin: 32px auto 0;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  h1 span {
+    display: block;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-size: 1rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--section-line);
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .col-en {
+    color: var(--en-col);
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+
+  .col-jp {
+    color: var(--jp-col);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  .col-en p, .col-jp p {
+    margin-bottom: 0;
+  }
+
+  .line {
+    line-height: 2rem;
+    display: block;
+    min-height: 2rem;
+  }
+
+  .line.empty {
+    min-height: 1em;
+  }
+
+  .section.fade .col-en,
+  .section.fade .col-jp {
+    opacity: 1;
+  }
+
+  .section.fade .col-en .line:nth-child(n+2),
+  .section.fade .col-jp .line:nth-child(n+2) {
+    opacity: 0.5;
+  }
+
+  .section.fade .col-en .line:nth-child(n+3),
+  .section.fade .col-jp .line:nth-child(n+3) {
+    opacity: 0.25;
+  }
+
+  @media (max-width: 640px) {
+    .columns {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    h1 { font-size: 1.8rem; }
+    h1 span { font-size: 1.3rem; }
+    .page { padding: 48px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>
+    <span>灰の轍</span>
+    Ruts in the Ash
+  </h1>
+  <div class="subtitle">© 2026 Crezth / Yevheniya Machnovsky / miquella.scott</div>
+  <div class="subtitle">All rights reserved</div>
+</header>
+
+<!-- VERSE 1 -->
+<div class="section">
+  <div class="section-label">Verse 1</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Waking up in a grey morning</span>
+      <span class="line">A cold wind brushes against my cheek</span>
+      <span class="line empty"></span>
+      <span class="line">I thought I heard my mother's voice</span>
+      <span class="line">Still searching for the rest of that dream</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">灰色の朝に　目を覚まして</span>
+      <span class="line">冷たい風が　頬を撫でる</span>
+      <span class="line empty"></span>
+      <span class="line">母さんの声が　聞こえた気がした</span>
+      <span class="line">夢の続きを　探している</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS 1 -->
+<div class="section">
+  <div class="section-label">Pre-Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Inside the turning wheel, who is crying?</span>
+      <span class="line">Holding a question with no answer close to my chest</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">廻る輪の中で　誰が泣いているの</span>
+      <span class="line">答えのない問いを　胸に抱いて</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS 1 -->
+<div class="section">
+  <div class="section-label">Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">O flower blooming at the edge of a burned-out empire</span>
+      <span class="line">I will stand up once more</span>
+      <span class="line empty"></span>
+      <span class="line">Born from the ashes like a phoenix</span>
+      <span class="line">Cast away your name and become the wind</span>
+      <span class="line empty"></span>
+      <span class="line">Ah — Kuvira</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">燃え尽きた帝国の　果てに咲く花よ</span>
+      <span class="line">私はもう一度　立ち上がるから</span>
+      <span class="line empty"></span>
+      <span class="line">不死鳥のように　灰から生まれて</span>
+      <span class="line">名前を捨てて　風になれ</span>
+      <span class="line empty"></span>
+      <span class="line">ああ　古維拉</span>
+    </div>
+  </div>
+</div>
+
+<!-- VERSE 2 -->
+<div class="section">
+  <div class="section-label">Verse 2</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Who watched over the hundred-year sleep?</span>
+      <span class="line">Forgotten souls are still here</span>
+      <span class="line empty"></span>
+      <span class="line">Revenge is not a sword, nor is it a prayer</span>
+      <span class="line">Just keep walking — onward, beyond</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">百年の眠りを　誰が見守った</span>
+      <span class="line">忘れられた魂　まだここにいる</span>
+      <span class="line empty"></span>
+      <span class="line">復讐は剣じゃない　祈りでもない</span>
+      <span class="line">ただ歩き続ける　その先へ</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRE-CHORUS 2 -->
+<div class="section">
+  <div class="section-label">Pre-Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Too sorrowful to call it fate</span>
+      <span class="line">And still I press forward, toward the light</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">運命と呼ぶには　あまりに哀しくて</span>
+      <span class="line">それでも進むの　光のほうへ</span>
+    </div>
+  </div>
+</div>
+
+<!-- CHORUS 2 -->
+<div class="section">
+  <div class="section-label">Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">O flower blooming at the edge of a burned-out empire</span>
+      <span class="line">I will stand up once more</span>
+      <span class="line empty"></span>
+      <span class="line">Born from the ashes like a phoenix</span>
+      <span class="line">Cast away your name and become the wind</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">燃え尽きた帝国の　果てに咲く花よ</span>
+      <span class="line">私はもう一度　立ち上がるから</span>
+      <span class="line empty"></span>
+      <span class="line">不死鳥のように　灰から生まれて</span>
+      <span class="line">名前を捨てて　風になれ</span>
+    </div>
+  </div>
+</div>
+
+<!-- BRIDGE / FINAL CHORUS -->
+<div class="section">
+  <div class="section-label">Bridge — Final Chorus</div>
+  <div class="columns">
+    <div class="col-en">
+      <span class="line">Before dawn reaches the hollow city of ash</span>
+      <span class="line">Someone will sing this name</span>
+      <span class="line empty"></span>
+      <span class="line">Turn, turn — the wheel of the six realms</span>
+      <span class="line">I will be the one to stop it</span>
+      <span class="line empty"></span>
+      <span class="line">Ah — Kuvira</span>
+    </div>
+    <div class="col-jp">
+      <span class="line">虚ろな灰の都に　夜明けが来る前に</span>
+      <span class="line">誰かが歌うだろう　この名前を</span>
+      <span class="line empty"></span>
+      <span class="line">廻れ廻れ　六道の車輪</span>
+      <span class="line">私が止めてみせる</span>
+      <span class="line empty"></span>
+      <span class="line">ああ　古維拉</span>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
